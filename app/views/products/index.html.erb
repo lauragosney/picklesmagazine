@@ -1,0 +1,9 @@
+<div class="product-hero">
+  <h1>Collection 2017 coming soon</h1>
+</div>
+
+<section class="products">
+  <% @products.each do |product| %>
+    <h3><%= link_to product.title, product_path(product) %></h3>
+ <%end%>
+</section>
