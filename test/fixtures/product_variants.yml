@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  size: MyString
+  color: MyString
+  is_sold_out: false
+  rank: 1
+
+two:
+  size: MyString
+  color: MyString
+  is_sold_out: false
+  rank: 1

@@ -1,5 +1,8 @@
 class Product < ApplicationRecord
 
+  has_many :product_variants
+  accepts_nested_attributes_for :product_variants
+
   validates :title, presence: true
   validates :price, presence: true
   validates :description, presence: true

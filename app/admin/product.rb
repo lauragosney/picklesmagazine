@@ -1,7 +1,7 @@
 ActiveAdmin.register Product do
 
  permit_params :title, :image_1, :image_2, :image_3, :image_4, :image_5,
-  :price, :collection_date, :description, :is_featured, :is_sold_out, :quote
+  :price, :collection_date, :description, :is_featured, :is_sold_out, :quote, product_variant_attributes: [:id, :size, :is_sold_out, :rank, :_destroy]
 
 
  index do
@@ -13,9 +13,11 @@ ActiveAdmin.register Product do
 
    column :title
    column :price
+   column :product_variant_attributes
    column :is_featured
    column :is_sold_out
-   column :is_sold_out
+   column :quote
+
    actions
  end
 
@@ -41,6 +43,13 @@ ActiveAdmin.register Product do
       f.input :image_5
       f.input :image_6
     end
+
+    f.inputs do
+      f.has_many :product_variants, sortable: :rank, sortable_start: 1 do |t|
+      t.input :size, as: :select, collection: ["S", "M", "L", "XL"]
+      t.input :is_sold_out, label: "Sold out?"
+   end
+end
 
     f.actions
 
