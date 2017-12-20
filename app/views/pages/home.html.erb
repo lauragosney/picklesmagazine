@@ -1,1 +1,8 @@
 <h1>Pickles magazine</h1>
+
+<section class="container">
+  <h2>Featured products</h2>
+  <div class="featured_products">
+    <%= render partial: "products/product", collection: @featured_products %>
+  </div>
+</section>

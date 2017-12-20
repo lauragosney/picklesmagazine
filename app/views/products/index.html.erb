@@ -2,8 +2,8 @@
   <h1>Collection 2017 coming soon</h1>
 </div>
 
-<section class="products">
-  <% @products.each do |product| %>
-    <h3><%= link_to product.title, product_path(product) %></h3>
- <%end%>
+<section class="container">
+  <div class="product_grid"
+    <%= render partial: "product", collection: @products %>
+ </div>
 </section>
