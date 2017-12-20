@@ -10,6 +10,8 @@ class OrderItemsController < ApplicationController
 
     @current_cart.order_items.create(product: @product, quantity: @quantity, product_variant_id: @size )
 
+    flash[:success] = "Item added to cart"
+
     redirect_to product_path(@product)
   end
 
