@@ -55,15 +55,15 @@ end
    column :title
    column :sizes do |product|
      sizes = product.product_variants.map do |v|
-       v.size
+       str = v.size
+       if v.is_sold_out?
+         str = v.size + " " +  "(sold out)"
+       end
+       str
      end
-     sizes.join(",")
+     sizes.to_sentence
    end
-   column :is_sold_out do |product|
-     is_sold_out = product.product_variants.map do |v|
-       v.is_sold_out
-      end
-    end
+
    column :price
    column :is_featured
    column :is_sold_out
@@ -105,4 +105,12 @@ end
     f.actions
 
   end
+
+
+  filter :title
+  filter :price
+  filter :created_at
+  filter :collection_date
+  filter :is_featured
+  filter :is_sold_out
 end

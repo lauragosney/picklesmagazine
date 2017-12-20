@@ -15,8 +15,16 @@
         <%= link_to "Shop", products_path %>
         <%= link_to "About", about_path %>
         <%= link_to "Contact", contact_path %>
+        <%= link_to "#" do %>
+         Cart <%= @current_cart.id %> (0)
+        <% end %>
       </nav>
     </header>
+      <% if flash[:success].present? %>
+        <div class="success">
+          <%= flash[:success] %>
+        </div>
+      <% end %>
     <%= yield %>
   </body>
 </html>
