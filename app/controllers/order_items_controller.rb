@@ -15,6 +15,18 @@ class OrderItemsController < ApplicationController
     redirect_to product_path(@product)
   end
 
+  def update
+    @product = Product.find(params[:product_id])
+
+    @order_item = OrderItem.find(params[:id])
+
+    @order_item.update(form_params)
+
+    flash[:success] = "Item added to cart"
+
+    redirect_to product_path(@product)
+  end
+
   def form_params
     params.require(:order_item).permit(:quantity, :product_variant_id)
   end
