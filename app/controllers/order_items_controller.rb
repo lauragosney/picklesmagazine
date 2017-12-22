@@ -20,7 +20,7 @@ class OrderItemsController < ApplicationController
 
     @order_item.update(form_params)
 
-    flash[:success] = "Item added to cart"
+    flash[:success] = "Cart updated"
 
     redirect_to product_path(@product)
   end
