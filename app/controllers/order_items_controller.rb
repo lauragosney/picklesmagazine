@@ -4,11 +4,21 @@ class OrderItemsController < ApplicationController
     @product = Product.find(params[:product_id])
 
     @quantity = form_params[:quantity]
+    @variant = form_params[:product_variant_id]
+    
+    @current_cart.order_items.create(product: @product, quantity: @quantity, product_variant_id: @variant)
 
-    @size = form_params[:product_variant_id]
+    flash[:success] = "Item added to cart"
 
+    redirect_to product_path(@product)
+  end
 
-    @current_cart.order_items.create(product: @product, quantity: @quantity, product_variant_id: @size )
+  def update
+    @product = Product.find(params[:product_id])
+
+    @order_item = OrderItem.find(params[:id])
+
+    @order_item.update(form_params)
 
     flash[:success] = "Item added to cart"
 
