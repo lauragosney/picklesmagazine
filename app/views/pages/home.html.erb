@@ -1,8 +1,78 @@
-<h1>Pickles magazine</h1>
+
+<div class="hero ">
+  <%= image_tag "pickles-logo.svg" %>
+</div>
+
+
+
+<section class="container_2">
+
+
+  <div class="block-image-left">
+
+    <%= link_to "#" do %>
+      <%= image_tag "image_shirt.jpg" %>
+    <% end %>
+  </div>
+
+  <div class="block-copy">
+        <h4>Introduction</h4>
+        <%= link_to "#" do %>
+          <%= image_tag "dividers.svg" %>
+        <% end %>
+        <h3>Type something</h3>
+        <p>Founded in 1992, Griffin Technology are leading creators of innovations for everyday life, including the latest in cases, chargers, cables and home & car audio solutions for iPhone, iPad, iPod, smartphones,tablets, PCs and more. As well as delivering a strategic and</p>
+        <div class="btn-primary">
+          <%= link_to "#" do %>
+            Shop now <%= image_tag "arrow_icon.svg",width: 30 %>
+          <% end %>
+        </div>
+
+      </div>
+
+</section>
+
+
+
+
+
+  <section class="container_2">
+
+      <div class="block-copy">
+        		<h4>Introduction</h4>
+            <%= link_to "#" do %>
+              <%= image_tag "dividers.svg" %>
+            <% end %>
+        		<h3>Type something</h3>
+        		<p>Founded in 1992, Griffin Technology are leading creators of innovations for everyday life, including the latest in cases, chargers, cables and home & car audio solutions for iPhone, iPad, iPod, smartphones,tablets, PCs and more. As well as delivering a strategic and</p>
+       	 		<div class="btn-primary">
+              <%= link_to "#" do %>
+                Shop now <%= image_tag "arrow_icon.svg",width: 30 %>
+              <% end %>
+            </div>
+
+      		</div>
+
+
+    <div class="block-image-right">
+
+      <%= link_to "#" do %>
+        <%= image_tag "image_mag.jpg" %>
+      <% end %>
+    </div>
+
+</section>
+
+
+
+
+
 
 <section class="container">
-  <h2>Featured products</h2>
-  <div class="featured_products">
+<div class="featured_products">
+  <h3>Featured products</h3>
+  <div class="product_grid_4">
     <%= render partial: "products/product", collection: @featured_products %>
   </div>
+</div>
 </section>

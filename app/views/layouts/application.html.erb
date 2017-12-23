@@ -2,6 +2,8 @@
 <html>
   <head>
     <title>Picklesmagazine</title>
+    <%= favicon_link_tag 'favicon.ico' %>
+
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -10,13 +12,20 @@
 
   <body>
     <header>
-      <h1><%= link_to "Pickles", root_path %></h1>
+
+      <h1>
+        <%= link_to root_path do %>
+          <%= image_tag "pickles-logo-small.svg" %>
+        <% end %>
+      </h1>
+
       <nav>
         <%= link_to "Shop", products_path %>
         <%= link_to "About", about_path %>
         <%= link_to "Contact", contact_path %>
-        <%= link_to "#" do %>
-         Cart <%= @current_cart.id %> (0)
+        <%= link_to cart_path do %>
+          <%= image_tag "cart.svg" %>
+         Cart (<%= @current_cart.total_quantity %> )
         <% end %>
       </nav>
     </header>
@@ -25,6 +34,8 @@
           <%= flash[:success] %>
         </div>
       <% end %>
+    <main>
     <%= yield %>
+  </main>
   </body>
 </html>

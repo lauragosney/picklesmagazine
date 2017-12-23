@@ -7,11 +7,8 @@
 <%= simple_form_for [@product, @order_item] do |f| %>
   <% if @product.product_variants.any? %>
      <div class="size">
-<<<<<<< HEAD
        <%= f.input :product_variant_id, as: :select, collection: @product.product_variants.all, label_method: :select_text, label: "Select size", include_blank: false %>
-=======
-       <%= f.input :product_variant_id, as: :select, collection: @product.product_variants.all, label_method: :select_text, label: "Select size" %>
->>>>>>> 362628d2ae10f96c8da80c76388443a24f9ed70a
+
     </div>
   <% end %>
   <%= f.input :quantity %>

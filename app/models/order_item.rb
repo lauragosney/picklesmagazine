@@ -3,5 +3,5 @@ class OrderItem < ApplicationRecord
   belongs_to :cart, optional: true
 
   belongs_to :product
-  belongs_to :product_variant
+  belongs_to :product_variant, optional: true
 end
