@@ -21,7 +21,7 @@
         <td><%= image_tag item.product.image_1.thumb, width: "50" %>
           <%= item.product.title %>
         </td>
-        <td><%= item.product.price %></td>
+        <td><%= number_to_currency item.product.price_in_pounds, unit: "£" %></td>
 
         <% if item.product_variant.present? %>
           <td> <%= item.product_variant.size %></td>
@@ -39,11 +39,21 @@
 
       </tr>
 
+
     <% end %>
+
+
 
   </tbody>
 
 </table>
+
+<p>Total: <%= number_to_currency @current_cart.total_price_in_pounds,  unit: "£" %> </p>
+
+<div>
+  <p> <%=link_to "Continue to checkout", new_order_path %> </p>
+<div/>
+
 
 <% else %>
   <p>There are no items in your cart</p>
