@@ -1,0 +1,30 @@
+<h2>Thanks for your order </h2>
+
+<p>Your order has been received. Please allow for 7-10 days for delivery</p>
+
+Total: <%= number_to_currency @order.price_in_pounds, unit: "£"  %>
+
+
+<%= @order.first_name %>
+<%= @order.last_name %>
+<%= @order.email %>
+
+
+<% @order.order_items.each do |item| %>
+
+    <div><%= image_tag item.product.image_1.thumb, width: "50" %>
+    <%= item.product.title %>
+    <%= number_to_currency item.product.price_in_pounds, unit: "£" %>
+
+    <% if item.product_variant.present? %>
+      <%= item.product_variant.size %>
+    <% else %>
+     -
+    <% end %>
+    <%= item.quantity %>
+<% end %>
+</div>
+
+<div class="button">
+  <p><%= link_to "Back to home", root_path%></p>
+</div>

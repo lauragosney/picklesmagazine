@@ -259,10 +259,15 @@ header {
   margin-right: 10%;
 }
 
-.btn-primary  {
+.button  {
  margin-top: 24px;
- display: inline-block;
  color: #000000;
+ background-color: #7ED321;
+ border: none;
+ padding: 10px 60px 8px 60px;
+ display: block;
+ text-transform: uppercase;
+ font-weight: 700;
 }
 
 .featured_products h3 {
@@ -304,4 +309,23 @@ form.edit_order_item {
   input[type=number] {
     width: 60px;
   }
+}
+
+.my-input {
+  width: 100%;
+  border: solid 1px #cccccc;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.product_grid_2 {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.product_grid_1 {
+  width: 50%;
 }

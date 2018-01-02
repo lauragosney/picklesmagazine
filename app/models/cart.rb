@@ -16,4 +16,26 @@ class Cart < ApplicationRecord
   end
 
 
+
+  def total_price
+
+    @total = 0
+
+    order_items.all.each do |item|
+      @total = @total + item.product.price * item.quantity
+    end
+      @total
+
+  end
+
+  def total_price_in_pounds
+    @total = 0
+
+    order_items.all.each do |item|
+      @total = @total + item.product.price_in_pounds * item.quantity
+    end
+      @total
+
+
+  end
 end

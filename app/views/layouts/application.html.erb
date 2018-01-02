@@ -7,6 +7,10 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <script src="https://js.stripe.com/v3/"></script>
+
+
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
@@ -25,7 +29,8 @@
         <%= link_to "Contact", contact_path %>
         <%= link_to cart_path do %>
           <%= image_tag "cart.svg" %>
-         Cart (<%= @current_cart.total_quantity %> )
+          <%= @current_cart.total_quantity %> items: <%= number_to_currency @current_cart.total_price_in_pounds,  unit: "£" %>
+
         <% end %>
       </nav>
     </header>
@@ -38,14 +43,7 @@
     <%= yield %>
   </main>
 
-  <div class="featured_products">
 
-  <h3>@picklesmagazine</h3>
-
-  <script src="//apps.elfsight.com/p/platform.js" defer></script>
-				<div class="elfsight-app-276db0d4-25a2-4a5e-8a72-30da22fe3732">
-				</div>
-      </div>
 
   <footer class="footer">
 

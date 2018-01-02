@@ -5,7 +5,7 @@ class Product < ApplicationRecord
   accepts_nested_attributes_for :product_variants
 
   validates :title, presence: true
-  validates :price, presence: true
+  validates :price_in_pounds, presence: true
   validates :description, presence: true
   validates :quote, presence: true
 
@@ -15,5 +15,13 @@ class Product < ApplicationRecord
   mount_uploader :image_4, ProductImageUploader
   mount_uploader :image_5, ProductImageUploader
   mount_uploader :image_6, ProductImageUploader
+
+  def price_in_pounds
+    price/100.00
+  end
+
+  def price_in_pounds=(pounds)
+    self.price = (pounds.to_f * 100).round
+  end
 
 end
