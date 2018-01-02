@@ -14,6 +14,13 @@ ActiveAdmin.register Order do
        row :city
        row :postal_code
        row :country
+
+       row :order_items do |order|
+         order.order_items.all.map do |item|
+            "#{item.quantity} x #{item.product.try(:title)} - #{item.product_variant.try(:size)}"
+         end
+       end
+
       end
       active_admin_comments
   end

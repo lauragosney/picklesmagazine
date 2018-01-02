@@ -1,7 +1,7 @@
 ActiveAdmin.register Product do
 
  permit_params :title, :image_1, :image_2, :image_3, :image_4, :image_5, :image_6,
-  :price, :collection_date, :description, :is_featured, :is_sold_out, :quote, product_variants_attributes: [:id, :size, :is_sold_out, :rank, :_destroy]
+  :price_in_pounds, :collection_date, :description, :is_featured, :is_sold_out, :quote, product_variants_attributes: [:id, :size, :is_sold_out, :rank, :_destroy]
 
   show do
     attributes_table do
@@ -35,7 +35,9 @@ ActiveAdmin.register Product do
          v.is_sold_out
         end
       end
-      row :price
+      row :price_in_pounds, :sortable => :price_in_pounds do |cur|
+            number_to_currency cur.price_in_pounds, unit: "£"
+        end
       row :is_featured
       row :is_sold_out
       row :quote
@@ -64,7 +66,9 @@ end
      sizes.to_sentence
    end
 
-   column :price
+   column :price_in_pounds, :sortable => :price_in_pounds do |cur|
+         number_to_currency cur.price_in_pounds, unit: "£"
+     end
    column :is_featured
    column :is_sold_out
    column :quote
@@ -75,7 +79,9 @@ end
  form do |f|
     f.inputs "Product info" do
       f.input :title
-      f.input :price
+      f.input :price_in_pounds, :sortable => :price_in_pounds do |cur|
+            number_to_currency cur.price_in_pounds, unit: "£"
+        end
       f.input :description
       f.input :quote
       f.input :collection_date
@@ -108,7 +114,7 @@ end
 
 
   filter :title
-  filter :price
+  filter :price_in_pounds
   filter :created_at
   filter :collection_date
   filter :is_featured

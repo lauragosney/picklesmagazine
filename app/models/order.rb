@@ -19,10 +19,57 @@ class Order < ApplicationRecord
 
   def total
     @count = 0
+
     self.order_items.each do |item|
       @count += item.quantity
     end
     @count
+  end
+
+  def save_and_charge
+    if self.valid?
+
+      Stripe::Charge.create(amount: self.total_price, currency: "gbp",
+        source: self.stripe_token, description: "Order for" + self.email)
+
+        self.save
+    else
+      false
+    end
+
+  rescue Stripe::CardError => e
+    @message = e.json_body[:error][:message]
+
+    self.errors.add(:stripe_token, @message)
+
+    false
+
+  end
+
+  def price_in_pounds
+    total_price/100.00
+  end
+
+
+
+
+
+  def total_price
+
+    @total = 0
+
+    if ["United States", "Canada"].include? self.country do
+      @total += 1000
+    end
+    else
+      @total += 500
+    end
+
+
+    order_items.each do |item|
+      @total = @total + item.product.price * item.quantity
+    end
+    @total
   end
 
 end

@@ -2,6 +2,8 @@
 
 <p>Your order has been received. Please allow for 7-10 days for delivery</p>
 
+Total: <%= number_to_currency @order.price_in_pounds, unit: "£"  %>
+
 
 <%= @order.first_name %>
 <%= @order.last_name %>

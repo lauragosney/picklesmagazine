@@ -1,9 +1,18 @@
-<h2>Checkout</h2>
+<div>
+  <%= @current_cart.total_quantity %> items: <%= number_to_currency @current_cart.total_price_in_pounds,  unit: "£" %>
+</div>
+<div>
+Delivery: £5.00
+</div>
+<div>
+Total: <%= number_to_currency @order.price_in_pounds, unit: "£"  %>
+</div>
 
-Total number of items: <%= @order.total %>
 
+<section class="product_grid_2">
 
-
+<div class="product_grid_1">
+  <h3>Billing address</h3>
 <%= simple_form_for @order do |f| %>
   <%= f.input :first_name %>
   <%= f.input :last_name %>
@@ -15,7 +24,82 @@ Total number of items: <%= @order.total %>
   <%= f.input :city %>
   <%= f.input :postal_code %>
 
+</div>
 
-  <%= f.button :submit,"Submit order" %>
+<div class="product_grid_1">
+
+  <h3>Payment details</h3>
+
+
+  <div id="card-errors">
+    <%@order.errors[:stripe_token].each do |message| %>
+      <p class="error"><%= message %> </p>
+    <%end%>
+  </div>
+
+  <label>Card number</label>
+  <div class="my-input" id="card-number"></div>
+
+  <label>Expiry</label>
+  <div class="my-input" id="card-expiry"></div>
+
+  <label>Security code (3 digits)</label>
+  <div class="my-input" id="card-cvc"></div>
+
+  <%= f.button :submit,"Submit order", class: "button" %>
+
+
+</div>
+
+
+
+</section>
+
 
 <%end%>
+
+
+<script>
+
+var style = {
+    base: {
+      color: '#ffffff',
+      fontSize: '14px',
+      color: "#32325d",
+      fontSmoothing: 'antialiased',
+    },
+    invalid: {
+      color: '#e5424d',
+      ':focus': {
+      color: '#303238',
+      },
+    },
+  };
+
+  var stripe = Stripe("<%= Rails.application.secrets.stripe_public_key %>")
+  var elements = stripe.elements()
+
+
+  var cardNumber = elements.create('cardNumber', { style: style });
+  cardNumber.mount('#card-number');
+
+  var cardExpiry = elements.create('cardExpiry', {style: style });
+  cardExpiry.mount('#card-expiry');
+
+  var cardCvc = elements.create('cardCvc', {  style: style });
+  cardCvc.mount('#card-cvc');
+
+
+  $("form.new_order").on("submit", function (ev) {
+    ev.preventDefault()
+
+    stripe.createToken(cardNumber).then(function (result) {
+      if (result.error) {
+        $("#card-error").html(result.error.message)
+      } else {
+        $("form.new_order").append("<input type=hidden name='order[stripe_token]' value=" + result.token.id + ">")
+        $("form.new_order").get(0).submit()
+      }
+    })
+  })
+</script>
