@@ -8,6 +8,13 @@ class Order < ApplicationRecord
   validates :city, presence: true
   validates :country, presence: true
 
+  validates :delivery_first_name, presence: true
+  validates :delivery_last_name, presence: true
+  validates :delivery_address_1, presence: true
+  validates :delivery_city, presence: true
+  validates :delivery_country, presence: true
+
+
   accepts_nested_attributes_for :order_items
 
 

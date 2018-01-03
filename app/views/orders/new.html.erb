@@ -1,18 +1,10 @@
-<div>
-  <%= @current_cart.total_quantity %> items: <%= number_to_currency @current_cart.total_price_in_pounds,  unit: "£" %>
-</div>
-<div>
-Delivery: £5.00
-</div>
-<div>
-Total: <%= number_to_currency @order.price_in_pounds, unit: "£"  %>
-</div>
 
 
 <section class="product_grid_2">
+  <h2>Checkout</h2>
 
-<div class="product_grid_1">
-  <h3>Billing address</h3>
+<div>
+ <h3>Billing address</h3>
 <%= simple_form_for @order do |f| %>
   <%= f.input :first_name %>
   <%= f.input :last_name %>
@@ -26,9 +18,39 @@ Total: <%= number_to_currency @order.price_in_pounds, unit: "£"  %>
 
 </div>
 
-<div class="product_grid_1">
+<div>
+  <h3>Delivery address</h3>
+
+  <%= f.input :delivery_first_name %>
+  <%= f.input :delivery_last_name %>
+
+  <%= f.input :delivery_country %>
+  <%= f.input :delivery_address_1 %>
+  <%= f.input :delivery_address_2 %>
+  <%= f.input :delivery_city %>
+  <%= f.input :delivery_postal_code %>
+</div>
+
+<div>
+  <h3>Your order</h3>
+
+  <div>
+    <%= @current_cart.total_quantity %> items: <%= number_to_currency @current_cart.total_price_in_pounds,  unit: "£" %>
+  </div>
+  <div>
+  Delivery: £5.00
+  </div>
+  <div>
+  Total: <%= number_to_currency @order.price_in_pounds, unit: "£"  %>
+  </div>
+
+</div>
+
+<div>
 
   <h3>Payment details</h3>
+
+  <p>We accept MasterCard, Visa and American Express. This payment is bank-level secure using SSL and Stripe.</p>
 
 
   <div id="card-errors">
@@ -57,6 +79,8 @@ Total: <%= number_to_currency @order.price_in_pounds, unit: "£"  %>
 
 
 <%end%>
+
+
 
 
 <script>
