@@ -1,7 +1,8 @@
 ActiveAdmin.register Order do
 
   permit_params :first_name, :last_name, :email, :country, :address_1,
-    :address_2, :city, :postal_code,
+    :address_2, :city, :postal_code, :delivery_first_name, :delivery_last_name, :delivery_address_1,
+    :delivery_address_2, :delivery_city, :delivery_postal_code, :delivery_country,
     order_items_attributes: [:id, :product_id, :quantity, :product_variant_id, :quantity, :_destroy]
 
     show do
@@ -14,6 +15,14 @@ ActiveAdmin.register Order do
        row :city
        row :postal_code
        row :country
+
+       row :delivery_first_name
+       row :delivery_last_name
+       row :delivery_address_1
+       row :delivery_address_2
+       row :delivery_city
+       row :delivery_postal_code
+       row :delivery_country
 
        row :order_items do |order|
          order.order_items.all.map do |item|
@@ -44,12 +53,20 @@ ActiveAdmin.register Order do
           f.input :email
       end
 
-        f.inputs "Address" do
+        f.inputs "Billing address" do
           f.input :address_1
           f.input :address_2
           f.input :city
           f.input :postal_code
           f.input :country
+        end
+
+        f.inputs "Delivery address" do
+          f.input :delivery_address_1
+          f.input :delivery_address_2
+          f.input :delivery_city
+          f.input :delivery_postal_code
+          f.input :delivery_country
         end
 
         f.has_many :order_items, heading: "Products" do |productf|
