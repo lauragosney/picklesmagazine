@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180103195655) do
+ActiveRecord::Schema.define(version: 20180104204517) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -44,6 +44,12 @@ ActiveRecord::Schema.define(version: 20180103195655) do
   end
 
   create_table "carts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -105,6 +111,28 @@ ActiveRecord::Schema.define(version: 20180103195655) do
     t.string "collection_date"
     t.boolean "is_sold_out", default: false
     t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "quote"
+  end
+
+  create_table "stories", force: :cascade do |t|
+    t.string "title"
+    t.string "byline"
+    t.text "body"
+    t.string "image_1"
+    t.string "image_2"
+    t.string "image_3"
+    t.string "image_4"
+    t.string "image_5"
+    t.string "caption_1"
+    t.string "caption_2"
+    t.string "caption_3"
+    t.string "caption_4"
+    t.string "caption_5"
+    t.string "credit"
+    t.boolean "is_featured", default: false
+    t.text "standfirst"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "quote"
