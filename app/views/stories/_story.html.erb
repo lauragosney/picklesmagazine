@@ -1,0 +1,15 @@
+<div>
+ <%= link_to story_path(story) do %>
+    <%= image_tag story.image_1.medium %>
+ <% end %>
+
+ <h5><%= link_to story.title, story_path(story) %></h5>
+ <p><%= story.byline %></p>
+
+<div class="btn-primary">
+ <%= link_to story_path(story)  do %>
+    Read more <%= image_tag "arrow_icon.svg",width: 30, class: "cta" %> </p>
+ <% end %>
+</div>
+
+</div>

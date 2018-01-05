@@ -1,0 +1,20 @@
+<h2><%= @story.title %></h2>
+
+<h5><%= @story.byline %></h5>
+
+<% if @story.standfirst.present? %>
+  <p><%= @story.standfirst %></p>
+<% end %>
+
+<%= image_tag @story.image_1.large %>
+
+<%= simple_format @story.body %>
+
+
+
+
+
+
+<p>
+ <%= link_to "Back to all Stories", stories_path %>
+</p>
