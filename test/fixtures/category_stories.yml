@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  story: one
+  category: one
+  is_featured: false
+
+two:
+  story: two
+  category: two
+  is_featured: false

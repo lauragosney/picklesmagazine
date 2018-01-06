@@ -19,6 +19,10 @@
 </div>
 
 <div>
+  <%= f.input :subscribe, :label => "Ship to this address" %> 
+</div>
+
+<div>
   <h3>Delivery address</h3>
 
   <%= f.input :delivery_first_name %>
@@ -30,6 +34,8 @@
   <%= f.input :delivery_city %>
   <%= f.input :delivery_postal_code %>
 </div>
+
+
 
 <div>
   <h3>Your order</h3>
@@ -68,7 +74,7 @@
   <label>Security code (3 digits)</label>
   <div class="my-input" id="card-cvc"></div>
 
-  <%= f.button :submit,"Submit order", class: "button" %>
+  <%= f.button :submit,"Submit order", class: "button_primary" %>
 
 
 </div>

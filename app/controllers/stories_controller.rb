@@ -1,7 +1,14 @@
 class StoriesController < ApplicationController
 
   def index
-    @stories = Story.all
+   @category_id = params[:category]
+
+   if @category_id.present?
+      @category = Category.find(@category_id)
+      @stories = @category.stories.all
+   else
+      @stories = Story.all
+   end
   end
 
 

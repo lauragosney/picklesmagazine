@@ -22,10 +22,11 @@ class OrdersController < ApplicationController
     end
   end
 
+
   def form_params
     params.require(:order).permit(:first_name, :last_name, :email, :country, :address_1,
     :address_2, :city, :postal_code, :stripe_token, :delivery_first_name, :delivery_last_name,
-    :delivery_address_1, :delivery_address_2, :delivery_city, :delivery_country, :delivery_postal_code)
+    :delivery_address_1, :delivery_address_2, :delivery_city, :delivery_country, :delivery_postal_code, :subscribe)
   end
 
   def show

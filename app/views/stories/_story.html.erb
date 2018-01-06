@@ -1,15 +1,27 @@
 <div>
+
+
  <%= link_to story_path(story) do %>
     <%= image_tag story.image_1.medium %>
  <% end %>
 
+
+
+
+ <h6> <% story.categories.all.each do |cat| %>
+   <%= link_to cat.title, stories_path(category: cat.id) %>
+ <% end %></h6>
+
  <h5><%= link_to story.title, story_path(story) %></h5>
  <p><%= story.byline %></p>
 
-<div class="btn-primary">
+
+
+<div class="button_secondary">
  <%= link_to story_path(story)  do %>
     Read more <%= image_tag "arrow_icon.svg",width: 30, class: "cta" %> </p>
  <% end %>
 </div>
+
 
 </div>
