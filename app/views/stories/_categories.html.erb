@@ -1,0 +1,4 @@
+<% Category.all.each do |cat| %>
+
+  <%= active_link_to cat.title, stories_path(category: cat.id), active:{category: cat.id} %>
+<% end %>

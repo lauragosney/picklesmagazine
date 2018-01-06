@@ -1,6 +1,6 @@
 ActiveAdmin.register Story do
   permit_params :title, :byline, :standfirst, :body, :image_1, :image_2, :image_3, :image_4, :image_5, :quote,
-  :caption_1, :caption_2, :caption_3, :caption_4, :caption_5, :credit, :is_featured
+  :caption_1, :caption_2, :caption_3, :caption_4, :caption_5, :credit, :is_featured, category_ids:[]
 
    show do
      attributes_table do
@@ -31,6 +31,11 @@ ActiveAdmin.register Story do
       row :caption_5
       row :quote
       row :is_featured
+      row :categories do |category|
+        category.categories.all.map do |t|
+          t.title
+        end
+      end
     end
     active_admin_comments
   end
@@ -51,6 +56,12 @@ ActiveAdmin.register Story do
 
     column :is_featured
     column :quote
+    column :categories do |category|
+      category.categories.all.map do |t|
+        t.title
+      end
+    end
+
 
     actions
   end
@@ -85,6 +96,10 @@ ActiveAdmin.register Story do
         f.input :caption_5
      end
 
+     f.inputs "Categories" do
+        f.input :categories, as: :check_boxes, collection: Category.order("title asc")
+     end
+
      f.actions
 
    end
@@ -94,4 +109,5 @@ ActiveAdmin.register Story do
     filter :byline
     filter :created_at
     filter :is_featured
+    filter :categories
 end

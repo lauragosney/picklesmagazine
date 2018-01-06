@@ -3,12 +3,15 @@
   <p>Pickles x Hummel shirt is made from moisture wicking polyester and ventilating mesh.  <br>Featuring the Pickles badge. </p>
 </div>
 
-<div class="categories">
-   <p>All stories</p>
+<div class="active">
+
+  <%= active_link_to "All stories", stories_path, active: {category: nil, category_id: nil} %>
+  <%= render "categories" %>
 </div>
 
 <section class="container">
   <div class="product_grid_3">
     <%= render partial: "story", collection: @stories %>
+
   </div>
 </section>

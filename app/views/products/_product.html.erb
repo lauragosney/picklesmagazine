@@ -3,7 +3,7 @@
     <%= image_tag product.image_1.medium %>
  <% end %>
 
- <h5><%= link_to product.title, product_path(product) %></h5>
+ <h6><%= link_to product.title, product_path(product) %></h6>
   <p>
     <%= number_to_currency product.price_in_pounds, unit: "£" %>
   </p>

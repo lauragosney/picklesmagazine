@@ -8,14 +8,20 @@ class Order < ApplicationRecord
   validates :city, presence: true
   validates :country, presence: true
 
-  validates :delivery_first_name, presence: true
-  validates :delivery_last_name, presence: true
-  validates :delivery_address_1, presence: true
-  validates :delivery_city, presence: true
-  validates :delivery_country, presence: true
-
 
   accepts_nested_attributes_for :order_items
+
+  before_save :update_delivery_address
+
+  def update_delivery_address
+    if self[:subscribe]
+      self.first_name = self.delivery_first_name
+      self.last_name = self.delivery_last_name
+      self.address_1 = self.delivery_address_1
+      self.city = self.delivery_city
+      self.country = self.delivery_country
+    end
+  end
 
 
   def add_from_cart(cart)
@@ -58,9 +64,6 @@ class Order < ApplicationRecord
   end
 
 
-
-
-
   def total_price
 
     @total = 0
@@ -78,5 +81,7 @@ class Order < ApplicationRecord
     end
     @total
   end
+
+
 
 end

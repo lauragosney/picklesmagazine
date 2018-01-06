@@ -10,9 +10,11 @@
 
 <%= simple_format @story.body %>
 
-
-
-
+<div>
+  <% @story.categories.each do |cat| %>
+    <%=  link_to cat.title, stories_path(category: cat.id) %>
+  <% end %>
+</div>
 
 
 <p>
