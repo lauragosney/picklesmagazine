@@ -8,18 +8,17 @@ class Order < ApplicationRecord
   validates :city, presence: true
   validates :country, presence: true
 
-
   accepts_nested_attributes_for :order_items
 
   before_save :update_delivery_address
 
   def update_delivery_address
-    if self[:subscribe]
-      self.first_name = self.delivery_first_name
-      self.last_name = self.delivery_last_name
-      self.address_1 = self.delivery_address_1
-      self.city = self.delivery_city
-      self.country = self.delivery_country
+    if self.subscribe?
+      self.delivery_first_name = self.first_name
+      self.delivery_last_name = self.last_name
+      self.delivery_address_1 = self.address_1
+      self.delivery_city = self.city
+      self.delivery_country = self.country
     end
   end
 

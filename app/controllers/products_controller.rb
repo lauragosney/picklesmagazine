@@ -5,6 +5,8 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @featured_products = Product.where(is_featured: true)
+
     @product = Product.find(params[:id])
 
     @order_item = @current_cart.order_items.find_by(product: @product)
