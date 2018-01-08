@@ -440,9 +440,15 @@
 
   .cart {
     position: fixed;
+    font-weight: 600;
     top: 0;
     right: 0;
-    padding: 25px;
+    padding: 30px;
+    line-height: 1;
+
+    img {
+      padding-right: 5px;
+    }
   }
 
   .menu {
@@ -516,11 +522,16 @@
     border-bottom: 2px solid #ffffff;
   }
 
-  h1.logo {
-    color: #000000;
-    font-weight: 600;
-    line-height: 1.2;
-    padding: 0;
-    margin: -30px 0 80px 0;
-    text-align: center;
+
+  div.header2 {
+    max-width: 130px;
+    overflow: hidden;
+    margin: 0px auto 80px auto;
+
+    h1.logo {
+      padding: 0;
+      text-align: center;
+      position: fixed;
+      top: 4%;
+    }
   }

@@ -1,6 +1,13 @@
-<h2>Thanks for your order </h2>
+<h1 class="logo">
+  <%= link_to root_path do %>
+    <%= image_tag "pickles-logo-small.svg" %>
+  <% end %>
+</h1>
 
-<p>Your order has been received. Please allow for 7-10 days for delivery</p>
+<div class="product_grid_2">
+  <h2>Thanks for your order</h2>
+  <p>Your order has been received. Please allow for 7-10 days for delivery</p>
+<div>
 
 Total: <%= number_to_currency @order.price_in_pounds, unit: "£"  %>
 

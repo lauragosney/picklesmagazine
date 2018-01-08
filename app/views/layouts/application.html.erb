@@ -22,7 +22,8 @@
       <div class="cart">
         <%= link_to cart_path do %>
           <%= image_tag "cart.svg" %>
-          <%= @current_cart.total_quantity %> items: <%= number_to_currency @current_cart.total_price_in_pounds,  unit: "£" %>
+          <!-- <%= @current_cart.total_quantity %>  -->
+          My cart: <%= number_to_currency @current_cart.total_price_in_pounds,  unit: "£" %>
 
           <% end %>
       </div>
