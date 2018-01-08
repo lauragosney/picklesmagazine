@@ -4,7 +4,7 @@
  <%= link_to "Back to all products", products_path %>
 </p>
 
-<section class="product_hero">
+<div class="product_hero">
 
   <div class="product_image">
     <%= image_tag @product.image_1.large %>
@@ -27,31 +27,31 @@
     <% end %>
   </div>
 
-</section>
+</div>
 
 
 
 
-<section class="container">
+<div class="container">
   <div class="featured">
     <h3>Honing the details</h3>
       <p><%= simple_format @product.description %></p>
     </div>
-</section>
+</div>
 
-<section class="container">
+<div class="container">
   <div class="product_carousel">
     <%= image_tag @product.image_2.medium %>
     <%= image_tag @product.image_3.medium %>
     <%= image_tag @product.image_4.medium %>
   </div>
-</section>
+</div>
 
-<section class="container">
+<div class="container">
   <div class="quote">
     <h3><%= @product.quote %></h3>
   </div>
-</section>
+</div>
 
 
 
