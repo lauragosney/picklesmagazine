@@ -39,6 +39,8 @@ GEM
       ransack (~> 1.3)
       sass (~> 3.1)
       sprockets (< 4.1)
+    activeadmin_trumbowyg (0.1.3)
+      activeadmin (~> 1.0)
     activejob (5.1.4)
       activesupport (= 5.1.4)
       globalid (>= 0.3.6)
@@ -291,6 +293,7 @@ PLATFORMS
 DEPENDENCIES
   active_link_to
   activeadmin
+  activeadmin_trumbowyg
   byebug
   capybara (~> 2.13)
   carrierwave (~> 1.0)

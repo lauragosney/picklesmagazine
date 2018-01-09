@@ -72,7 +72,7 @@ ActiveAdmin.register Story do
        f.input :byline
        f.input :credit
        f.input :standfirst
-       f.input :body
+       f.input :body, as: :trumbowyg
        f.input :quote
      end
 

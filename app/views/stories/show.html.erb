@@ -16,7 +16,7 @@
 
 <%= image_tag @story.image_1.large %>
 
-<%= simple_format @story.body %>
+<%= @story.body.to_html %>
 
 <div>
   <% @story.categories.each do |cat| %>
