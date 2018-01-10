@@ -4,32 +4,54 @@ ActiveAdmin.register Story do
 
    show do
      attributes_table do
-      row :title
-      row :byline
-      row :standfirst
-      row :credit
+      row :title do |editor|
+        editor.title.html_safe
+      end
+      row :byline do |editor|
+        editor.byline.html_safe
+      end
+      row :standfirst do |editor|
+        editor.standfirst.html_safe
+      end
+      row :credit do |editor|
+        editor.credit.html_safe
+      end
       row :image_1 do |story|
         image_tag story.image_1.thumb, width: "40"
       end
-      row :caption_1
-      row :body
+      row :caption_1 do |editor|
+        editor.caption_1.html_safe
+      end
+      row :body do |editor|
+        editor.body.html_safe
+      end
       row :image_2 do |story|
         image_tag story.image_2.thumb, width: "40"
       end
-      row :caption_2
+      row :caption_2 do |editor|
+        editor.caption_2.html_safe
+      end
       row :image_3 do |story|
         image_tag story.image_3 .thumb, width: "40"
       end
-      row :caption_3
+      row :caption_3 do |editor|
+        editor.caption_3.html_safe
+      end
       row :image_4 do |story|
         image_tag story.image_4.thumb, width: "40"
       end
-      row :caption_4
+      row :caption_4 do |editor|
+        editor.caption_4.html_safe
+      end
       row :image_5 do |story|
         image_tag story.image_5.thumb, width: "40"
       end
-      row :caption_5
-      row :quote
+      row :caption_5 do |editor|
+        editor.caption_5.html_safe
+      end
+      row :quote do |editor|
+        editor.quote.html_safe
+      end
       row :is_featured
       row :categories do |category|
         category.categories.all.map do |t|
@@ -47,15 +69,22 @@ ActiveAdmin.register Story do
       image_tag story.image_1.thumb, width: "40"
     end
 
-    column :title
-    column :byline
-    column :standfirst
-
+    column :title do |editor|
+      editor.title.html_safe
+    end
+    column :byline do |editor|
+      editor.byline.html_safe
+    end
+    column :standfirst do |editor|
+      editor.standfirst.html_safe
+    end
 
 
 
     column :is_featured
-    column :quote
+    column :quote do |editor|
+      editor.quote.html_safe
+    end
     column :categories do |category|
       category.categories.all.map do |t|
         t.title
@@ -71,7 +100,7 @@ ActiveAdmin.register Story do
        f.input :title
        f.input :byline
        f.input :credit
-       f.input :standfirst
+       f.input :standfirst, as: :trumbowyg
        f.input :body, as: :trumbowyg
        f.input :quote
      end
