@@ -212,10 +212,9 @@
 
 
   .container {
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 90px;
+    margin: 90px auto 90px auto;
     max-width: 1160px;
+    padding: 0 20px 0 20px;
   }
 
   .container_2 {
@@ -252,33 +251,6 @@
     grid-column-gap: 30px;
     grid-row-gap: 60px;
 
-
-    .product {
-      display: block;
-      border-bottom: none;
-      color: $black;
-      padding: 10px;
-      font-size: $font-size-h6-px;
-      background-color: $white;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-    }
-
-    img {
-      margin-bottom: 20px;
-    }
-
-    .cta {
-      margin-bottom: 0px;
-    }
-  }
-
-
-  .product_grid_4 {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-column-gap: 30px;
-    grid-row-gap: 60px;
-
     .product {
       display: block;
       border-bottom: none;
@@ -289,13 +261,35 @@
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
     }
 
+    h5 {
+      margin: 10px 0px 0px 0px;
+    }
+
     img {
       margin-bottom: 20px;
+    }
+
+    .button_secondary {
+      margin-top: 0px;
+      color: $black;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 5.5;
+
+      img {
+        margin-left: 5px;
+      }
     }
   }
 
   .block-copy {
     width: 45%;
+
+    h3 {
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
   }
 
   .block-image-right {
@@ -321,11 +315,17 @@
   }
 
   .button_secondary  {
-    margin-top: 24px;
-    color: $black;
-    text-transform: uppercase;
-    font-weight: $font-weight-bold;
-    font-size: $font-size-links-px;
+      margin-top: 0px;
+      color: $black;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 5.5;
+
+      img {
+        margin-left: 5px;
+        margin-bottom: 20px;
+      }
   }
 
   .featured h3 {
@@ -400,7 +400,6 @@
     background-color: $lightgrey;
     max-height: 600px;
     padding: 0 60px 0;
-    margin-bottom: 60px;
     overflow: hidden;
 
 
@@ -498,6 +497,7 @@
     right: 0;
     padding: 30px;
     line-height: 1;
+    z-index: 4;
 
     img {
       padding-right: 5px;
