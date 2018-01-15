@@ -8,6 +8,7 @@ class Product < ApplicationRecord
   validates :price_in_pounds, presence: true
   validates :description, presence: true
   validates :quote, presence: true
+  validates :quote_credit, presence: true
 
   mount_uploader :image_1, ProductImageUploader
   mount_uploader :image_2, ProductImageUploader

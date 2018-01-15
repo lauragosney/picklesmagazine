@@ -5,5 +5,8 @@ class OrderMailer < ApplicationMailer
     @order = order
 
     mail to: @order.email, subject: "Thank your for ordering from Pickles Magazine"
+
   end
+
+
 end

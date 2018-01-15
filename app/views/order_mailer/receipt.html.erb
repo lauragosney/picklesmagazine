@@ -1,13 +1,148 @@
-<h1>Thank you for your order</h1>
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="600" style="border-collapse: collapse;">
+      <tr>
 
-<p>
-  Order ID: <%= @order.id %>
-</p>
+        <td align="center" bgcolor="#ffffff" style="padding: 40px 0 30px 0;">
 
-<p>
-  Your name: <%= @order.first_name %> <%= @order.last_name %>
-</p>
+            <img src="https://i.imgur.com/uJqk89g.jpg" alt="Pickles Magazine logo" width="550" height="123" style="display: block;" />
+        </td>
 
-<p>Total: <%= number_to_currency @order.price_in_pounds, unit: "£"  %></p>
+      </tr>
 
-<p>From Ned, Founder, Pickles Magazine</p>
+      <tr>
+        <td bgcolor="#ffffff" style="padding: 40px 30px 40px 30px;">
+          <table border="0" cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+              <td>
+                <h1 style="letter-spacing: -1px; font-weight: bold; color: #000000; font-size:3em;">Thank you for your order</h1>
+              </td>
+            </tr>
+
+            <tr>
+              <td style="padding: 20px 0 30px 0;">
+                Your order details are below. We hope you love your items.
+                <p style="font-weight: bold; color: #000000">
+                  Your name: <%= @order.first_name %> <%= @order.last_name %>
+                </p>
+                <p style="font-weight: bold; color: #000000">
+                  Order ID: <%= @order.id %>
+                </p>
+                <p style="font-weight: bold; color: #000000">Total: <%= number_to_currency @order.price_in_pounds, unit: "£"  %></p>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+       <tr>
+        <td width="260" valign="top">
+         <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tr>
+           <td style="font-size:16px; font-weight: bold;">
+             Delivery Address
+           </td>
+          </tr>
+          <tr>
+           <td style="padding: 25px 0 0 0;">
+             <%= @order.delivery_first_name %> <%= @order.delivery_last_name %><br/>
+             <%= @order.delivery_address_1 %><br/>
+             <% if @order.delivery_address_2.present? %>
+              <%=  @order.delivery_address_2 %>
+              <% else %>
+              -
+              <% end %><br/>
+            <%= @order.delivery_city %><br/>
+
+          <% if @order.delivery_postal_code.present? %>
+             <%=  @order.delivery_postal_code %>
+             <% else %>
+             -
+             <% end %>
+            <br/>
+
+            <<%= @order.delivery_country %>
+
+           </td>
+          </tr>
+         </table>
+        </td>
+        <td style="font-size: 0; line-height: 0;" width="20">
+         &nbsp;
+        </td>
+        <td width="260" valign="top">
+         <table border="0" cellpadding="0" cellspacing="0" width="100%">
+           <tr>
+             <td style="font-size:16px; font-weight: bold;">
+              Billing Address
+            </td>
+           </tr>
+          <tr>
+             <td style="padding: 25px 0 0 0;">
+               <%= @order.first_name %> <%= @order.last_name %> <br/>
+               <%= @order.address_1 %><br/>
+
+               <% if @order.address_2.present? %>
+                <%=  @order.address_2 %>
+                <% else %>
+                -
+                <% end %>
+                <br/>
+              <%= @order.city %><br/>
+
+              <% if @order.postal_code.present? %>
+               <%=  @order.postal_code %>
+               <% else %>
+               -
+               <% end %>
+              <br/>
+
+              <%= @order.country %>
+
+             </td>
+          </tr>
+         </table>
+        </td>
+       </tr>
+      </table>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <p style="font-weight: bold; color: #000000">From Ned, Founder, Pickles Magazine</p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#000000" style="font-size: 12px; color:#ffffff;">
+           <tr>
+             <td width="75%" style="padding: 40px 20px 30px 20px; color:#ffffff;">
+
+      Pickles Magazine © 2012 | Designed by Read <br/>
+      Unsubscribe to this newsletter instantly
+     </td>
+            <td align="right">
+     <table border="0" cellpadding="0" cellspacing="0">
+      <tr>
+       <td>
+        <a href="http://www.twitter.com/">
+         <img src="images/tw.gif" alt="Twitter" width="38" height="38" style="display: block;" border="0" />
+        </a>
+       </td>
+       <td style="font-size: 0; line-height: 0;" width="20">&nbsp;</td>
+       <td>
+        <a href="http://www.twitter.com/">
+         <img src="images/fb.gif" alt="Facebook" width="38" height="38" style="display: block;" border="0" />
+        </a>
+       </td>
+      </tr>
+     </table>
+    </td>
+           </tr>
+          </table>    </td>
+      </tr>
+
+    </table>

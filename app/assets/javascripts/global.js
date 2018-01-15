@@ -71,8 +71,6 @@ $(document).on("ready turbolinks:load", function () {
       $("div.navigation-overlay-bg-contact-hover").fadeIn()
     }, function () {
       $("div.navigation-overlay-bg-contact-hover").fadeOut()
-    })
-
-
+    });
 
 })

@@ -1,6 +1,8 @@
 #= require active_admin/base
+//= require activeadmin/trumbowyg/plugins/base64/trumbowyg.base64.js
 //= require activeadmin/trumbowyg/trumbowyg
 //= require activeadmin/trumbowyg_input
+
 
 $('#editor-dropdown')
 .trumbowyg({
@@ -17,7 +19,7 @@ $('#editor-dropdown')
         ['strong', 'em', 'del'],
         ['superscript', 'subscript'],
         ['link'],
-        ['image'], 
+        ['image'],
         ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],
         ['unorderedList', 'orderedList'],
         ['horizontalRule'],

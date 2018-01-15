@@ -8,6 +8,9 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
+    <link rel="stylesheet" href="node_modules/trumbowyg/dist/ui/trumbowyg.css">
+
+
     <script src="https://js.stripe.com/v3/"></script>
 
 
@@ -23,7 +26,7 @@
         <%= link_to cart_path do %>
           <%= image_tag "cart.svg" %>
           <!-- <%= @current_cart.total_quantity %>  -->
-          My cart: <%= number_to_currency @current_cart.total_price_in_pounds,  unit: "£" %>
+          My basket: <%= number_to_currency @current_cart.total_price_in_pounds,  unit: "£" %>
 
           <% end %>
       </div>
@@ -48,6 +51,12 @@
       <% if flash[:success].present? %>
         <div class="success">
           <%= flash[:success] %>
+        </div>
+      <% end %>
+
+      <% if flash[:error].present? %>
+        <div class="error">
+          <%= flash[:error] %>
         </div>
       <% end %>
 

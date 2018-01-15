@@ -1,7 +1,7 @@
 ActiveAdmin.register Product do
 
  permit_params :title, :image_1, :image_2, :image_3, :image_4, :image_5, :image_6,
-  :price_in_pounds, :collection_date, :description, :is_featured, :is_sold_out, :quote, product_variants_attributes: [:id, :size, :is_sold_out, :rank, :_destroy]
+  :price_in_pounds, :collection_date, :description, :is_featured, :is_sold_out, :quote, :quote_credit, product_variants_attributes: [:id, :size, :is_sold_out, :rank, :_destroy]
 
   show do
     attributes_table do
@@ -41,6 +41,7 @@ ActiveAdmin.register Product do
       row :is_featured
       row :is_sold_out
       row :quote
+      row :quote_credit
      end
       active_admin_comments
 
@@ -72,6 +73,7 @@ end
    column :is_featured
    column :is_sold_out
    column :quote
+   column :quote_credit
 
    actions
  end
@@ -84,6 +86,7 @@ end
         end
       f.input :description
       f.input :quote
+      f.input :quote_credit
       f.input :collection_date
     end
 
@@ -103,7 +106,7 @@ end
 
     f.inputs "Sizes" do
       f.has_many :product_variants, sortable: :rank, sortable_start: 1 do |t|
-        t.input :size, as: :select, collection: ["S", "M", "L", "XL"]
+        t.input :size, as: :select, collection: ["S", "M", "L", "XL", "XXL"]
         t.input :is_sold_out, label: "Sold out?"
    end
 end
