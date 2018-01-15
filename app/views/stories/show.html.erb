@@ -11,12 +11,12 @@
 <h5><%= @story.byline %></h5>
 
 <% if @story.standfirst.present? %>
-  <p><%= @story.standfirst %></p>
+  <p><%= @story.standfirst.html_safe %></p>
 <% end %>
 
 <%= image_tag @story.image_1.large %>
 
-<%= simple_format @story.body %>
+<%= @story.body.html_safe %>
 
 <div>
   <% @story.categories.each do |cat| %>

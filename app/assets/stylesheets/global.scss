@@ -7,10 +7,12 @@
   src: url("fonts/Geomanist-Bold.otf"); }
 
   $green: #7ed321;
+  $hovergreen: #6CAF22;
   $black: #000000;
   $white: #ffffff;
   $lightgrey: #f7f7f7;
   $grey: #cbcbcb;
+
 
   $font: "Geomanist", Helvetica, Arial, sans-serif;
 
@@ -331,6 +333,20 @@
     margin-bottom: 30px;
   }
 
+  .product_description {
+    text-align: center;
+    max-width:760px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    h3 {
+      margin-bottom: 30px;
+    }
+  }
+
+
   table {
     width: 100%;
 
@@ -383,19 +399,51 @@
   .product_hero {
     background-color: $lightgrey;
     max-height: 600px;
-    display: flex;
-    flex-wrap: wrap;
-    position: relative;
+    padding: 0 60px 0;
     margin-bottom: 60px;
+    overflow: hidden;
 
-    .product_details{
-      max-width: 500px;
-      text-align: center;
-      position: absolute;
-      top: 30%;
-      right: 25%;
+
+    .product_image {
+      float: left;
+      width: 58.33333%;
     }
 
+    .product_details {
+      max-width: 41.66667%;
+      float: left;
+      text-align: center;
+      padding: 40px;
+      margin: 10% auto;
+    }
+
+    .button_primary  {
+      margin: 24px 0px 0px 0px;
+      width: 100%;
+      color: $black;
+      background-color: $green;
+      border: none;
+      padding: 10px 60px 8px 60px;
+      display: block;
+      text-transform: uppercase;
+      font-weight: $font-weight-bold;
+      font-size:$font-size-links-px;
+      transition: 0.3s;
+    }
+
+    .button_primary:hover  {
+      margin: 24px 0px 0px 0px;
+      width: 100%;
+      color: $black;
+      background-color: $hovergreen;
+      border: none;
+      padding: 10px 60px 8px 60px;
+      display: block;
+      text-transform: uppercase;
+      font-weight: $font-weight-bold;
+      font-size:$font-size-links-px;
+      cursor: pointer;
+    }
 
     img {
       max-height: 600px;
@@ -408,6 +456,11 @@
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+
+    p {
+      font-style: normal;
+      font-size: 13px;
+    }
   }
 
   .visible {
@@ -452,7 +505,7 @@
   }
 
   .menu {
-    background-color: #000000;
+    background-color: $black;
     width: 100%;
     height: 100%;
     position: fixed;
@@ -479,14 +532,13 @@
   }
 
   .menu nav a {
-    font-size: 32px;
-    font-family: Geomanist;
- 	  font-weight: 700;
-	  line-height: 1.5;
+    font-size: $font-size-h4-px;
+ 	  font-weight: $font-weight-bold;
+    line-height: $line-height-body-px;
     margin-bottom: 10px;
     margin-left: auto;
     margin-right: auto;
-    color: #ffffff;
+    color: $white;
     text-decoration: none;
     text-align: center;
     opacity: 0;
@@ -519,7 +571,7 @@
   }
 
   .open nav a:hover {
-    border-bottom: 2px solid #ffffff;
+    border-bottom: 2px solid $white;
   }
 
 
@@ -535,3 +587,31 @@
       top: 4%;
     }
   }
+
+.success {
+  text-align: center;
+  margin-top: 30px;
+}
+
+select#order_item_product_variant_id,
+input#order_item_quantity {
+  font-size: 13px;
+  text-transform: uppercase;
+  display: inline-block;
+  width: 100%;
+ 	border: solid 1px $grey;
+  background-color: $white;
+  padding: 3%;
+  border-radius: 0;
+  transition: 0.3s;
+}
+
+
+.product_extraimages {
+  display: flex;
+  flex-wrap: wrap;
+
+  .product_extraimage {
+    max-width: 33.333%;
+  }
+}

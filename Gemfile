@@ -44,6 +44,7 @@ gem "fog-aws"
 
 gem 'devise'
 gem 'activeadmin'
+gem 'activeadmin_trumbowyg'
 gem 'stripe'
 
 

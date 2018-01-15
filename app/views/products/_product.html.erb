@@ -7,4 +7,10 @@
   <p>
     <%= number_to_currency product.price_in_pounds, unit: "£" %>
   </p>
+
+  <% if product.is_sold_out? %>
+     <div class="sold_out">
+        Item is sold out
+    </div>
+  <% end %>
 </div>

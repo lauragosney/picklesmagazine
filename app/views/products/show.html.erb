@@ -24,40 +24,55 @@
       <% if @product.product_variants.any? %>
          <div class="size">
            <%= f.input :product_variant_id, as: :select, collection: @product.product_variants.all, label_method: :select_text, label: "Select size", include_blank: false %>
-
         </div>
       <% end %>
+
 
       <%= f.input :quantity %>
       <%= f.button :submit, "Add to cart", class: "button_primary" %>
     <% end %>
+    </div>
+
   </div>
 
-</div>
 
 
+  <section class="container">
 
-
-<div class="container">
-  <div class="featured">
+  <div class="product_description">
     <h3>Honing the details</h3>
       <p><%= simple_format @product.description %></p>
     </div>
-</div>
+</section>
 
-<div class="container">
-  <div class="product_carousel">
-    <%= image_tag @product.image_2.medium %>
-    <%= image_tag @product.image_3.medium %>
-    <%= image_tag @product.image_4.medium %>
-  </div>
-</div>
+<section class="product_extraimages">
 
-<div class="container">
+
+        <div class="product_extraimage">
+          <% if @product.image_2.medium.present? %>
+            <%= image_tag @product.image_2.medium %>
+          <% end %>
+        </div>
+        <div class="product_extraimage">
+          <% if @product.image_3.medium.present? %>
+            <%= image_tag @product.image_3.medium %>
+          <% end %>
+        </div>
+        <div class="product_extraimage">
+          <% if @product.image_4.medium.present? %>
+            <%= image_tag @product.image_4.medium %>
+          <% end %>
+        </div>
+
+</section>
+
+
+<section class="container">
   <div class="quote">
     <h3><%= @product.quote %></h3>
+    <p><%= @product.quote_credit %></p>
   </div>
-</div>
+</section>
 
 
 

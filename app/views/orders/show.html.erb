@@ -1,8 +1,10 @@
-<h1 class="logo">
-  <%= link_to root_path do %>
-    <%= image_tag "pickles-logo-small.svg" %>
-  <% end %>
-</h1>
+<div class="header2">
+  <h1 class="logo">
+    <%= link_to root_path do %>
+      <%= image_tag "pickles-logo-small.svg" %>
+      <% end %>
+    </h1>
+</div>
 
 <div class="product_grid_2">
   <h2>Thanks for your order</h2>
@@ -12,7 +14,10 @@
 Total: <%= number_to_currency @order.price_in_pounds, unit: "£"  %>
 
 
-<%= @order.first_name %>
+
+
+
+<% @order.first_name %>
 <%= @order.last_name %>
 <%= @order.email %>
 
