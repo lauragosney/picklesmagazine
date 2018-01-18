@@ -66,6 +66,8 @@
 
 <div class="newsletter">
   <%= simple_form_for :newsletter, url: newsletter_path do |f| %>
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
   <%= f.input :email %>
   <%= f.button :submit  %>
 <% end %>
