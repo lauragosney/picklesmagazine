@@ -23,7 +23,7 @@
   $font-size-h5-px:24px;
   $font-size-h6-px:16px;
   $font-size-body-px: 16px;
-  $font-size-links-px: 12px;
+  $font-size-links-px: 13px;
 
   $line-height-body-px: 1.8;
   $line-height-headlines-px: 1.2;
@@ -273,9 +273,9 @@
       margin-top: 0px;
       color: $black;
       text-transform: uppercase;
-      font-weight: 600;
-      font-size: 12px;
-      line-height: 5.5;
+      font-weight: $font-weight-bold;
+      font-size: $font-size-links-px;
+      line-height: 5.25;
 
       img {
         margin-left: 5px;
@@ -318,9 +318,9 @@
       margin-top: 0px;
       color: $black;
       text-transform: uppercase;
-      font-weight: 600;
-      font-size: 12px;
-      line-height: 5.5;
+      font-weight: $font-weight-bold;
+      font-size: $font-size-links-px;
+      line-height: 5.25;
 
       img {
         margin-left: 5px;

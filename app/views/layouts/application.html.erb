@@ -64,7 +64,12 @@
         <%= yield %>
       </main>
 
-
+<div class="newsletter">
+  <%= simple_form_for :newsletter, url: newsletter_path do |f| %>
+  <%= f.input :email %>
+  <%= f.button :submit  %>
+<% end %>
+</div>
 
   <footer class="footer">
 

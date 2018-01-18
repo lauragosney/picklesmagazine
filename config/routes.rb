@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     resources :order_items
   end
 
+  resource :newsletter
+
   resources :orders
 
   resources :stories

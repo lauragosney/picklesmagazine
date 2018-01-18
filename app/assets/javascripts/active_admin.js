@@ -2,6 +2,7 @@
 //= require activeadmin/trumbowyg/trumbowyg
 //= require activeadmin/trumbowyg/plugins/base64/trumbowyg.base64.js
 
+
 $(document).ready( function() {
   $('.trumbowyg-textarea').each(function () {
     var options = {
@@ -32,4 +33,5 @@ $(document).ready( function() {
     }, options, $(this).data( 'options' ));
     $(this).trumbowyg( options );
   });
+
 });
