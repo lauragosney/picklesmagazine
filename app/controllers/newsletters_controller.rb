@@ -6,7 +6,7 @@ class NewslettersController < ApplicationController
 
       flash[:success] = "You have successfully subscribed to Pickles Magazine "
 
-      redirect_to newsletter_path
+      redirect_back(fallback_location: root_path)
   end
 
 
