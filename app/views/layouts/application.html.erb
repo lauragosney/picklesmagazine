@@ -64,14 +64,35 @@
         <%= yield %>
       </main>
 
-<div class="newsletter">
-  <%= simple_form_for :newsletter, url: newsletter_path do |f| %>
-  <%= f.input :first_name %>
-  <%= f.input :last_name %>
-  <%= f.input :email %>
-  <%= f.button :submit  %>
-<% end %>
-</div>
+      <% if flash[:success].present? %>
+        <div class="newsletter_flash">
+          <%= flash[:success] %>
+        </div>
+      <% end %>
+
+      <% if flash[:error].present? %>
+        <div class="newsletter_flash">
+          <%= flash[:error] %>
+        </div>
+      <% end %>
+
+
+      <section class="container">
+        <div class= "newsletter_copy">
+          <h3>Join the Pickles gang</h3>
+          <p> Sign up to our Newsletter to hear about new product releases, learn about our design process, and everything else going on behind the scenes at Pickles magazine. </p>
+        </div>
+
+          <div class="newsletter_form">
+            <%= simple_form_for :newsletter, url: newsletter_path, remote: true do |f| %>
+            <%= f.input :first_name %>
+            <%= f.input :last_name %>
+            <%= f.input :email %>
+            <%= f.button :submit,"Sign me up", class: "button_primary"  %>
+            <% end %>
+          </div>
+      </section>
+
 
   <footer class="footer">
 
@@ -85,4 +106,7 @@
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
   <script src="node_modules/trumbowyg/dist/trumbowyg.js"></script>
   <script src="node_modules/trumbowyg/dist/plugins/base64/trumbowyg.base64.min.js"></script>
+  <script src="node_modules/trumbowyg/dist/plugins/insertaudio/trumbowyg.insertaudio.min.js"></script>
+  <script src="node_modules/trumbowyg/dist/plugins/noembed/trumbowyg.noembed.min.js"></script>
+  <script src="node_modules/trumbowyg/dist/plugins/colors/trumbowyg.colors.min.js"></script>
 </html>

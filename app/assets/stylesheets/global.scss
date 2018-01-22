@@ -615,3 +615,49 @@ input#order_item_quantity {
     max-width: 33.333%;
   }
 }
+
+
+
+
+.newsletter_copy {
+  max-width: 760px;
+  text-align: center;
+  margin: 40px auto 40px auto;
+}
+
+  form.simple_form.newsletter {
+    display: flex;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+
+  .newsletter_flash {
+    text-aligh: center;
+  }
+
+    input#newsletter_email,
+    input#newsletter_name {
+      margin-left: 10px;
+      margin-right: 10px;
+      height: 42px;
+    }
+
+    input#newsletter_email {
+    width: 80%;
+  }
+
+    input.btn.button_primary  {
+      margin: 0px;
+    }
+  }
+
+  form.simple_form.newsletter .input.email.required.newsletter_email {
+    width: 40%;
+    margin: 0 20px;
+  }
+
+  .category {
+    margin: 0 20px;
+    display: inline;
+    text-align: center;
+  }

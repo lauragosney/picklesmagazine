@@ -1,5 +1,8 @@
 //= require active_admin/base
 //= require activeadmin/trumbowyg/trumbowyg
+//= require activeadmin/trumbowyg/plugins/noembed/trumbowyg.noembed.min.js
+//= require activeadmin/trumbowyg/plugins/colors/trumbowyg.colors.min.js
+//= require activeadmin/trumbowyg/plugins/insertaudio/trumbowyg.insertaudio.js
 //= require activeadmin/trumbowyg/plugins/base64/trumbowyg.base64.js
 
 
@@ -28,7 +31,10 @@ $(document).ready( function() {
         ['unorderedList', 'orderedList'],
         ['horizontalRule'],
         ['removeformat'],
-        ['fullscreen']
+        ['fullscreen'],
+        ['noembed'],
+        ['foreColor', 'backColor'],
+        ['insertAudio']
       ]
     }, options, $(this).data( 'options' ));
     $(this).trumbowyg( options );
