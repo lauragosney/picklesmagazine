@@ -71,7 +71,13 @@ $(document).on("ready turbolinks:load", function () {
       $("div.navigation-overlay-bg-contact-hover").fadeIn()
     }, function () {
       $("div.navigation-overlay-bg-contact-hover").fadeOut()
-    });
+    })
+
+
+    $("form.newsletter").on("ajax:success", function () {
+      $(this).html("Thanks for signing up")
+    })
+
 
 
 })
