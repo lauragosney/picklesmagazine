@@ -74,10 +74,10 @@ $(document).on("ready turbolinks:load", function () {
     })
 
 
-    $("form.newsletter").on("ajax:success", function () {
-      $(this).html("Thanks for signing up")
+    $("form.newsletter").on("ajax:success", function (ev, data, status, xhr) {
+      $(this).html(xhr.responseText)
+    }).on("ajax:error", function (e, xhr, status, error) {
+      alert("Please complete all required fields")
     })
-
-
 
 })

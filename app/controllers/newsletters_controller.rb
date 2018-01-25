@@ -17,15 +17,27 @@ class NewslettersController < ApplicationController
          LNAME: params["newsletter"]["last_name"]
        }
      })
-
-      flash[:success] = "You have successfully subscribed to Pickles Magazine "
-      redirect_back(fallback_location: root_path)
-
+     
+     respond_to do |format|
+       format.html do
+         # backup if js fails
+         flash[:success] = "You have successfully subscribed to Pickles Magazine "
+         redirect_back(fallback_location: root_path)
+       end
+       format.js do
+         render html: "You have successfully subscribed to Pickles Magazine"
+       end
+     end
     else
-      flash[:error] = "Please complete all required fields"
-      redirect_back(fallback_location: root_path)
-
+      respond_to do |format|
+        format.html do
+          flash[:error] = "Please complete all required fields"
+          redirect_back(fallback_location: root_path)
+        end
+        format.js do
+          render status: :unprocessable_entity
+        end
+      end
     end
-
   end
 end
