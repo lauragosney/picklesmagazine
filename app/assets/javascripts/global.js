@@ -75,7 +75,7 @@ $(document).on("ready turbolinks:load", function () {
 
 
     $("form.newsletter").on("ajax:success", function (ev, data, status, xhr) {
-      $(this).html(xhr.responseText)
+      $(this).html(event.detail[0])
     }).on("ajax:error", function (e, xhr, status, error) {
       alert("Please complete all required fields")
     })

@@ -25,7 +25,7 @@ class NewslettersController < ApplicationController
          redirect_back(fallback_location: root_path)
        end
        format.js do
-         render html: "You have successfully subscribed to Pickles Magazine"
+         render plain: "You have successfully subscribed to Pickles Magazine"
        end
      end
     else
