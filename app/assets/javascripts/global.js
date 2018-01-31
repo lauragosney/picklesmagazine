@@ -39,12 +39,12 @@ $(document).on("ready turbolinks:load", function () {
       $('.menu').toggleClass('open')
 
     })
-    $("div.menu-toggle").on("click", function () {
+    $('div.menu-toggle').on("click", function () {
 
-      if ($("img.icon").attr("src") == "menu-icon.svg") {
-         $("img.icon").attr("src", "menu-close.svg")
+      if ($("img.icon").attr("src") == "/assets/menu-icon.svg") {
+         $("img.icon").attr("src", "/assets/menu-close.svg")
       } else {
-         $("img.icon").attr("src", "menu-icon.svg")
+         $("img.icon").attr("src", "/assets/menu-icon.svg")
       }
     })
     $(".homehover").hover(function () {

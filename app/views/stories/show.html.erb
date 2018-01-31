@@ -10,6 +10,15 @@
 
   <div class="intro">
 
+    <div>
+      <h6>
+      <% @story.categories.each do |cat| %>
+        <%=  link_to cat.title, stories_path(category: cat.id) %>
+        <% end %>
+      </h6>
+
+    </div>
+
 
     <h2><%= @story.title %></h2>
 
@@ -19,23 +28,17 @@
     <p><%= @story.standfirst.html_safe %></p>
     <% end %>
 
+
+
     <%= image_tag @story.image_1.large %>
   </div>
 
   <div class="text">
 
     <%= @story.body.html_safe %>
+
+      <div class="link">
+        <%= link_to "Back to all Stories", stories_path %>
+      </div>
+
   </div>
-
-
-    <% @story.categories.each do |cat| %>
-    <div class="category">
-      <%=  link_to cat.title, stories_path(category: cat.id) %>
-    </div>
-      <% end %>
-
-
-  <p>
-    <%= link_to "Back to all Stories", stories_path %>
-  </p>
-</div>

@@ -17,7 +17,7 @@ class NewslettersController < ApplicationController
          LNAME: params["newsletter"]["last_name"]
        }
      })
-     
+
      respond_to do |format|
        format.html do
          # backup if js fails

@@ -656,8 +656,16 @@ input#order_item_quantity {
     margin: 0 20px;
   }
 
-  .category {
-    margin: 0 20px;
-    display: inline;
-    text-align: center;
+
+   h6 a:after {
+        content: " / ";
+    }
+
+   h6 a:last-child:after {
+    content: " ";
+  }
+
+  .link {
+    margin-top: 40px;
+    font-weight: $font-weight-bold;
   }

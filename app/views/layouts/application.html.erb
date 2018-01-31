@@ -18,7 +18,7 @@
   <body>
     <header>
       <div class="menu-toggle">
-        <%= image_tag "menu-icon.svg" %>
+        <%= image_tag "menu-icon.svg", class:"icon"%>
       </div>
       <div class="cart">
         <%= link_to cart_path do %>
@@ -34,6 +34,7 @@
 
       <nav>
         <%= link_to "Home", root_path, class: "homehover" %>
+        <%= link_to "Search", "#", class: "searchhover" %>
         <%= link_to "Shop", products_path, class: "shophover" %>
         <%= link_to "Stories", stories_path, class: "storieshover" %>
         <%= link_to "About", about_path, class: "abouthover" %>
@@ -77,7 +78,7 @@
 
       <section class="container">
         <div class= "newsletter_copy">
-          <h3>Join the Pickles gang</h3>
+          <h3>Join the Pickles squad</h3>
           <p> Sign up to our Newsletter to hear about new product releases, learn about our design process, and everything else going on behind the scenes at Pickles magazine. </p>
         </div>
 
