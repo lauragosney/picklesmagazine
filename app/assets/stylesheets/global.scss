@@ -486,9 +486,11 @@
     top: 0;
     left: 0;
     padding: 25px;
-    width: 80px;
+    width: 100px;
     z-index: 8;
+    cursor: pointer;
   }
+
 
   .cart {
     position: fixed;
@@ -668,4 +670,17 @@ input#order_item_quantity {
   .link {
     margin-top: 40px;
     font-weight: $font-weight-bold;
+  }
+
+  .basket {
+    text-align: center;
+    max-width: 250px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+
+  .iconfade {
+    transition: all .3s ease-in-out;
+    opacity: 0;
   }

@@ -41,10 +41,10 @@ $(document).on("ready turbolinks:load", function () {
     })
     $('div.menu-toggle').on("click", function () {
 
-      if ($("img.icon").attr("src") == "/assets/menu-icon.svg") {
-         $("img.icon").attr("src", "/assets/menu-close.svg")
-      } else {
+      if ($("img.icon").attr("src") == "/assets/menu-close.svg") {
          $("img.icon").attr("src", "/assets/menu-icon.svg")
+      } else {
+         $("img.icon").attr("src", "/assets/menu-close.svg")
       }
     })
     $(".homehover").hover(function () {

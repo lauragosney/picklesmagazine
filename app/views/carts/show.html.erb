@@ -68,7 +68,13 @@
 
 
 <% else %>
+<div class="basket">
   <p>There are no items in your cart</p>
+  <div class="button_primary">
+    <p> <%=link_to "Start shopping", products_path %> </p>
+  </div>
+</div>
+
 <% end %>
 
 
