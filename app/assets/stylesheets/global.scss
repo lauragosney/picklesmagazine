@@ -58,6 +58,12 @@
   footer, header, hgroup, menu, nav, section {
     display: block;
   }
+
+  form abbr[title] {
+  border-bottom: none !important;
+  text-decoration: none !important;
+  }
+
   body {
   	font-family: $font;
    	font-weight: $font-weight-regular;
@@ -322,11 +328,33 @@
       font-size: $font-size-links-px;
       line-height: 5.25;
 
+      a {
+        transition: all 0.3s;
+      }
+
       img {
         margin-left: 5px;
         margin-bottom: 20px;
+        transition: all 0.3s;
       }
   }
+
+  .button_secondary:hover  {
+
+    a {
+      transition: all 0.3s;
+      color: $green;
+    }
+
+    img {
+      transform: translate(5px,0);
+    }
+  }
+
+.arrow {
+  padding-left: 5px;
+ 	transition: all 0.3s ease-in-out;
+}
 
   .featured h3 {
     text-align: center;
@@ -679,8 +707,9 @@ input#order_item_quantity {
     margin-left: auto;
   }
 
-
-  .iconfade {
-    transition: all .3s ease-in-out;
-    opacity: 0;
+  input#newsletter_first_name,
+  input#newsletter_last_name,
+  input#newsletter_email {
+    width: 100%;
+    padding: 5px 10px 5px 10px;
   }

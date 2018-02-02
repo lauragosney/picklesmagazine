@@ -70,8 +70,10 @@
 <% else %>
 <div class="basket">
   <p>There are no items in your cart</p>
-  <div class="button_primary">
-    <p> <%=link_to "Start shopping", products_path %> </p>
+  <div class="button_secondary">
+    <%= link_to products_path do %>
+      Start shopping <%= image_tag "arrow_icon.svg",width: 30 %>
+    <% end %>
   </div>
 </div>
 

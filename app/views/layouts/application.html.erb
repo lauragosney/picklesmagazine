@@ -76,21 +76,7 @@
       <% end %>
 
 
-      <section class="container">
-        <div class= "newsletter_copy">
-          <h3>Join the Pickles squad</h3>
-          <p> Sign up to our Newsletter to hear about new product releases, learn about our design process, and everything else going on behind the scenes at Pickles magazine. </p>
-        </div>
-
-          <div class="newsletter_form">
-            <%= simple_form_for :newsletter, url: newsletter_path, remote: true do |f| %>
-            <%= f.input :first_name %>
-            <%= f.input :last_name %>
-            <%= f.input :email %>
-            <%= f.button :submit,"Sign me up", class: "button_primary"  %>
-            <% end %>
-          </div>
-      </section>
+      
 
 
   <footer class="footer">
