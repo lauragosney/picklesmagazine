@@ -517,6 +517,20 @@
     width: 100px;
     z-index: 8;
     cursor: pointer;
+    
+    img.close {
+      display: none;
+    }
+    
+    &.open {
+      img.close {
+        display: inline;
+      }
+      
+      img.icon {
+        display: none;
+      }
+    }
   }
 
 
