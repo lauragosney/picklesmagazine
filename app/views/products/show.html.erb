@@ -18,17 +18,21 @@
 
   <div class="product_details">
     <h3><%= @product.title %></h3>
-    <%= number_to_currency @product.price_in_pounds, unit: "£" %>
+    <div clas="price">
+      <h5 class="price"><%= number_to_currency @product.price_in_pounds, unit: "£" %></h5>
+    </div>
 
     <%= simple_form_for [@product, @order_item] do |f| %>
       <% if @product.product_variants.any? %>
-         <div class="size">
-           <%= f.input :product_variant_id, as: :select, collection: @product.product_variants.all, label_method: :select_text, label: "Select size", include_blank: false %>
+        <div class="product_variant">
+
+           <%= f.input :product_variant_id, as: :select, collection: @product.product_variants.all, label_method: :select_text, prompt: 'Select size', label: false, include_blank: false %>
         </div>
       <% end %>
 
-
-      <%= f.input :quantity %>
+      <div class="quantity">
+        <%= f.input :quantity, label: "Qty" %>
+        </div>
       <%= f.button :submit, "Add to cart", class: "button_primary" %>
     <% end %>
     </div>
@@ -40,7 +44,7 @@
   <section class="container">
 
   <div class="product_description">
-    <h3>Honing the details</h3>
+    <h4>Honing the details</h4>
       <p><%= simple_format @product.description %></p>
     </div>
 </section>
@@ -69,7 +73,7 @@
 
 <section class="container">
   <div class="quote">
-    <h3><%= @product.quote %></h3>
+    <h4><%= @product.quote %></h4>
     <p><%= @product.quote_credit %></p>
   </div>
 </section>
@@ -79,7 +83,7 @@
 
 <section class="container">
   <div class="featured">
-    <h3>You might also like...</h3>
+    <h4>You might also like...</h4>
     <div class="product_grid_3">
       <%= render partial: "product", collection: @featured_products %>
     </div>
@@ -88,7 +92,7 @@
 
 
 <div class="featured">
-  <h3>@picklesmagazine</h3>
+  <h4>@picklesmagazine</h4>
 
   <script src="//apps.elfsight.com/p/platform.js" defer></script>
       <div class="elfsight-app-276db0d4-25a2-4a5e-8a72-30da22fe3732">
@@ -98,16 +102,21 @@
 
 <section class="container">
   <div class= "newsletter_copy">
-    <h3>Join the Pickles squad</h3>
+    <h4>Join the Pickles squad</h4>
     <p> Sign up to our Newsletter to hear about new product releases, learn about our design process, and everything else going on behind the scenes at Pickles magazine. </p>
   </div>
 
     <div class="newsletter_form">
-      <%= simple_form_for :newsletter, url: newsletter_path, remote: true, defaults: {label: false} do |f| %>
-      <%= f.input :first_name, :value=>"",:placeholder => "First name"%>
-      <%= f.input :last_name, :value=>"",:placeholder => "Last name"%>
-      <%= f.input :email, :value=>"",:placeholder => "Eg:abc@gmail.com"%>
+      <%= simple_form_for :newsletter, url: newsletter_path, remote: true do |f| %>
+      <%= f.input :first_name, label: false, placeholder: "First name*"%>
+      <%= f.input :last_name, label: false, placeholder: "Last name*"%>
+      <%= f.input :email, label: false, placeholder: "Email address*"%>
+
       <%= f.button :submit,"Sign me up", class: "button_primary"  %>
+
+      <p class="smallprint"> *all fields required </p>
+
       <% end %>
+
     </div>
 </section>

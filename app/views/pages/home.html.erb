@@ -21,11 +21,11 @@
 
 
   <div class="block-copy">
-        <h4>Introduction</h4>
+        <h6>Introduction</h6>
         <%= link_to product_path(@product_launch) do %>
           <%= image_tag "dividers.svg" %>
         <% end %>
-        <h3>Type something</h3>
+        <h4>Type something</h4>
         <p>Founded in 1992, Griffin Technology are leading creators of innovations for everyday life, including the latest in cases, chargers, cables and home & car audio solutions for iPhone, iPad, iPod, smartphones,tablets, PCs and more. As well as delivering a strategic and</p>
         <div class="button_secondary">
           <%= link_to product_path(@product_launch) do %>
@@ -44,11 +44,11 @@
   <section class="container_2">
 
       <div class="block-copy">
-        		<h4>Introduction</h4>
+        		<h6>Introduction</h6>
             <%= link_to product_path(@product_mag) do %>
               <%= image_tag "dividers.svg" %>
             <% end %>
-        		<h3>Type something</h3>
+        		<h4>Type something</h4>
         		<p>Founded in 1992, Griffin Technology are leading creators of innovations for everyday life, including the latest in cases, chargers, cables and home & car audio solutions for iPhone, iPad, iPod, smartphones,tablets, PCs and more. As well as delivering a strategic and</p>
        	 		<div class="button_secondary">
               <%= link_to product_path(@product_mag) do %>
@@ -75,7 +75,7 @@
 
 <section class="container">
   <div class="featured">
-    <h3>Featured products</h3>
+    <h4>Featured products</h4>
     <div class="product_grid_3">
       <%= render partial: "products/product", collection: @featured_products %>
     </div>
@@ -84,7 +84,7 @@
 
 <section class="container">
   <div class="featured">
-    <h3>Top stories</h3>
+    <h4>Top stories</h4>
     <div class="product_grid_3">
       <%= render partial: "stories/story", collection: @featured_stories %>
     </div>
@@ -93,7 +93,7 @@
 
 
 <div class="featured">
-  <h3>@picklesmagazine</h3>
+  <h4>@picklesmagazine</h4>
 
   <script src="//apps.elfsight.com/p/platform.js" defer></script>
       <div class="elfsight-app-276db0d4-25a2-4a5e-8a72-30da22fe3732">
@@ -104,16 +104,21 @@
 
 <section class="container">
   <div class= "newsletter_copy">
-    <h3>Join the Pickles squad</h3>
+    <h4>Join the Pickles squad</h4>
     <p> Sign up to our Newsletter to hear about new product releases, learn about our design process, and everything else going on behind the scenes at Pickles magazine. </p>
   </div>
 
     <div class="newsletter_form">
       <%= simple_form_for :newsletter, url: newsletter_path, remote: true do |f| %>
-      <%= f.input :first_name %>
-      <%= f.input :last_name %>
-      <%= f.input :email %>
+      <%= f.input :first_name, label: false, placeholder: "First name*"%>
+      <%= f.input :last_name, label: false, placeholder: "Last name*"%>
+      <%= f.input :email, label: false, placeholder: "Email address*"%>
+
       <%= f.button :submit,"Sign me up", class: "button_primary"  %>
+
+      <p class="smallprint"> *all fields required </p>
+
       <% end %>
+
     </div>
 </section>

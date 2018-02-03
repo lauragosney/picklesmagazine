@@ -25,10 +25,15 @@
 
     <div class="newsletter_form">
       <%= simple_form_for :newsletter, url: newsletter_path, remote: true do |f| %>
-      <%= f.input :first_name %>
-      <%= f.input :last_name %>
-      <%= f.input :email %>
+      <%= f.input :first_name, label: false, placeholder: "First name*"%>
+      <%= f.input :last_name, label: false, placeholder: "Last name*"%>
+      <%= f.input :email, label: false, placeholder: "Email address*"%>
+
       <%= f.button :submit,"Sign me up", class: "button_primary"  %>
+
+      <p class="smallprint"> *all fields required </p>
+
       <% end %>
+
     </div>
 </section>
