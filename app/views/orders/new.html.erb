@@ -11,6 +11,8 @@
   <h2>Checkout</h2>
 <div>
 
+<div class="billing_address">
+
  <h3>Billing address</h3>
   <%= f.input :first_name %>
   <%= f.input :last_name %>
@@ -127,12 +129,12 @@ var style = {
 
   $("form.new_order").on("submit", function (ev) {
     ev.preventDefault()
-    
+
     console.log("submit")
 
     stripe.createToken(cardNumber).then(function (result) {
       console.log(result)
-      
+
       if (result.error) {
         $("#card-errors").html(result.error.message)
         $(this).find("input[type=submit]").removeAttr("disabled")
