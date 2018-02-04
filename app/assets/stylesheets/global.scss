@@ -153,6 +153,7 @@
 
     text-align: center;
     margin-bottom: 60px;
+    position: relative;
 
     a {
         color: $grey;
@@ -365,8 +366,13 @@
     text-transform: uppercase;
     font-weight: $font-weight-bold;
     font-size:$font-size-links-px;
-    max-width: 220px;
     text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .button_primary:hover  {
+    background-color: $hovergreen;
   }
 
   .button_secondary  {
@@ -376,6 +382,7 @@
       font-weight: $font-weight-bold;
       font-size: $font-size-links-px;
       line-height: 5.25;
+      cursor: pointer;
 
       a {
         transition: all 0.3s;
@@ -450,15 +457,6 @@
     }
   }
 
-  form.edit_order_item {
-      div {
-        display: inline;
-      }
-
-      input[type=number] {
-        width: 60px;
-      }
-    }
 
   .my-input {
     width: 100%;
@@ -468,7 +466,7 @@
   }
 
   .product_grid_2 {
-    max-width: 600px;
+    max-width: 500px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -490,7 +488,7 @@
       float: left;
       text-align: center;
       padding: 40px;
-      margin: 10% auto;
+      margin: 8% auto;
     }
 
     .button_primary  {
@@ -507,6 +505,7 @@
       transition: 0.3s;
       max-width: 100%;
       text-align: center;
+      cursor:pointer;
     }
 
     .button_primary:hover  {
@@ -575,19 +574,37 @@
   }
 
 
-  .cart {
-    position: fixed;
-    font-weight: 600;
-    top: 0;
-    right: 0;
-    padding: 30px;
-    line-height: 1;
-    z-index: 4;
+    .cart {
+      position: fixed;
+      right: 0px;
+      top: 2px;
+      padding: 25px;
+      font-weight: 600;
+      line-height: 1;
+      z-index: 4;
 
-    img {
-      padding-right: 5px;
+      img {
+        padding-right: 5px;
+      }
     }
+
+
+  .search_form {
+    background-color: $white;
+    width: 700px;
+    position:absolute;
+    top:0;
+    left:20%;
+
   }
+
+  .search {
+    display:inline-block;
+    vertical-align: top;
+    line-height: 1px;
+    margin-left: 20px
+  }
+
 
   .menu {
     background-color: $black;
@@ -673,13 +690,11 @@
     }
   }
 
-.success {
+.success,
+.error  {
   text-align: center;
-  margin-top: 30px;
+  margin-top: 20px;
 }
-
-
-
 
 .product_extraimages {
   display: flex;
@@ -689,9 +704,6 @@
     max-width: 33.333%;
   }
 }
-
-
-
 
 .newsletter_copy {
   max-width: 760px;
@@ -735,11 +747,12 @@
     font-weight: $font-weight-bold;
   }
 
-  .basket {
+  .basket_empty {
     text-align: center;
     max-width: 250px;
     margin-right: auto;
     margin-left: auto;
+    min-height:800px;
   }
 
 
@@ -765,28 +778,23 @@
     border: none;
   }
 
-  form.new_order_item {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
 
   div.quantity {
+    width: 30%;
     text-transform: uppercase;
     font-size: 13px;
-    width: 40%;
+    margin:20px auto;
   }
 
   div.product_variant {
-    width: 50%;
-    margin-right: 5%;
+    width: 100%;
     position: relative;
   }
 
   .product_variant:after {
     content: "";
     position: absolute;
-    right: 10%;
+    right: 5%;
     top: 45%;
     width: 0;
     height: 0;
@@ -799,8 +807,8 @@
   select {
     box-sizing: border-box;
     margin: 0;
-    padding: 15px;
-    border: 2px solid black;
+    padding: 0;
+    border: solid 1px $grey;
     height: 40px;
     overflow: visible;
     text-decoration: none;
@@ -810,8 +818,8 @@
     background: none;
     -webkit-appearance: none;
     border-radius: 0;
+    width:100%;
   }
-
 
 
   select#order_item_product_variant_id {
@@ -820,11 +828,22 @@
     display: inline-block;
    	border: solid 1px $grey;
     background-color: $white;
-    padding: 3%;
+    padding: 2% 5%;
     border-radius: 0;
     transition: 0.3s;
-    width: 50%;
+    width: 100%;
     height: 40px;
+  }
+
+  select#order_item_product_variant_id:hover,
+  input#order_item_quantity:hover {
+   	border: solid 1px $green;
+  }
+
+  select#order_item_product_variant_id:focus,
+  input#order_item_quantity:focus {
+   	border: solid 1px $green;
+    outline:none;
   }
 
   input#order_item_quantity {
@@ -833,12 +852,67 @@
     display: inline-block;
     border: solid 1px $grey;
     background-color: $white;
-    padding: 3%;
     border-radius: 0;
     transition: 0.3s;
     height: 40px;
+    width:50%;
   }
 
   label {
-    margin-right: 3%;
+    margin-right: 5%;
   }
+
+  .text_link {
+    font-size: 13px;
+    padding: 0 0 10px 30px;
+  }
+
+
+  .billing_address {
+    margin-top: 30px;
+
+    form div {
+      margin: 20px auto;
+    }
+  }
+
+  .checkbox {
+    margin-top:30px;
+  }
+
+  input#order_subscribe {
+    width:20px;
+    padding:0;
+    margin: 0 5px 0px 0px;
+  }
+
+  .delivery_address,
+  .your_order {
+    margin-top: 30px;
+
+     div {
+      margin: 20px auto;
+    }
+  }
+
+  .payment {
+    margin: 30px auto;
+
+      p {
+      margin: 0px auto 20px;
+    }
+   }
+
+   .confirmation {
+     max-width:960px;
+     margin: 0 auto;
+     text-align:center;
+     min-height: 800px;
+   }
+
+   .basket {
+     min-height: 800px;
+     margin: 90px auto 90px auto;
+     max-width: 960px;
+     padding: 0 20px 0 20px;
+   }

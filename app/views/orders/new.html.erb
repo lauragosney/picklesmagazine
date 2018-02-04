@@ -10,13 +10,15 @@
   <h2>Checkout</h2>
 <div>
 
- <h3>Billing address</h3>
+<div class="billing_address">
+
+ <h4>Billing address</h4>
 <%= simple_form_for @order do |f| %>
   <%= f.input :first_name %>
   <%= f.input :last_name %>
 
   <%= f.input :email %>
-  <%= f.input :country %>
+  <%= f.input :country, prompt: 'Select country' %>
   <%= f.input :address_1 %>
   <%= f.input :address_2 %>
   <%= f.input :city %>
@@ -29,22 +31,22 @@
 </div>
 
 <div class="delivery_address">
-  <h3>Delivery address</h3>
+  <h4>Delivery address</h4>
 
-  <%= f.input :delivery_first_name %>
-  <%= f.input :delivery_last_name %>
+  <%= f.input :delivery_first_name, label: "First name" %>
+  <%= f.input :delivery_last_name, label: "Last name"  %>
 
-  <%= f.input :delivery_country %>
-  <%= f.input :delivery_address_1 %>
-  <%= f.input :delivery_address_2 %>
-  <%= f.input :delivery_city %>
-  <%= f.input :delivery_postal_code %>
+  <%= f.input :delivery_country, prompt: 'Select country' %>
+  <%= f.input :delivery_address_1, label: "Address 1" %>
+  <%= f.input :delivery_address_2, label: "Address 2"  %>
+  <%= f.input :delivery_city,label: "City" %>
+  <%= f.input :delivery_postal_code, label: "Post code"%>
 </div>
 
 
 
-<div>
-  <h3>Your order</h3>
+<div class="your_order">
+  <h4>Your order</h4>
 
   <div>
     <%= @current_cart.total_quantity %> items: <%= number_to_currency @current_cart.total_price_in_pounds,  unit: "£" %>
@@ -58,9 +60,9 @@
 
 </div>
 
-<div>
+<div class="payment">
 
-  <h3>Payment details</h3>
+  <h4>Payment details</h4>
 
   <p>We accept MasterCard, Visa and American Express. This payment is bank-level secure using SSL and Stripe.</p>
 
@@ -83,7 +85,6 @@
   <%= f.button :submit,"Submit order", class: "button_primary" %>
 
 
-</div>
 
 
 

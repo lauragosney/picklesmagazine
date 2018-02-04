@@ -6,8 +6,8 @@
     </h1>
 </div>
 
-<p>
- <%= link_to "Back to all products", products_path %>
+<p class="text_link">
+ <%= link_to " Back to all products", products_path %>
 </p>
 
 <div class="product_hero">
@@ -18,26 +18,52 @@
 
   <div class="product_details">
     <h3><%= @product.title %></h3>
+
     <div clas="price">
       <h5 class="price"><%= number_to_currency @product.price_in_pounds, unit: "£" %></h5>
     </div>
 
+    <% if @product.is_sold_out? %>
+       <div class="sold_out">
+          Item is sold out
+      </div>
+    <% end %>
+
     <%= simple_form_for [@product, @order_item] do |f| %>
-      <% if @product.product_variants.any? %>
+      <% if @product.product_variants.present? %>
+
         <div class="product_variant">
 
            <%= f.input :product_variant_id, as: :select, collection: @product.product_variants.all, label_method: :select_text, prompt: 'Select size', label: false, include_blank: false %>
         </div>
+        <% end %>
+
+        <div class="quantity">
+          <%= f.input :quantity, label: "Qty" %>
+        </div>
+
+
+
+      <%= f.button :submit, "Add to cart", class: "button_primary" %>
       <% end %>
 
-      <div class="quantity">
-        <%= f.input :quantity, label: "Qty" %>
+      <% if flash[:success].present? %>
+        <div class="success">
+          <%= flash[:success] %>
         </div>
-      <%= f.button :submit, "Add to cart", class: "button_primary" %>
-    <% end %>
-    </div>
+      <% end %>
+
+      <% if flash[:error].present? %>
+        <div class="error">
+          <%= flash[:error] %>
+        </div>
+      <% end %>
+
 
   </div>
+
+</div>
+
 
 
 

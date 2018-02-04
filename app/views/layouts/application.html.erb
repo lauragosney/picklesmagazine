@@ -18,50 +18,46 @@
         <%= image_tag "menu-icon.svg", class: "icon" %>
         <%= image_tag "menu-close.svg", class: "close" %>
       </div>
-      <div class="cart">
-        <%= link_to cart_path do %>
-          <%= image_tag "cart.svg" %>
-          <!-- <%= @current_cart.total_quantity %>  -->
-          Basket: <%= number_to_currency @current_cart.total_price_in_pounds,  unit: "£" %>
 
-          <% end %>
-      </div>
+        <div class="cart">
+          <%= link_to cart_path do %>
+            <%= image_tag "cart.svg" %>
+            ( <%= @current_cart.total_quantity %> )
+            <!-- <%= number_to_currency @current_cart.total_price_in_pounds,  unit: "£" %> -->
+            <% end %>
+        </div>
+
+
+
+
     </header>
+
+
 
     <div class="menu">
 
       <nav>
         <%= link_to "Home", root_path, class: "homehover" %>
-        <%= link_to "Search", "#", class: "searchhover" %>
         <%= link_to "Shop", products_path, class: "shophover" %>
         <%= link_to "Stories", stories_path, class: "storieshover" %>
         <%= link_to "About", about_path, class: "abouthover" %>
         <%= link_to "Contact", contact_path, class: "contacthover" %>
       </nav>
 
+      <div class="navigation-overlay-bg-home-hover"></div>
 	     <div class="navigation-overlay-bg-shop-hover"></div>
        <div class="navigation-overlay-bg-stories-hover"></div>
        <div class="navigation-overlay-bg-about-hover"></div>
        <div class="navigation-overlay-bg-contact-hover"></div>
      </div>
 
-      <% if flash[:success].present? %>
-        <div class="success">
-          <%= flash[:success] %>
-        </div>
-      <% end %>
 
-      <% if flash[:error].present? %>
-        <div class="error">
-          <%= flash[:error] %>
-        </div>
-      <% end %>
 
       <main>
         <%= yield %>
       </main>
 
-      <% if flash[:success].present? %>
+      <!-- <% if flash[:success].present? %>
         <div class="newsletter_flash">
           <%= flash[:success] %>
         </div>
@@ -71,10 +67,10 @@
         <div class="newsletter_flash">
           <%= flash[:error] %>
         </div>
-      <% end %>
+      <% end %> -->
 
 
-      
+
 
 
   <footer class="footer">
