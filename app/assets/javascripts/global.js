@@ -33,6 +33,15 @@ $(document).on("turbolinks:load", function (ev) {
     }
   })
 
+  $('div.search').on("click", function () {
+      $('.search_form').fadeIn()
+  })
+
+  $('.search_close').on('click', function() {
+
+    $('.search_form').fadeOut()
+
+  })
 
   $('div.menu-toggle').on("click", function () {
     $('.menu').toggleClass('open')
@@ -74,4 +83,6 @@ $(document).on("turbolinks:load", function (ev) {
   }).on("ajax:error", function (e, xhr, status, error) {
     alert("Please complete all required fields")
   })
+
+
 })

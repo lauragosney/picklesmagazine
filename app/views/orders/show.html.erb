@@ -6,21 +6,25 @@
     </h1>
 </div>
 
-<div class="product_grid_2">
+<div class="confirmation">
   <h2>Thanks for your order</h2>
-  <p>Your order has been received. Please allow for 7-10 days for delivery</p>
+  <p>Your order has been received. <br>Please allow for 7-10 days for delivery</p>
+
+
+
+
+
 <div>
+  <%= @order.first_name %> <%= @order.last_name %>
+</div>
 
-Total: <%= number_to_currency @order.price_in_pounds, unit: "£"  %>
+<div>
+  <%= @order.email %>
+</div>
 
-
-
-
-
-<% @order.first_name %>
-<%= @order.last_name %>
-<%= @order.email %>
-
+<div>
+  Total: <%= number_to_currency @order.price_in_pounds, unit: "£"  %>
+</div>
 
 <% @order.order_items.each do |item| %>
 
@@ -37,6 +41,9 @@ Total: <%= number_to_currency @order.price_in_pounds, unit: "£"  %>
 <% end %>
 </div>
 
-<div class="button">
-  <p><%= link_to "Back to home", root_path%></p>
+<div class="button_secondary">
+  <%= link_to root_path do %>
+    Back to home<%= image_tag "arrow_icon.svg",width: 30 %>
+  <% end %>
+</div>
 </div>
