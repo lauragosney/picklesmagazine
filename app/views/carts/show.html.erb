@@ -6,7 +6,7 @@
     </h1>
 </div>
 
-<div class="container">
+<div class="basket">
 
 
   <div class="intro">
@@ -68,7 +68,20 @@
 
 
 <% else %>
-<div class="basket">
+
+<% if flash[:success].present? %>
+  <div class="success">
+    <%= flash[:success] %>
+  </div>
+<% end %>
+
+<% if flash[:error].present? %>
+  <div class="error">
+    <%= flash[:error] %>
+  </div>
+<% end %>
+
+<div class="basket_empty">
   <p>There are no items in your cart</p>
   <div class="button_secondary">
     <%= link_to products_path do %>

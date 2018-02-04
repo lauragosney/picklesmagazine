@@ -9,6 +9,14 @@ class StoriesController < ApplicationController
    else
       @stories = Story.all
    end
+
+
+   # if params[:q].present?
+   #   @stories = Story.where("lower(title) LIKE ?", "%" + params[:q].downcase + "%")
+   # else
+   #   @stories = Story.all
+   # end
+
   end
 
 

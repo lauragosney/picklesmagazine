@@ -2,10 +2,50 @@ Thank you for your order
 
 ------------------------
 
-Order ID: <%= @order.id %>
+Your order details are below. We hope you love your items.
 
 Your name: <%= @order.first_name %> <%= @order.last_name %>
 
+Order ID: <%= @order.id %>
+
 Total: <%= number_to_currency @order.price_in_pounds, unit: "£"  %>
 
+Delivery Address
+<%= @order.delivery_first_name %> <%= @order.delivery_last_name %><br/>
+<%= @order.delivery_address_1 %><br/>
+<% if @order.delivery_address_2.present? %>
+  <%=  @order.delivery_address_2 %>
+<% else %>
+  -
+<% end %>
+<%= @order.delivery_city %><br/>
+
+<% if @order.delivery_postal_code.present? %>
+  <%=  @order.delivery_postal_code %>
+<% else %>
+   -
+<% end %>
+
+<%= @order.delivery_country %>
+
+Billing Address
+<%= @order.first_name %> <%= @order.last_name %> <br/>
+<%= @order.address_1 %><br/>
+
+<% if @order.address_2.present? %>
+  <%=  @order.address_2 %>
+<% else %>
+    -
+<% end %>
+
+<%= @order.city %><br/>
+
+<% if @order.postal_code.present? %>
+<%=  @order.postal_code %>
+<% else %>
+-
+<% end %>
+<%= @order.country %>
 From Ned, Founder, Pickles Magazine
+
+Pickles Magazine © 2012 | Designed by Laura Gosney
