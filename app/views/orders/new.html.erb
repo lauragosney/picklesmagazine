@@ -5,6 +5,7 @@
       <% end %>
     </h1>
 </div>
+<%= simple_form_for @order do |f| %>
 
 <div class="product_grid_2">
   <h2>Checkout</h2>
@@ -13,7 +14,6 @@
 <div class="billing_address">
 
  <h4>Billing address</h4>
-<%= simple_form_for @order do |f| %>
   <%= f.input :first_name %>
   <%= f.input :last_name %>
 
@@ -68,9 +68,9 @@
 
 
   <div id="card-errors">
-    <%@order.errors[:stripe_token].each do |message| %>
+    <% @order.errors[:stripe_token].each do |message| %>
       <p class="error"><%= message %> </p>
-    <%end%>
+    <% end%>
   </div>
 
   <label>Card number</label>
@@ -82,7 +82,7 @@
   <label>Security code (3 digits)</label>
   <div class="my-input" id="card-cvc"></div>
 
-  <%= f.button :submit,"Submit order", class: "button_primary" %>
+  <%= f.button :submit, "Submit order", class: "button_primary" %>
 
 
 
@@ -92,7 +92,6 @@
 
 
 <%end%>
-
 
 
 
@@ -129,10 +128,15 @@ var style = {
 
   $("form.new_order").on("submit", function (ev) {
     ev.preventDefault()
+    
+    console.log("submit")
 
     stripe.createToken(cardNumber).then(function (result) {
+      console.log(result)
+      
       if (result.error) {
-        $("#card-error").html(result.error.message)
+        $("#card-errors").html(result.error.message)
+        $(this).find("input[type=submit]").removeAttr("disabled")
       } else {
         $("form.new_order").append("<input type=hidden name='order[stripe_token]' value=" + result.token.id + ">")
         $("form.new_order").get(0).submit()
