@@ -43,12 +43,12 @@
         <td> - </td>
         <% end %>
 
-      <%= simple_form_for [item.product, item] do |f| %>
             <td class="quantity_basket">
-              <%= f.input :quantity, label: false %>
-              <%= f.button :submit, "Update", class: "button_basket" %>
+              <%= simple_form_for [item.product, item] do |f| %>
+                <%= f.input :quantity, label: false %>
+                <%= f.button :submit, "Update", class: "button_basket" %>
+              <% end %>
             </td>
-        <% end %>
 
         <td class="price_basket">
           <%= number_to_currency item.product.price_in_pounds, unit: "£" %>
@@ -72,10 +72,7 @@
 <div class="total_price_basket">Total: <%= number_to_currency @current_cart.total_price_in_pounds,  unit: "£" %> </div>
 
 
-
-<div class="button_primary">
-  <%=link_to "Continue to checkout", new_order_path %>
-</div>
+<%= link_to "Continue to checkout", new_order_path, class: "button_primary" %>
 
 
 <% else %>

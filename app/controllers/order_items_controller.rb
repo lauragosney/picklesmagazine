@@ -6,15 +6,16 @@ class OrderItemsController < ApplicationController
     @quantity = form_params[:quantity]
     @variant_id = form_params[:product_variant_id]
 
-
     if @variant_id.present?
       @variant = ProductVariant.find(@variant_id)
     else
       @variant = nil
     end
-
-
-    if @product.is_sold_out? or (@variant.present? and @variant.is_sold_out?)
+    
+    if @product.product_variants.any? and @variant.nil?
+      flash[:error] = "Please pick a style"
+      redirect_to product_path(@product)
+    elsif @product.is_sold_out? or (@variant.present? and @variant.is_sold_out?)
       flash[:error] = "This product is sold out"
       redirect_to product_path(@product)
     else
@@ -22,8 +23,6 @@ class OrderItemsController < ApplicationController
       redirect_to product_path(@product)
       @current_cart.order_items.create(product: @product, quantity: @quantity, product_variant_id: @variant_id)
     end
-
-
   end
 
   def update
