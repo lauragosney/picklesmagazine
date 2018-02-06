@@ -7,89 +7,86 @@
 </div>
 <%= simple_form_for @order do |f| %>
 
+
 <div class="product_grid_2">
   <h2>Checkout</h2>
-<div>
 
-<div class="billing_address">
+  <div class="billing_address">
 
- <h3>Billing address</h3>
-  <%= f.input :first_name %>
-  <%= f.input :last_name %>
+    <h4>Billing address</h4>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
 
-  <%= f.input :email %>
-  <%= f.input :country, prompt: 'Select country' %>
-  <%= f.input :address_1 %>
-  <%= f.input :address_2 %>
-  <%= f.input :city %>
-  <%= f.input :postal_code %>
+    <%= f.input :email %>
+    <%= f.input :country, prompt: 'Select country' %>
+    <%= f.input :address_1 %>
+    <%= f.input :address_2 %>
+    <%= f.input :city %>
+    <%= f.input :postal_code %>
 
-</div>
-
-<div class="checkbox">
-  <%= f.input :subscribe, label: "Ship to this address" %>
-</div>
-
-<div class="delivery_address">
-  <h4>Delivery address</h4>
-
-  <%= f.input :delivery_first_name, label: "First name" %>
-  <%= f.input :delivery_last_name, label: "Last name"  %>
-
-  <%= f.input :delivery_country, prompt: 'Select country' %>
-  <%= f.input :delivery_address_1, label: "Address 1" %>
-  <%= f.input :delivery_address_2, label: "Address 2"  %>
-  <%= f.input :delivery_city,label: "City" %>
-  <%= f.input :delivery_postal_code, label: "Post code"%>
-</div>
-
-
-
-<div class="your_order">
-  <h4>Your order</h4>
-
-  <div>
-    <%= @current_cart.total_quantity %> items: <%= number_to_currency @current_cart.total_price_in_pounds,  unit: "£" %>
-  </div>
-  <div>
-  Delivery: £5.00
-  </div>
-  <div>
-  Total: <%= number_to_currency @order.price_in_pounds, unit: "£"  %>
   </div>
 
-</div>
-
-<div class="payment">
-
-  <h4>Payment details</h4>
-
-  <p>We accept MasterCard, Visa and American Express. This payment is bank-level secure using SSL and Stripe.</p>
-
-
-  <div id="card-errors">
-    <% @order.errors[:stripe_token].each do |message| %>
-      <p class="error"><%= message %> </p>
-    <% end%>
+  <div class="checkbox">
+    <%= f.input :subscribe, label: "Ship to this address" %>
   </div>
 
-  <label>Card number</label>
-  <div class="my-input" id="card-number"></div>
+  <div class="delivery_address">
+    <h4>Delivery address</h4>
 
-  <label>Expiry</label>
-  <div class="my-input" id="card-expiry"></div>
+    <%= f.input :delivery_first_name, label: "First name" %>
+    <%= f.input :delivery_last_name, label: "Last name"  %>
 
-  <label>Security code (3 digits)</label>
-  <div class="my-input" id="card-cvc"></div>
+    <%= f.input :delivery_country, prompt: 'Select country' %>
+    <%= f.input :delivery_address_1, label: "Address 1" %>
+    <%= f.input :delivery_address_2, label: "Address 2"  %>
+    <%= f.input :delivery_city,label: "City" %>
+    <%= f.input :delivery_postal_code, label: "Post code"%>
+  </div>
 
-  <%= f.button :submit, "Submit order", class: "button_primary" %>
 
 
+  <div class="your_order">
+    <h4>Your order</h4>
+
+    <div>
+      <%= @current_cart.total_quantity %> items: <%= number_to_currency @current_cart.total_price_in_pounds,  unit: "£" %>
+    </div>
+    <div>
+      Delivery: £5.00
+    </div>
+    <div>
+      Total: <%= number_to_currency @order.price_in_pounds, unit: "£"  %>
+    </div>
+
+    </div>
+
+    <div class="payment">
+
+      <h4>Payment details</h4>
+
+      <p>We accept MasterCard, Visa and American Express. This payment is bank-level secure using SSL and Stripe.</p>
 
 
+    <div id="card-errors">
+      <% @order.errors[:stripe_token].each do |message| %>
+        <p class="error"><%= message %> </p>
+      <% end%>
+    </div>
+
+    <label>Card number</label>
+    <div class="my-input" id="card-number"></div>
+
+    <label>Expiry</label>
+    <div class="my-input" id="card-expiry"></div>
+
+    <label>Security code (3 digits)</label>
+    <div class="my-input" id="card-cvc"></div>
+
+    <%= f.button :submit, "Submit order", class: "button_primary" %>
+
+  </div>
 
 </div>
-
 
 <%end%>
 

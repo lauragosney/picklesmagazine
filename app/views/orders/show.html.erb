@@ -6,7 +6,7 @@
     </h1>
 </div>
 
-<div class="confirmation">
+<div class="order_confirmation">
   <h2>Thanks for your order</h2>
   <p>Your order has been received. <br>Please allow for 7-10 days for delivery</p>
 
@@ -14,19 +14,19 @@
 
 
 
-<div>
+<div class="order_details">
+  <p> Your order details:</p>
   <%= @order.first_name %> <%= @order.last_name %>
-</div>
-
-<div>
+<br>
   <%= @order.email %>
-</div>
+  <br>
 
-<div>
   Total: <%= number_to_currency @order.price_in_pounds, unit: "£"  %>
+
 </div>
 
-<% @order.order_items.each do |item| %>
+
+<!-- <% @order.order_items.each do |item| %>
 
     <div><%= image_tag item.product.image_1.thumb, width: "50" %>
     <%= item.product.title %>
@@ -39,7 +39,7 @@
     <% end %>
     <%= item.quantity %>
 <% end %>
-</div>
+</div> -->
 
 <div class="button_secondary">
   <%= link_to root_path do %>
@@ -47,3 +47,26 @@
   <% end %>
 </div>
 </div>
+
+<section class="container">
+  <div class= "newsletter_copy">
+    <h4>Join the Pickles squad</h4>
+    <p> Sign up to our Newsletter to hear about new product releases, learn about our design process, and everything else going on behind the scenes at Pickles magazine. </p>
+  </div>
+
+    <div class="newsletter_form">
+      <%= simple_form_for :newsletter, url: newsletter_path, remote: true do |f| %>
+      <%= f.input :first_name, label: false, placeholder: "First name*"%>
+      <%= f.input :last_name, label: false, placeholder: "Last name*"%>
+      <%= f.input :email, label: false, placeholder: "Email address*"%>
+
+      <%= f.button :submit,"Sign me up", class: "button_primary"  %>
+
+
+      <% end %>
+
+    </div>
+
+    <p class="smallprint"> *all fields required </p>
+
+</section>

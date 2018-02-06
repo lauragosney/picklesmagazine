@@ -16,4 +16,8 @@ class Story < ApplicationRecord
   mount_uploader :image_4, StoryImageUploader
   mount_uploader :image_5, StoryImageUploader
 
+  def to_param
+    id.to_s + "-" + title.parameterize
+  end
+
 end

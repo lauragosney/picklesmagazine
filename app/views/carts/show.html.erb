@@ -20,20 +20,22 @@
   <thead>
     <tr>
       <th>Item</th>
-      <th>Price</th>
       <th>Size</th>
       <th>Qty</th>
+      <th class="price_head_basket">Price</th>
     </tr>
   </thead>
 
+
+
   <tbody>
+
     <% @current_cart.order_items.each do |item| %>
 
       <tr>
         <td><%= image_tag item.product.image_1.thumb, width: "50" %>
           <%= item.product.title %>
         </td>
-        <td><%= number_to_currency item.product.price_in_pounds, unit: "£" %></td>
 
         <% if item.product_variant.present? %>
           <td> <%= item.product_variant.size %></td>
@@ -41,30 +43,39 @@
         <td> - </td>
         <% end %>
 
-        <td><%= simple_form_for [item.product, item] do |f| %>
-          <%= f.input :quantity %>
-          <%= f.button :submit, "Update cart"%>
+      <%= simple_form_for [item.product, item] do |f| %>
+            <td class="quantity_basket">
+              <%= f.input :quantity, label: false %>
+              <%= f.button :submit, "Update", class: "button_basket" %>
+            </td>
         <% end %>
 
-        <td><%= link_to "Remove", product_order_item_path(item.product, item), method: :delete %></td>
+        <td class="price_basket">
+          <%= number_to_currency item.product.price_in_pounds, unit: "£" %>
+
+        <div>  <%= link_to "Remove", product_order_item_path(item.product, item), method: :delete %> </div>
+
+        </td>
+
+
 
 
       </tr>
 
 
-    <% end %>
-
-
+      <% end %>
 
   </tbody>
 
 </table>
 
-<p>Total: <%= number_to_currency @current_cart.total_price_in_pounds,  unit: "£" %> </p>
+<div class="total_price_basket">Total: <%= number_to_currency @current_cart.total_price_in_pounds,  unit: "£" %> </div>
+
+
 
 <div class="button_primary">
-  <p> <%=link_to "Continue to checkout", new_order_path %> </p>
-<div/>
+  <%=link_to "Continue to checkout", new_order_path %>
+</div>
 
 
 <% else %>
@@ -80,7 +91,6 @@
     <%= flash[:error] %>
   </div>
 <% end %>
-
 <div class="basket_empty">
   <p>There are no items in your cart</p>
   <div class="button_secondary">
@@ -88,9 +98,13 @@
       Start shopping <%= image_tag "arrow_icon.svg",width: 30 %>
     <% end %>
   </div>
+
 </div>
 
+
 <% end %>
+
+
 
 
 </div>

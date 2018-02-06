@@ -17,6 +17,10 @@ class Product < ApplicationRecord
   mount_uploader :image_5, ProductImageUploader
   mount_uploader :image_6, ProductImageUploader
 
+  def to_param
+    id.to_s + "-" + title.parameterize
+  end
+
   def price_in_pounds
     price/100.00
   end

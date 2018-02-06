@@ -41,8 +41,15 @@
 
 
 
-    <%= @story.body.html_safe %>
+    <p><%= @story.body.html_safe %></p>
 
+    <div class="share">
+       <p>Share </p>
+       <a href="https://twitter.com/picklesmagazine?lang=ens">
+        <%= image_tag "twitter.svg"%></a>
+        <a href="https://www.instagram.com/picklesmagazine/?hl=en">
+         <%= image_tag "instagram.svg"%></a>
+    </div>
       <div class="link">
         <%= link_to "Back to all Stories", stories_path %>
       </div>
@@ -63,9 +70,11 @@
 
         <%= f.button :submit,"Sign me up", class: "button_primary"  %>
 
-        <p class="smallprint"> *all fields required </p>
 
         <% end %>
 
       </div>
+
+      <p class="smallprint"> *all fields required </p>
+
   </section>

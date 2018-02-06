@@ -19,8 +19,8 @@
   <div class="product_details">
     <h3><%= @product.title %></h3>
 
-    <div clas="price">
-      <h5 class="price"><%= number_to_currency @product.price_in_pounds, unit: "£" %></h5>
+    <div class="price">
+      <h5><%= number_to_currency @product.price_in_pounds, unit: "£" %></h5>
     </div>
 
     <% if @product.is_sold_out? %>
@@ -140,9 +140,11 @@
 
       <%= f.button :submit,"Sign me up", class: "button_primary"  %>
 
-      <p class="smallprint"> *all fields required </p>
 
       <% end %>
 
     </div>
+
+    <p class="smallprint"> *all fields required </p>
+
 </section>
