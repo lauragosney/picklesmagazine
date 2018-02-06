@@ -44,15 +44,14 @@
     <p><%= @story.body.html_safe %></p>
 
     <div class="share">
-       <p>Share </p>
-       <a href="https://twitter.com/picklesmagazine?lang=ens">
-        <%= image_tag "twitter.svg"%></a>
-        <a href="https://www.instagram.com/picklesmagazine/?hl=en">
-         <%= image_tag "instagram.svg"%></a>
+      <!-- Go to www.addthis.com/dashboard to customize your tools -->
+      <div class="addthis_inline_share_toolbox"></div>
     </div>
-      <div class="link">
-        <%= link_to "Back to all Stories", stories_path %>
-      </div>
+
+    <div class="link">
+      <%= link_to "Back to all Stories", stories_path %>
+    </div>
+
 
   </div>
 

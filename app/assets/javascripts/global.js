@@ -26,6 +26,7 @@ $(document).on("turbolinks:load", function (ev) {
         $(tag).removeClass("visible")
       }
 
+
     if (pageTop > 200) {
         $(".hero").addClass("fade")
     } else
