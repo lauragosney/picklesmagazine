@@ -1082,6 +1082,11 @@ div.order_delivery_country {
       }
     }
 
+    blockquote, q {
+      quotes: none;
+      font-size: 13px;
+    }
+
 
     footer p:after {
       content: "|";
