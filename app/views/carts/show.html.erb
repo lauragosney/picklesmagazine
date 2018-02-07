@@ -20,9 +20,9 @@
   <thead>
     <tr>
       <th>Item</th>
+      <th>Price</th>
       <th>Size</th>
       <th>Qty</th>
-      <th class="price_head_basket">Price</th>
     </tr>
   </thead>
 
@@ -37,11 +37,16 @@
           <%= item.product.title %>
         </td>
 
+        <td> <%= number_to_currency item.product.price_in_pounds, unit: "£" %></td>
+
+
         <% if item.product_variant.present? %>
           <td> <%= item.product_variant.size %></td>
         <% else %>
         <td> - </td>
         <% end %>
+
+
 
             <td class="quantity_basket">
               <%= simple_form_for [item.product, item] do |f| %>
@@ -51,9 +56,8 @@
             </td>
 
         <td class="price_basket">
-          <%= number_to_currency item.product.price_in_pounds, unit: "£" %>
 
-        <div>  <%= link_to "Remove", product_order_item_path(item.product, item), method: :delete %> </div>
+          <div>  <%= link_to "Remove", product_order_item_path(item.product, item), method: :delete %> </div>
 
         </td>
 
@@ -69,10 +73,34 @@
 
 </table>
 
-<div class="total_price_basket">Total: <%= number_to_currency @current_cart.total_price_in_pounds,  unit: "£" %> </div>
+<div class="total_price_basket">
+
+  <p class="subtotal">
+    Subtotal: <%= number_to_currency @current_cart.total_price_in_pounds,  unit: "£" %>
+  </p>
+  <p class="delivery">
+    Delivery: £5.00
+  </p>
+  <p class="total">
+    Total: <%= number_to_currency @current_cart.price_in_pounds,  unit: "£" %>
+
+  </p>
+
+</div>
+
 
 
 <%= link_to "Continue to checkout", new_order_path, class: "button_primary" %>
+
+<div class="basket_empty">
+  <div class="button_secondary_left">
+    <%= link_to products_path do %>
+      <%= image_tag "arrow_icon_left.svg",width: 30 %> Back to shop
+    <% end %>
+  </div>
+
+</div>
+
 
 
 <% else %>

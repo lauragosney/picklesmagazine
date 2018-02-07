@@ -438,6 +438,39 @@
     }
   }
 
+
+  .button_secondary_left  {
+      margin-top: 0px;
+      color: $black;
+      text-transform: uppercase;
+      font-weight: $font-weight-bold;
+      font-size: $font-size-links-px;
+      line-height: 5.25;
+      cursor: pointer;
+
+      a {
+        transition: all 0.3s;
+      }
+
+      img {
+        margin-right: 5px;
+        margin-bottom: 20px;
+        transition: all 0.3s;
+      }
+  }
+
+  .button_secondary_left:hover  {
+
+    a {
+      transition: all 0.3s;
+      color: $green;
+    }
+
+    img {
+      transform: translate(-5px,0);
+    }
+  }
+
 .arrow {
   padding-left: 5px;
  	transition: all 0.3s ease-in-out;
@@ -517,7 +550,7 @@
     }
 
     .product_details {
-      width: 41.66667%;
+      width: 35%;
       float: left;
       text-align: center;
       padding: 40px;
@@ -822,7 +855,7 @@
   }
 
   div.quantity {
-    width: 50%;
+    min-width: 100%;
     text-transform: uppercase;
     font-size: 13px;
     margin:20px auto;
@@ -902,11 +935,11 @@ div.order_delivery_country {
     border-radius: 0;
     transition: 0.3s;
     height: 40px;
-    width:40%;
+    width:30%;
   }
 
   label {
-    margin-right: 5%;
+    margin-right: 3%;
   }
 
   .text_link {
@@ -989,7 +1022,6 @@ div.order_delivery_country {
 
     .price_basket {
       text-align:right;
-      padding-top: 40px;
 
       a {
         text-decoration: underline;
@@ -998,15 +1030,20 @@ div.order_delivery_country {
 
     }
 
-    th.price_head_basket {
-      text-align: right;
-    }
 
     .total_price_basket {
       text-align: right;
-      font-weight: $font-weight-bold;
-      font-size: $font-size-h5-px;
       margin-top:20px;
+
+      .subtotal,
+      .delivery {
+        font-size:$font-size-body-px;
+      }
+
+      .total {
+        font-size: $font-size-h5-px;
+        font-weight: $font-weight-bold;
+      }
     }
 
     .share {
@@ -1030,6 +1067,32 @@ div.order_delivery_country {
         display:inline-block;
         font-weight:$font-weight-bold;
       }
+    }
+
+    footer {
+
+      font-size: $font-size-h6-px;
+
+      p {
+      display: inline-block;
+      }
+
+      a {
+        color: $white;
+      }
+    }
+
+
+    footer p:after {
+      content: "|";
+      margin-left:10px;
+      margin-right:10px;
+    }
+
+
+    @media (max-width: 800px) {
+
+
     }
 
 

@@ -15,11 +15,21 @@ class Cart < ApplicationRecord
 
   end
 
-
+  def price_in_pounds
+    total_price/100.00
+  end
 
   def total_price
 
-    @total = 0
+    @total = 500
+
+    # if ["United States", "Canada"].include? self.country do
+    #   @total += 1000
+    # end
+    # else
+    #   @total += 500
+    # end
+
 
     order_items.all.each do |item|
       @total = @total + item.product.price * item.quantity
@@ -35,7 +45,6 @@ class Cart < ApplicationRecord
       @total = @total + item.product.price_in_pounds * item.quantity
     end
       @total
-
 
   end
 end
