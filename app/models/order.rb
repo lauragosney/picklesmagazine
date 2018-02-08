@@ -17,6 +17,8 @@ class Order < ApplicationRecord
       self.delivery_first_name = self.first_name
       self.delivery_last_name = self.last_name
       self.delivery_address_1 = self.address_1
+      self.delivery_address_2 = self.address_2
+      self.delivery_postal_code = self.postal_code
       self.delivery_city = self.city
       self.delivery_country = self.country
     end

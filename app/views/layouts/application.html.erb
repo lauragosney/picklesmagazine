@@ -13,11 +13,14 @@
   </head>
 
   <body>
+
+    <div class="menu-toggle">
+      <%= image_tag "menu-icon.svg", class: "icon" %>
+      <%= image_tag "menu-close.svg", class: "close" %>
+    </div>
+
     <header>
-      <div class="menu-toggle">
-        <%= image_tag "menu-icon.svg", class: "icon" %>
-        <%= image_tag "menu-close.svg", class: "close" %>
-      </div>
+
 
         <div class="cart">
           <%= link_to cart_path do %>

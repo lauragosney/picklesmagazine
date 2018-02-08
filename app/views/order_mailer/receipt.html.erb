@@ -44,7 +44,7 @@
            </td>
           </tr>
           <tr>
-           <td style="padding: 25px 0 0 0;">
+           <td style="padding: 25px 0 0 0; color: #000000;">
              <%= @order.delivery_first_name %> <%= @order.delivery_last_name %><br/>
              <%= @order.delivery_address_1 %><br/>
              <% if @order.delivery_address_2.present? %>
@@ -61,7 +61,7 @@
              <% end %>
             <br/>
 
-            <<%= @order.delivery_country %>
+            <%= @order.delivery_country %>
 
            </td>
           </tr>
@@ -73,12 +73,12 @@
         <td width="260" valign="top">
          <table border="0" cellpadding="0" cellspacing="0" width="100%">
            <tr>
-             <td style="font-size:16px; font-weight: bold;">
+             <td style="font-size:16px; font-weight: bold; color: #000000;">
               Billing Address
             </td>
            </tr>
           <tr>
-             <td style="padding: 25px 0 0 0;">
+             <td style="padding: 25px 0 0 0; color: #000000;">
                <%= @order.first_name %> <%= @order.last_name %> <br/>
                <%= @order.address_1 %><br/>
 

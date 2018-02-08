@@ -6,6 +6,9 @@
     </h1>
 </div>
 
+<div class="top_container"></div>
+
+
 <div class="container">
 
   <div class="intro">
@@ -35,6 +38,9 @@
   </div>
 
   <%= image_tag @story.image_1.large %>
+  <p class="captions"><%= @story.caption_1.html_safe %></p>
+
+
 
 
   <div class="text">
@@ -52,6 +58,7 @@
       <%= link_to "Back to all Stories", stories_path %>
     </div>
 
+  </div>
 
   </div>
 

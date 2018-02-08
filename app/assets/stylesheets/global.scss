@@ -25,6 +25,8 @@
   $font-size-h6-px:13px;
   $font-size-body-px: 17px;
   $font-size-links-px: 13px;
+  $font-size-captions-px: 11px;
+;
 
   $line-height-body-px: 1.8;
   $line-height-headlines-px: 1.2;
@@ -232,10 +234,14 @@
   }
 
   header {
-    padding: 30px;
+    padding: 40px 40px 50px 39px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index:4;
+    background-color: $white;
 
     nav a {
       padding-left: 20px;
@@ -253,6 +259,9 @@
     margin-top: 90px;
   }
 
+  .top_container {
+    min-height: 40px;
+  }
 
   .hero {
  	  display: flex;
@@ -274,7 +283,7 @@
   }
 
 
-  .product-hero {
+  .products_hero {
     text-align: center;
     background-image:url(../assets/lifestyle.png);
     background-repeat: no-repeat;
@@ -290,7 +299,8 @@
 
 
   .container {
-    margin: 90px auto 90px auto;
+    margin:
+    0px auto 90px auto;
     max-width: 1160px;
     padding: 0 20px 0 20px;
   }
@@ -305,6 +315,8 @@
     padding-left: 20px;
     padding-right: 20px;
   }
+
+
 
   .text {
     margin: 30px auto 30px auto;
@@ -542,6 +554,7 @@
     max-height: 600px;
     padding: 0 60px 0;
     overflow: hidden;
+    margin-bottom: 90px;
 
 
     .product_image {
@@ -608,7 +621,7 @@
   }
 
   .block_1 {
-    padding-top: 800px;
+    padding-top: 1000px;
   }
 
   .fade {
@@ -621,7 +634,7 @@
     left: 0;
     padding: 22px 20px;
     width: 100px;
-    z-index: 8;
+    z-index: 6;
     cursor: pointer;
 
     img.close {
@@ -643,8 +656,8 @@
     .cart {
       position: fixed;
       right: 0px;
-      top: 2px;
-      padding: 25px 20px;
+      top: 0px;
+      padding: 30px 20px;
       font-weight: 600;
       line-height: 1;
       z-index: 4;
@@ -681,7 +694,7 @@
     left: 0%;
     transform: translateX(-100%);
     transition: transform 0.5s cubic-bezier(0.06, 0.17, 0.2, 1);
-    z-index: 2;
+    z-index: 5;
   }
 
   .open {
@@ -754,6 +767,7 @@
       text-align: center;
       position: fixed;
       top: 4%;
+      z-index:5;
     }
   }
 
@@ -772,6 +786,7 @@
 .product_extraimages {
   display: flex;
   flex-wrap: wrap;
+  margin-bottom:90px;
 
   .product_extraimage {
     max-width: 33.333%;
@@ -981,7 +996,11 @@ div.order_delivery_country {
      max-width:960px;
      margin: 0 auto;
      text-align:center;
-     min-height: 800px;
+     margin-bottom:90px;
+
+     h2 {
+       padding: 10px 0px 10px 0;
+     }
    }
 
    .order_details {
@@ -993,9 +1012,10 @@ div.order_delivery_country {
      }
    }
 
+
    .basket {
      min-height: 800px;
-     margin: 90px auto 90px auto;
+     margin: 0px auto 90px auto;
      max-width: 960px;
      padding: 0 20px 0 20px;
    }
@@ -1069,6 +1089,15 @@ div.order_delivery_country {
       }
     }
 
+    .featured {
+      margin-bottom: 90px;
+    }
+
+    .checkout h2 {
+      text-align: center;
+      padding:10px 0px 10px 0;
+    }
+
     footer {
 
       font-size: $font-size-h6-px;
@@ -1082,11 +1111,11 @@ div.order_delivery_country {
       }
     }
 
-    blockquote, q {
-      quotes: none;
-      font-size: 13px;
+    .captions  {
+      margin-top:10px;
+      font-size:  $font-size-captions-px;
+      font-style: italic;
     }
-
 
     footer p:after {
       content: "|";
@@ -1097,29 +1126,169 @@ div.order_delivery_country {
 
     @media (max-width: 800px) {
 
+      .product_hero {
+        margin-bottom: 40px;
+        padding: 20px 20px;
+        max-height: 100%;
 
+        .product_image {
+          float: none;
+          margin: 0px;
+          width:100%;
+          padding: 0px 0px 20px 0px;
+
+        }
+
+        .product_details {
+          width: 100%;
+          float: none;
+          text-align: center;
+          padding: 0px 0px 20px 0px;
+          margin: 0px;
+        }
+      }
     }
 
 
     @media (max-width: 534px) {
+
+      h2 {
+        font-size: 48px
+      }
+
+
+
+      .product-hero {
+        text-align: center;
+        background-image:url(../assets/lifestyle.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-top: 150px;
+        padding-bottom: 150px;
+        margin-bottom: 40px;
+
+        h2 {
+          color: $white;
+        }
+      }
 
       .product_grid_3 {
   	     display: flex;
          flex-direction: column;
 	     }
 
-       .product_single {
+       .grid_single {
          margin-bottom: 40px;
        }
 
+
        form.simple_form.newsletter {
          display: flex;
-         flex-wrap: wrap;
-         display: flex;
+         flex-direction: column;
          justify-content: center;
+         width:100%;
 
-       .newsletter_flash {
-         text-align: center;
+         input.btn.button_primary  {
+           width: 100%;
+         }
        }
-     }
-  }
+
+       div.newsletter_first_name,
+       div.newsletter_last_name,
+       div.newsletter_email {
+         width: 100%;
+         margin-right: 0px;
+       }
+
+       .container,
+       .container_2 {
+  	      display: flex;
+          flex-direction: column;
+          margin-bottom:40px;
+	       }
+
+        .block_2 {
+   	       flex-direction: column-reverse;
+	        }
+
+	       .block-image-left,
+         .block-image-right,
+          .block-copy {
+            width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+            padding-bottom: 40px;
+	        }
+
+          div.active {
+            margin-bottom: 40px;
+          }
+
+          .basket table {
+            tr td {
+              display:block;
+              clear:both;
+              width: 100%;
+              text-align: left;
+              padding:5px 0px;
+            }
+
+            thead {
+              display: none;
+            }
+          }
+
+          td.basket_item {
+            margin-top:40px;
+            margin-bottom:0px;
+            padding: 0px;
+          }
+
+          .quantity_basket {
+
+            input.btn.button_basket {
+              width: 100%;
+              padding:20px 0px 0px 0px;
+            }
+
+            input.btn {
+              text-align: left;
+            }
+          }
+
+          .total_price_basket {
+            text-align: center;
+          }
+
+          .basket,
+          .basket_empty {
+            min-height: 0;
+          }
+
+
+        .product_hero {
+          margin-bottom: 40px;
+          padding: 20px 20px;
+          max-height: 100%;
+
+          .product_image{
+            float: none;
+            margin: 0px;
+            width:100%;
+            padding: 0px 0px 20px 0px;
+
+          }
+
+          .product_details {
+            width: 100%;
+            float: none;
+            text-align: center;
+            padding: 0px 0px 20px 0px;
+            margin: 0px;
+          }
+        }
+        .product_extraimages .product_extraimage {
+          max-width: 100%;
+        }
+
+      }
