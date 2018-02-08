@@ -2,7 +2,7 @@ class Product < ApplicationRecord
 
   has_many :order_items
   has_many :product_variants
-  accepts_nested_attributes_for :product_variants
+  accepts_nested_attributes_for :product_variants, allow_destroy: true
 
   validates :title, presence: true
   validates :price_in_pounds, presence: true

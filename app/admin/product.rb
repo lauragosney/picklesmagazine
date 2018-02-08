@@ -105,7 +105,7 @@ end
     end
 
     f.inputs "Sizes" do
-      f.has_many :product_variants, sortable: :rank, sortable_start: 1 do |t|
+      f.has_many :product_variants, allow_destroy: true, new_record: false, sortable: :rank, sortable_start: 1 do |t|
         t.input :size, as: :select, collection: ["S", "M", "L", "XL", "XXL"]
         t.input :is_sold_out, label: "Sold out?"
    end
