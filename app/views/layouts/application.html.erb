@@ -17,12 +17,14 @@
 
   <body>
 
-    <div class="menu-toggle">
-      <%= image_tag "menu-icon.svg", class: "icon" %>
-      <%= image_tag "menu-close.svg", class: "close" %>
-    </div>
+
 
     <header>
+
+      <div class="menu-toggle">
+        <%= image_tag "menu-icon.svg", class: "icon" %>
+        <%= image_tag "menu-close.svg", class: "close" %>
+      </div>
 
 
         <div class="cart">
@@ -33,6 +35,24 @@
             <% end %>
         </div>
 
+        <div class="menu">
+
+          <nav>
+            <%= link_to "Home", root_path, class: "homehover" %>
+            <%= link_to "Shop", products_path, class: "shophover" %>
+            <%= link_to "Stories", stories_path, class: "storieshover" %>
+            <%= link_to "About", about_path, class: "abouthover" %>
+            <%= link_to "Contact", contact_path, class: "contacthover" %>
+          </nav>
+
+          <div class="navigation-overlay-bg-home-hover"></div>
+    	     <div class="navigation-overlay-bg-shop-hover"></div>
+           <div class="navigation-overlay-bg-stories-hover"></div>
+           <div class="navigation-overlay-bg-about-hover"></div>
+           <div class="navigation-overlay-bg-contact-hover"></div>
+         </div>
+
+
 
 
 
@@ -40,22 +60,6 @@
 
 
 
-    <div class="menu">
-
-      <nav>
-        <%= link_to "Home", root_path, class: "homehover" %>
-        <%= link_to "Shop", products_path, class: "shophover" %>
-        <%= link_to "Stories", stories_path, class: "storieshover" %>
-        <%= link_to "About", about_path, class: "abouthover" %>
-        <%= link_to "Contact", contact_path, class: "contacthover" %>
-      </nav>
-
-      <div class="navigation-overlay-bg-home-hover"></div>
-	     <div class="navigation-overlay-bg-shop-hover"></div>
-       <div class="navigation-overlay-bg-stories-hover"></div>
-       <div class="navigation-overlay-bg-about-hover"></div>
-       <div class="navigation-overlay-bg-contact-hover"></div>
-     </div>
 
 
 

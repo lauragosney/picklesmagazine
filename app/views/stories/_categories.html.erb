@@ -1,4 +1,4 @@
 <% Category.all.each do |cat| %>
 
-  <%= active_link_to cat.title, stories_path(category: cat.id), active:{category: cat.id} %>
+  <%= active_link_to cat.title, stories_path(category: cat.title), active:{category: cat.title} %>
 <% end %>

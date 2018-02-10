@@ -4,7 +4,7 @@ class StoriesController < ApplicationController
    @category_id = params[:category]
 
    if @category_id.present?
-      @category = Category.find(@category_id)
+      @category = Category.find_by(title: @category_id)
       @stories = @category.stories.all
    else
       @stories = Story.all

@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   resources :orders
 
-  resources :stories
+  resources :stories 
 
   resource :cart
 
