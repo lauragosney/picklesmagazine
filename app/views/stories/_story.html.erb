@@ -9,7 +9,7 @@
 
 
  <h6> <% story.categories.all.each do |cat| %>
-   <%= link_to cat.title, stories_path(category: cat.id) %>
+   <%= link_to cat.title, stories_path(category: cat.title) %>
  <% end %></h6>
 
  <h5><%= link_to story.title, story_path(story) %></h5>

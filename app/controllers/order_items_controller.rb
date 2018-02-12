@@ -11,7 +11,7 @@ class OrderItemsController < ApplicationController
     else
       @variant = nil
     end
-    
+
     if @product.product_variants.any? and @variant.nil?
       flash[:error] = "Please pick a style"
       redirect_to product_path(@product)
