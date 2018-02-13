@@ -400,6 +400,18 @@
     }
   }
 
+  .grid_single {
+    border: 1px solid transparent;
+    padding: 10px;
+    transition: all 0.3s;
+  }
+
+  .grid_single:hover {
+      border: 1px solid $green;
+      padding: 10px;
+  }
+
+
   .block-copy {
     width: 45%;
 
