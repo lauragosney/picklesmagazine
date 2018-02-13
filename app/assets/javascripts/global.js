@@ -75,6 +75,4 @@ $(document).on("turbolinks:load", function (ev) {
   }).on("ajax:error", function (e, xhr, status, error) {
     alert("Please complete all required fields")
   })
-
-
 })

@@ -667,10 +667,12 @@
     transform: translateX(-100%);
     transition: transform 0.5s cubic-bezier(0.06, 0.17, 0.2, 1);
     z-index: 5;
+    opacity: 0;
   }
 
   .open {
     transform: translateX(0);
+    opacity: 1;
   }
 
   .menu nav {

@@ -1,7 +1,7 @@
 class Product < ApplicationRecord
 
   has_many :order_items
-  has_many :product_variants
+  has_many :product_variants, dependent: :destroy 
   accepts_nested_attributes_for :product_variants, allow_destroy: true
 
   validates :title, presence: true
@@ -22,7 +22,9 @@ class Product < ApplicationRecord
   end
 
   def price_in_pounds
-    price/100.00
+    if price.present?
+      price/100.00
+    end
   end
 
   def price_in_pounds=(pounds)
