@@ -11,11 +11,13 @@ Rails.application.routes.draw do
 
   resources :orders
 
-  resources :stories 
+  resources :stories
 
   resource :cart
 
   root "pages#home"
+
+  get "privacypolicy", to: "pages#privacypolicy"
 
   get "about", to: "pages#about"
 
