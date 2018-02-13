@@ -1,13 +1,13 @@
-$(document).on("turbolinks:load", function (ev) {
+$(document).on("ready", function () {
 
   $('.delivery_address').hide();
 
   $("#order_subscribe").on("click", function(e) {
      var checked = $(this).is(":checked");
      if (checked) {
-       $('.delivery_address').hide(300);
+       $('.delivery_address').hide(200);
      } else {
-       $('.delivery_address').show(300);
+       $('.delivery_address').show(200);
      }
   });
 
