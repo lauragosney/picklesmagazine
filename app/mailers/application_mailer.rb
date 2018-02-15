@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'ned@picklesmagazine.co.uk'
+  default from: 'hello@picklesmagazine.com'
   layout 'mailer'
 end
