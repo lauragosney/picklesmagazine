@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180217135043) do
+ActiveRecord::Schema.define(version: 20180218211710) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -128,6 +128,7 @@ ActiveRecord::Schema.define(version: 20180217135043) do
     t.string "quote"
     t.string "quote_credit"
     t.boolean "on_homepage", default: false
+    t.boolean "on_homepage_slottwo", default: false
   end
 
   create_table "stories", force: :cascade do |t|

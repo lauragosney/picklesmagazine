@@ -1,7 +1,7 @@
 ActiveAdmin.register Product do
 
  permit_params :title, :image_1, :image_2, :image_3, :image_4, :image_5, :image_6,
-  :price_in_pounds, :collection_date, :description, :is_featured, :on_homepage, :is_sold_out, :quote, :quote_credit, product_variants_attributes: [:id, :size, :is_sold_out, :rank, :_destroy]
+  :price_in_pounds, :collection_date, :description, :is_featured, :on_homepage, :on_homepage_slottwo, :is_sold_out, :quote, :quote_credit, product_variants_attributes: [:id, :size, :is_sold_out, :rank, :_destroy]
 
   show do
     attributes_table do
@@ -40,6 +40,7 @@ ActiveAdmin.register Product do
         end
       row :is_featured
       row :on_homepage
+      row :on_homepage_slottwo
       row :is_sold_out
       row :quote
       row :quote_credit
@@ -72,6 +73,7 @@ end
          number_to_currency cur.price_in_pounds, unit: "£"
      end
    column :on_homepage
+   column :on_homepage_slottwo
    column :is_featured
    column :is_sold_out
    column :quote
@@ -94,7 +96,8 @@ end
 
     f.inputs "Filters" do
       f.input :is_featured, label: "Featured product?"
-      f.input :on_homepage, label: "On homepage?"
+      f.input :on_homepage, label: "On homepage slot 1?"
+      f.input :on_homepage_slottwo, label: "On homepage slot 2?"
       f.input :is_sold_out, label: "Sold out?"
     end
 

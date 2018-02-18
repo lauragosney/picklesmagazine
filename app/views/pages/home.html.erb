@@ -8,10 +8,11 @@
 
 
   <div class="block-image-left">
-
-    <%= link_to product_path(@product_launch) do %>
+  <% if @product_launch1.present? %>
+    <%= link_to product_path(@product_launch1) do %>
       <%= image_tag "image_shirt.jpg" %>
     <% end %>
+  <% end %>
   </div>
 
 
@@ -22,15 +23,19 @@
 
   <div class="block-copy">
         <h6>Introduction</h6>
-        <%= link_to product_path(@product_launch) do %>
-          <%= image_tag "dividers.svg" %>
+        <% if @product_launch1.present? %>
+            <%= link_to product_path(@product_launch1) do %>
+            <%= image_tag "dividers.svg" %>
+          <% end %>
         <% end %>
         <h4>Type something</h4>
         <p>Founded in 1992, Griffin Technology are leading creators of innovations for everyday life, including the latest in cases, chargers, cables and home & car audio solutions for iPhone, iPad, iPod, smartphones,tablets, PCs and more. As well as delivering a strategic and</p>
         <div class="button_secondary">
-          <%= link_to product_path(@product_launch) do %>
-            Shop now <%= image_tag "arrow_icon.svg",width: 30 %>
-          <% end %>
+        <% if @product_launch1.present? %>
+            <%= link_to product_path(@product_launch1) do %>
+              Shop now <%= image_tag "arrow_icon.svg",width: 30 %>
+            <% end %>
+        <% end %>
         </div>
 
   </div>
@@ -45,25 +50,30 @@
 
       <div class="block-copy">
         		<h6>Introduction</h6>
-            <%= link_to product_path(@product_launch) do %>
+          <% if @product_launch2.present? %>
+            <%= link_to product_path(@product_launch2) do %>
               <%= image_tag "dividers.svg" %>
             <% end %>
+          <% end %>
         		<h4>Type something</h4>
         		<p>Founded in 1992, Griffin Technology are leading creators of innovations for everyday life, including the latest in cases, chargers, cables and home & car audio solutions for iPhone, iPad, iPod, smartphones,tablets, PCs and more. As well as delivering a strategic and</p>
        	 		<div class="button_secondary">
-              <%= link_to product_path(@product_launch) do %>
+            <% if @product_launch2.present? %>
+              <%= link_to product_path(@product_launch2) do %>
                 Shop now <%= image_tag "arrow_icon.svg",width: 30 %>
               <% end %>
+            <% end %>
             </div>
 
       		</div>
 
 
     <div class="block-image-right">
-
-      <%= link_to product_path(@product_launch) do %>
+    <% if @product_launch2.present? %>
+      <%= link_to product_path(@product_launch2) do %>
         <%= image_tag "image_mag.jpg" %>
-      <% end %>
+    <% end %>
+  <% end %>
     </div>
 
 </section>
