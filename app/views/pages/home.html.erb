@@ -10,7 +10,8 @@
   <div class="block-image-left">
   <% if @product_launch1.present? %>
     <%= link_to product_path(@product_launch1) do %>
-      <%= image_tag "image_shirt.jpg" %>
+    <%= image_tag "image_shirt.jpg" %>
+
     <% end %>
   <% end %>
   </div>
@@ -23,9 +24,10 @@
 
   <div class="block-copy">
         <h6>Introduction</h6>
+        <%= image_tag "dividers.svg" %>
+
         <% if @product_launch1.present? %>
             <%= link_to product_path(@product_launch1) do %>
-            <%= image_tag "dividers.svg" %>
           <% end %>
         <% end %>
         <h4>Type something</h4>
@@ -33,9 +35,10 @@
         <div class="button_secondary">
         <% if @product_launch1.present? %>
             <%= link_to product_path(@product_launch1) do %>
-              Shop now <%= image_tag "arrow_icon.svg",width: 30 %>
             <% end %>
         <% end %>
+        Shop now <%= image_tag "arrow_icon.svg",width: 30 %>
+
         </div>
 
   </div>
@@ -50,9 +53,9 @@
 
       <div class="block-copy">
         		<h6>Introduction</h6>
+            <%= image_tag "dividers.svg" %>
           <% if @product_launch2.present? %>
             <%= link_to product_path(@product_launch2) do %>
-              <%= image_tag "dividers.svg" %>
             <% end %>
           <% end %>
         		<h4>Type something</h4>
@@ -60,9 +63,10 @@
        	 		<div class="button_secondary">
             <% if @product_launch2.present? %>
               <%= link_to product_path(@product_launch2) do %>
-                Shop now <%= image_tag "arrow_icon.svg",width: 30 %>
               <% end %>
             <% end %>
+            Shop now <%= image_tag "arrow_icon.svg",width: 30 %>
+
             </div>
 
       		</div>
@@ -71,9 +75,11 @@
     <div class="block-image-right">
     <% if @product_launch2.present? %>
       <%= link_to product_path(@product_launch2) do %>
-        <%= image_tag "image_mag.jpg" %>
+      <%= image_tag "image_mag.jpg" %>
+
     <% end %>
   <% end %>
+
     </div>
 
 </section>
