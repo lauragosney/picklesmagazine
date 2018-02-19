@@ -457,9 +457,11 @@
       font-size: $font-size-links-px;
       line-height: 5.25;
       cursor: pointer;
+      transition: all 0.3s;
 
       a {
         transition: all 0.3s;
+        color: $black;
       }
 
       img {
@@ -471,8 +473,9 @@
 
   .button_secondary:hover  {
 
+    color: $green;
+
     a {
-      transition: all 0.3s;
       color: $green;
     }
 
