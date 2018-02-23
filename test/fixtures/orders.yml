@@ -1,21 +1,20 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  first_name: MyString
-  last_name: MyString
-  email: MyString
-  country: MyString
-  address_1: MyString
-  address_2: MyString
-  city: MyString
-  postal_code: MyString
+laura:
+  first_name: Laura
+  last_name: Gosney
+  email: lauragosney82@gmail.com
+  address_1: Flat 17 Mulberry Apartments
+  city: London
+  country: United Kingdom
+  stripe_token: tok_visa
 
-two:
-  first_name: MyString
-  last_name: MyString
-  email: MyString
-  country: MyString
-  address_1: MyString
-  address_2: MyString
-  city: MyString
-  postal_code: MyString
+
+ed:
+  first_name: Ed
+  last_name: Read
+  email: ned@picklesmagazine.co.uk
+  address_1: Flat 17 Mulberry Apartments
+  city: London
+  country: United Kingdom
+  stripe_token: tok_chargeDeclined
