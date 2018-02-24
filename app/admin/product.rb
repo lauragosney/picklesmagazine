@@ -1,7 +1,7 @@
 ActiveAdmin.register Product do
 
- permit_params :title, :image_1, :image_2, :image_3, :image_4, :image_5, :image_6, :allow_destroy,
-  :price_in_pounds, :collection_date, :description, :is_featured, :on_homepage, :on_homepage_slottwo, :is_sold_out, :quote, :quote_credit, product_variants_attributes: [:id, :size, :is_sold_out, :rank, :_destroy]
+ permit_params :title, :image_1, :image_2, :image_3, :image_4, :image_5, :image_6, :price_in_pounds, :collection_date, :description, :is_featured, :on_homepage, :on_homepage_slottwo, :is_sold_out, :quote, :quote_credit,
+ product_variants_attributes: [:id, :size, :is_sold_out, :rank, :_destroy]
 
   show do
     attributes_table do
