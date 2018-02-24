@@ -173,6 +173,7 @@
     text-decoration: none;
   }
 
+
   div.active {
 
     text-align: center;
@@ -441,12 +442,12 @@
     font-weight: $font-weight-bold;
     font-size:$font-size-links-px;
     text-align: center;
-    cursor: pointer;
     transition: 0.3s;
   }
 
   .button_primary:hover  {
     background-color: $hovergreen;
+    cursor:pointer
   }
 
   .button_secondary  {
@@ -456,7 +457,6 @@
       font-weight: $font-weight-bold;
       font-size: $font-size-links-px;
       line-height: 5.25;
-      cursor: pointer;
       transition: all 0.3s;
 
       a {
@@ -492,7 +492,6 @@
       font-weight: $font-weight-bold;
       font-size: $font-size-links-px;
       line-height: 5.25;
-      cursor: pointer;
 
       a {
         transition: all 0.3s;
@@ -590,7 +589,6 @@
       transition: 0.3s;
       max-width: 100%;
       text-align: center;
-      cursor:pointer;
     }
 
     .button_primary:hover  {
