@@ -29,8 +29,9 @@
     <p><%= @story.standfirst.html_safe %></p>
     <% end %>
 
-
-    <h6><%= @story.byline %></h6>
+    <% if @story.credit.present? %>
+      <h6><%= @story.byline %> | <%= @story.credit %></h6>
+    <% end %>
 
 
 
