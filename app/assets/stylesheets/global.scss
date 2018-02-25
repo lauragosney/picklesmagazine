@@ -1102,6 +1102,26 @@
       margin-right:10px;
     }
 
+    .contact_email {
+      text-align:center;
+      padding: 20px 20px 100px 20px;
+
+      a {
+        color: $black;
+        transition: 0.3s;
+        font-size: $font-size-h3-px;
+        font-weight: $font-weight-bold;
+        text-align: center;
+        border-bottom: 2px solid transparent;
+        transition: all 0.3s;
+        padding-bottom: 2px;
+      }
+
+      a:hover {
+        border-bottom: 2px solid $black;
+      }
+    }
+
 
   @media (max-width: 800px) {
 
@@ -1147,6 +1167,12 @@
     margin-left: 0;
     margin-right: 0;
     padding-bottom: 40px;
+   }
+
+   .contact_email {
+     a {
+       font-size: $font-size-h4-px;
+     }
    }
  }
 
@@ -1269,5 +1295,12 @@
 
     .product_extraimages .product_extraimage {
       max-width: 100%;
+    }
+
+    .contact_email {
+
+      a {
+        font-size: $font-size-h5-px;
+      }
     }
   }
