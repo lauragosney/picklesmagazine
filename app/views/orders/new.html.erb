@@ -136,7 +136,7 @@ var style = {
 
       if (result.error) {
         $("#card-errors").html(result.error.message)
-        $(this).find("input[type=submit]").removeAttr("disabled")
+        $("form.new_order input[type=submit]").removeAttr("disabled")
       } else {
         $("form.new_order").append("<input type=hidden name='order[stripe_token]' value=" + result.token.id + ">")
         $("form.new_order").get(0).submit()
