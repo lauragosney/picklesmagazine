@@ -19,6 +19,8 @@ Rails.application.routes.draw do
 
   get "privacypolicy", to: "pages#privacypolicy"
 
+  get "termsandconditions", to: "pages#termsandconditions"
+
   get "about", to: "pages#about"
 
   get "contact", to: "pages#contact"
