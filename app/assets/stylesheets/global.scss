@@ -311,6 +311,7 @@
   .products_hero {
     text-align: center;
     background-image:image-url('lifestyle.png');
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     padding-top: 250px;
@@ -319,6 +320,8 @@
 
     h2 {
       color: $white;
+      padding-left: 20px;
+      padding-right: 20px;
     }
   }
 
@@ -1209,6 +1212,16 @@
 
   @media (max-width: 534px) {
 
+    .products_hero {
+      text-align: center;
+      background-image:image-url('lifestyle.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding-top: 150px;
+      padding-bottom: 150px;
+      margin-bottom: 40px;
+    }
+
 
     .intro {
       margin-bottom: 0px;
@@ -1216,20 +1229,6 @@
 
     h2 {
       font-size: 42px
-    }
-
-    .product-hero {
-      text-align: center;
-      background-image:url(../assets/lifestyle.png);
-      background-repeat: no-repeat;
-      background-size: cover;
-      padding-top: 150px;
-      padding-bottom: 150px;
-      margin-bottom: 40px;
-
-      h2 {
-        color: $white;
-      }
     }
 
     .product_grid_3 {
