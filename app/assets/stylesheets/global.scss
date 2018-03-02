@@ -1,10 +1,22 @@
 @font-face {
-  font-family: "Geomanist-Regular";
-  src: url(/assets/Geomanist-Regular.otf) format("truetype"); }
+  font-family: "geomanist-regular";
+  src: url("fonts/geomanist-regular.otf") format("truetype");
+  src: url("fonts/geomanist-regular.eot") format("embedded-opentype"),
+      url("fonts/geomanist-regular.woff2") format("woff2"),
+     url("fonts/geomanist-regular.woff") format("woff"),
+     url("fonts/geomanist-regular.ttf") format("truetype"),
+     url("fonts/geomanist-regular.svg#geomanist-regular") format("svg");
+}
 
 @font-face {
-  font-family: "Geomanist-Bold";
-  src: url(assets/Geomanist-Bold.otf) format("truetype"); }
+  font-family: "geomanist-bold";
+  src: url("fonts/geomanist-bold.otf") format("truetype");
+  src: url("fonts/geomanist-bold.eot") format("embedded-opentype"),
+      url("fonts/geomanist-bold.woff2") format("woff2"),
+     url("fonts/geomanist-bold.woff") format("woff"),
+     url("fonts/geomanist-bold.ttf") format("truetype"),
+     url("fonts/geomanist-bold.svg#geomanist-bold") format("svg");
+}
 
   $green: #7ed321;
   $hovergreen: #6CAF22;
