@@ -18,3 +18,41 @@ ed:
   city: London
   country: United Kingdom
   stripe_token: tok_chargeDeclined
+
+
+jo:
+  first_name: Jo
+  last_name: Akerman
+  email: lauragosney82@gmail.com
+  address_1: Flat 17 Mulberry Apartments
+  city: London
+  country: United Kingdom
+  stripe_token: tok_chargeDeclinedIncorrectCvc
+
+
+hel:
+  first_name: Jo
+  last_name: Akerman
+  email: lauragosney82@gmail.com
+  address_1: Flat 17 Mulberry Apartments
+  city: London
+  country: United Kingdom
+  stripe_token: tok_chargeDeclinedExpiredCard
+
+gabs:
+  first_name: Jo
+  last_name: Akerman
+  email: lauragosney82@gmail.com
+  address_1: Flat 17 Mulberry Apartments
+  city: London
+  country: United Kingdom
+  stripe_token: tok_chargeDeclinedProcessingError
+
+dan:
+  first_name: Jo
+  last_name: Akerman
+  email: lauragosney82@gmail.com
+  address_1: Flat 17 Mulberry Apartments
+  city: London
+  country: United Kingdom
+  stripe_token: tok_chargeDeclinedFraudulent
