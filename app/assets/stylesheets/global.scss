@@ -1,21 +1,21 @@
 @font-face {
-  font-family: "geomanist-regular";
-  src: url("assets/fonts/geomanist-regular.otf") format("truetype");
-  src: url("assets/fonts/geomanist-regular.eot") format("embedded-opentype"),
-      url("assets/fonts/geomanist-regular.woff2") format("woff2"),
-     url("assets/fonts/geomanist-regular.woff") format("woff"),
-     url("assets/fonts/geomanist-regular.ttf") format("truetype"),
-     url("assets/fonts/geomanist-regular.svg#geomanist-regular") format("svg");
+  font-family: 'geomanist-regular';
+  src:asset-url('fonts/geomanist-regular.otf') format('truetype');
+  src:asset-url('fonts/geomanist-regular.eot') format('embedded-opentype'),
+      asset-url('fonts/geomanist-regular.woff2') format('woff2'),
+     asset-url('fonts/geomanist-regular.woff') format('woff'),
+     asset-url('fonts/geomanist-regular.ttf') format('truetype'),
+     asset-url('fonts/geomanist-regular.svg#geomanist-regular') format('svg');
 }
 
 @font-face {
-  font-family: "geomanist-bold";
-  src: url("assets/fonts/geomanist-bold.otf") format("truetype");
-  src: url("assets/fonts/geomanist-bold.eot") format("embedded-opentype"),
-      url("assets/fonts/geomanist-bold.woff2") format("woff2"),
-     url("assets/fonts/geomanist-bold.woff") format("woff"),
-     url("assets/fonts/geomanist-bold.ttf") format("truetype"),
-     url("assets/fonts/geomanist-bold.svg#geomanist-bold") format("svg");
+  font-family: 'geomanist-bold';
+  src:asset-url('fonts/geomanist-bold.otf') format('truetype');
+  src:asset-url('fonts/geomanist-bold.eot') format('embedded-opentype'),
+      asset-url('fonts/geomanist-bold.woff2') format('woff2'),
+     asset-url('fonts/geomanist-bold.woff') format('woff'),
+     asset-url('fonts/geomanist-bold.ttf') format('truetype'),
+     asset-url('fonts/geomanist-bold.svg#geomanist-bold') format('svg');
 }
 
   $green: #7ed321;
