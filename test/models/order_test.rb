@@ -92,14 +92,4 @@ class OrderTest < ActiveSupport::TestCase
 
   end
 
-  test "Charge succeeds but the address_line1_check verification fails" do
-    @order = orders(:joey)
-
-    assert_equal @order.address_1, false
-    assert_equal @order.save_and_charge, false
-    assert_equal @order.errors[:stripe_token], ["Your card was declined."]
-
-  end
-
-
 end

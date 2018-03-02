@@ -119,13 +119,3 @@ kirstie:
   city: London
   country: United Kingdom
   stripe_token: tok_chargeCustomerFail
-
-
-joey:
-  first_name: Jo
-  last_name: Akerman
-  email: lauragosney82@gmail.com
-  address_1: Flat 17 Mulberry Apartments
-  city: London
-  country: United Kingdom
-  stripe_token: tok_avsLine1Fail
