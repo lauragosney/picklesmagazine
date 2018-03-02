@@ -1,10 +1,10 @@
 @font-face {
-  font-family: Geomanist-Regular;
-  src: asset-url("fonts/Geomanist-Regular.otf"); }
+  font-family: "Geomanist-Regular";
+  src: url(/assets/Geomanist-Regular.otf) format("truetype"); }
 
 @font-face {
-  font-family: Geomanist-Bold;
-  src: asset-url("fonts/Geomanist-Bold.otf"); }
+  font-family: "Geomanist-Bold";
+  src: url(assets/Geomanist-Bold.otf) format("truetype"); }
 
   $green: #7ed321;
   $hovergreen: #6CAF22;
