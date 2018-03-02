@@ -15,6 +15,34 @@ class OrderTest < ActiveSupport::TestCase
 
   end
 
+  test "should save and charge debit" do
+    @order = orders(:laura2)
+
+    assert_equal @order.save_and_charge, true
+
+  end
+
+  test "should save and charge mastercard" do
+    @order = orders(:laura3)
+
+    assert_equal @order.save_and_charge, true
+
+  end
+
+  test "should save and charge mastercard debit" do
+    @order = orders(:laura4)
+
+    assert_equal @order.save_and_charge, true
+
+  end
+
+  test "should save and charge american express" do
+    @order = orders(:laura5)
+
+    assert_equal @order.save_and_charge, true
+
+  end
+
   test "should not save and charge with invalid card" do
     @order = orders(:ed)
 
@@ -46,5 +74,32 @@ class OrderTest < ActiveSupport::TestCase
     assert_equal @order.errors[:stripe_token], ["Your card was declined."]
 
   end
+
+  test "should not save and charge as the address_line1_check and address_zip_check verifications fail" do
+    @order = orders(:sue)
+
+    assert_equal @order.save_and_charge, false
+    assert_equal @order.errors[:stripe_token], ["The zip code you supplied failed validation."]
+
+  end
+
+
+  test "should not save and charge attaching this card to a Customer object succeeds, but attempts to charge the customer fail." do
+    @order = orders(:kirstie)
+
+    assert_equal @order.save_and_charge, false
+    assert_equal @order.errors[:stripe_token], ["Your card was declined."]
+
+  end
+
+  test "Charge succeeds but the address_line1_check verification fails" do
+    @order = orders(:joey)
+
+    assert_equal @order.address_1, false
+    assert_equal @order.save_and_charge, false
+    assert_equal @order.errors[:stripe_token], ["Your card was declined."]
+
+  end
+
 
 end

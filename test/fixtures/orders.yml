@@ -9,6 +9,41 @@ laura:
   country: United Kingdom
   stripe_token: tok_visa
 
+laura2:
+  first_name: Laura
+  last_name: Gosney
+  email: lauragosney82@gmail.com
+  address_1: Flat 17 Mulberry Apartments
+  city: London
+  country: United Kingdom
+  stripe_token: tok_visa_debit
+
+laura3:
+  first_name: Laura
+  last_name: Gosney
+  email: lauragosney82@gmail.com
+  address_1: Flat 17 Mulberry Apartments
+  city: London
+  country: United Kingdom
+  stripe_token: tok_mastercard
+
+laura4:
+  first_name: Laura
+  last_name: Gosney
+  email: lauragosney82@gmail.com
+  address_1: Flat 17 Mulberry Apartments
+  city: London
+  country: United Kingdom
+  stripe_token: tok_mastercard_debit
+
+laura5:
+  first_name: Laura
+  last_name: Gosney
+  email: lauragosney82@gmail.com
+  address_1: Flat 17 Mulberry Apartments
+  city: London
+  country: United Kingdom
+  stripe_token: tok_amex
 
 ed:
   first_name: Ed
@@ -56,3 +91,41 @@ dan:
   city: London
   country: United Kingdom
   stripe_token: tok_chargeDeclinedFraudulent
+
+sue:
+  first_name: Jo
+  last_name: Akerman
+  email: lauragosney82@gmail.com
+  address_1: Flat 17 Mulberry Apartments
+  city: London
+  country: United Kingdom
+  stripe_token: tok_avsFail
+
+eddie:
+  first_name: Jo
+  last_name: Akerman
+  email: lauragosney82@gmail.com
+  address_1: Flat 17 Mulberry Apartments
+  city: London
+  country: United Kingdom
+  stripe_token: tok_avsLine1Fail
+
+
+kirstie:
+  first_name: Jo
+  last_name: Akerman
+  email: lauragosney82@gmail.com
+  address_1: Flat 17 Mulberry Apartments
+  city: London
+  country: United Kingdom
+  stripe_token: tok_chargeCustomerFail
+
+
+joey:
+  first_name: Jo
+  last_name: Akerman
+  email: lauragosney82@gmail.com
+  address_1: Flat 17 Mulberry Apartments
+  city: London
+  country: United Kingdom
+  stripe_token: tok_avsLine1Fail
