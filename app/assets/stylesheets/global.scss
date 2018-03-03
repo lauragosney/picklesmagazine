@@ -783,7 +783,6 @@
     opacity: 1;
   	transition: all 0.3s;
   	border-bottom: 2px solid transparent;
-  	padding-bottom: 1px;
   }
 
   .open nav a:hover {
@@ -846,7 +845,8 @@
 
     input {
       margin-bottom: 20px;
-      height:40px
+      height:40px;
+
     }
 
     input.btn.button_primary  {
@@ -854,6 +854,9 @@
       transition: 0.3s;
       width: 200px;
       height:40px;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
     }
 
     input.btn.button_primary:hover {
@@ -1182,6 +1185,18 @@
 
 
   @media (max-width: 800px) {
+
+    .open nav a {
+      transform: translateX(0);
+      opacity: 1;
+      transition: all 0.3s;
+      border-bottom: none;
+    }
+
+    .open nav a:hover {
+      border-bottom: none;
+      opacity: 0.5;
+    }
 
     .product_hero {
       margin-bottom: 40px;
