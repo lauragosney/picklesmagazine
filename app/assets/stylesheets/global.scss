@@ -74,6 +74,10 @@
     display: block;
   }
 
+  *:focus {
+    outline: none;
+  }
+
   input {
     border: 1px solid $lightgrey;
     border-style: none;
@@ -573,11 +577,15 @@
     }
   }
 
-  .my-input {
+  .my-input  {
     width: 100%;
-    border: solid 1px $lightgrey;
+    border: solid 1px $grey;
     padding: 10px;
     margin-bottom: 20px;
+  }
+
+  .my-input:hover {
+    border: solid 1px $green;
   }
 
   .product_grid_2 {
