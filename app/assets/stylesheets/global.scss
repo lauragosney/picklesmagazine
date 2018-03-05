@@ -10,7 +10,7 @@
 }
 
 @font-face {
-  font-family: 'Geomanist';
+  font-family:'Geomanist';
   font-weight: 700;
   src: asset-url('fonts/geomanist-bold.otf') format('truetype');
   src: asset-url('fonts/geomanist-bold.eot') format('embedded-opentype'),
@@ -45,7 +45,7 @@
   $line-height-body-px: 1.8;
   $line-height-headlines-px: 1.2;
 
-  $font-weight-bold: 600;
+  $font-weight-bold: 700;
   $font-weight-regular: 400;
   $font-weight-light: 200;
 
@@ -150,6 +150,8 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
+    font-family: $font;
+   	font-weight: $font-weight-bold;
   	color: $black;
     line-height: $line-height-headlines-px;
     padding: 0;
