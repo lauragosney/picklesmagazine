@@ -67,7 +67,7 @@ class Order < ApplicationRecord
 
   def total_price
 
-    @total = 500
+    @total = 300
 
     # if ["United States", "Canada"].include? self.country do
     #   @total += 1000
