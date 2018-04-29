@@ -368,11 +368,16 @@
   .text {
     margin: 30px auto 30px auto;
     max-width: 760px;
-    line-height: 1.6em;
-    letter-spacing: 0.3px;
-    font-size: 1.0625rem;
-    word-wrap: break-word;
-    font-family: geomanist, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+    span {
+      font-family: $font;
+      font-weight: $font-weight-regular;
+      font-size: $font-size-body-px;
+      line-height: $line-height-body-px;
+      letter-spacing: 0.3px;
+      word-wrap: break-word;
+      color: $black;
+    }
 
     a {
       text-decoration: underline;
