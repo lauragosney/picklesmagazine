@@ -369,14 +369,14 @@
     margin: 30px auto 30px auto;
     max-width: 760px;
 
-    span {
-      font-family: $font;
-      font-weight: $font-weight-regular;
-      font-size: $font-size-body-px;
-      line-height: $line-height-body-px;
-      letter-spacing: 0.3px;
-      word-wrap: break-word;
-      color: $black;
+    p span {
+      font-family: $font !important;
+      font-weight: $font-weight-regular !important;
+      font-size: $font-size-body-px !important;
+      line-height: $line-height-body-px !important;
+      letter-spacing: 0.3px !important;
+      word-wrap: break-word !important;
+      color: $black !important;
     }
 
     a {
@@ -388,6 +388,8 @@
       color: $green;
     }
   }
+
+
 
   p.subhead {
     font-weight: $font-weight-bold;
@@ -574,10 +576,34 @@
  	  transition: all 0.3s ease-in-out;
   }
 
+  .big_link {
+    margin-left:auto;
+    margin-right:auto;
+    width: 230px;
+  }
+
   .featured h4 {
     text-align: center;
     margin-bottom: 30px;
   }
+
+  .instagram {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: $font-size-h4-px;
+    font-weight: $font-weight-bold;
+    color: $black;
+    line-height: $line-height-headlines-px;
+
+    a {
+      transition: 0.3s;
+    }
+
+    a:hover {
+      color: $green;
+    }
+  }
+
 
   .product_description {
     text-align: center;
@@ -1108,7 +1134,6 @@
       }
     }
 
-
     .total_price_basket {
       text-align: right;
       margin-top:20px;
@@ -1166,6 +1191,11 @@
 
       a {
         color: $white;
+        transition: 0.3s;
+      }
+
+      a:hover {
+        color:$green
       }
     }
 
@@ -1181,9 +1211,19 @@
       margin-right:10px;
     }
 
-    footer p:nth-child(3):after {
-      content: "";
-    }
+    .social {
+      margin-bottom:20px;
+
+      img {
+        margin-left:5px;
+        margin-right:5px;
+        transition:0.3s;
+      }
+
+      a:hover img {
+          transform: scale(0.8);
+        }
+      }
 
     .contact_email {
       text-align:center;
@@ -1191,17 +1231,14 @@
 
       a {
         color: $black;
-        transition: 0.3s;
         font-size: $font-size-h3-px;
         font-weight: $font-weight-bold;
         text-align: center;
-        border-bottom: 2px solid transparent;
-        transition: all 0.3s;
-        padding-bottom: 2px;
+        transition: 0.3s;
       }
 
       a:hover {
-        border-bottom: 2px solid $black;
+        color: $green;
       }
 
     }
@@ -1273,6 +1310,10 @@
  }
 
   @media (max-width: 534px) {
+
+    .big_link {
+      width:100%;
+    }
 
     .products_hero {
       text-align: center;

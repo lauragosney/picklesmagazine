@@ -95,6 +95,9 @@
     <div class="product_grid_3">
       <%= render partial: "products/product", collection: @featured_products %>
     </div>
+    <div class="big_link">
+      <%= link_to "View all products", products_path, class: "button_primary" %>
+    </div>
   </div>
 </section>
 
@@ -104,12 +107,18 @@
     <div class="product_grid_3">
       <%= render partial: "stories/story", collection: @featured_stories %>
     </div>
+    <div class="big_link">
+      <%= link_to "View all stories", stories_path, class: "button_primary" %>
+    </div>
+
   </div>
 </section>
 
 
 <div class="featured">
-  <h4>@picklesmagazine</h4>
+  <div class="instagram">
+    <a href="https://www.instagram.com/picklesmagazine/?hl=en" target="_blank">@picklesmagazine</a>
+  </div>
 
   <script src="//apps.elfsight.com/p/platform.js" defer></script>
       <div class="elfsight-app-276db0d4-25a2-4a5e-8a72-30da22fe3732">
