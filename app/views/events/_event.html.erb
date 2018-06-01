@@ -1,0 +1,18 @@
+<div class="container_2">
+  <div class="block-image-left">
+    <%= image_tag event.image.medium %>
+  </div>
+
+  <div class="block-copy">
+    <h6><%= event.date %></h6>
+    <%= image_tag "dividers.svg" %>
+    <h4><%= event.title %></h4>
+    <p> <%= event.description %> </p>
+
+    <p class="margin_top_30"><strong>Price:</strong> <%= event.price %></p>
+    <p><strong>Time:</strong> <%= event.time %></p>
+    <p><strong>Venue:</strong> <%= event.venue %></p>
+    <p><strong>More information:</strong> More information: <%= event.more_information.html_safe %></p>
+
+  </div>
+</div>

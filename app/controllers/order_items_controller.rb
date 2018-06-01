@@ -13,7 +13,7 @@ class OrderItemsController < ApplicationController
     end
 
     if @product.product_variants.any? and @variant.nil?
-      flash[:error] = "Please pick a style"
+      flash[:error] = "Please pick a size"
       redirect_to product_path(@product)
     elsif @product.is_sold_out? or (@variant.present? and @variant.is_sold_out?)
       flash[:error] = "This product is sold out"

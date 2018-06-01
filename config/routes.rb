@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   resources :stories
 
+  resources :events
+
   resource :cart
 
   root "pages#home"

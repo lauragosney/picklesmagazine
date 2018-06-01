@@ -47,6 +47,12 @@ $(document).on("ready", function () {
   })
 
   $(".shophover").hover(function () {
+    $("div.navigation-overlay-bg-events-hover").fadeIn()
+  }, function () {
+    $("div.navigation-overlay-bg-events-hover").fadeOut()
+  })
+
+  $(".shophover").hover(function () {
     $("div.navigation-overlay-bg-shop-hover").fadeIn()
   }, function () {
     $("div.navigation-overlay-bg-shop-hover").fadeOut()
