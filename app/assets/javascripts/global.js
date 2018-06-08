@@ -27,7 +27,7 @@ $(document).on("ready", function () {
       }
 
 
-    if (pageTop > 200) {
+    if (pageTop > 1000) {
         $(".hero").addClass("fade")
     } else
     	$(".hero").removeClass("fade")
