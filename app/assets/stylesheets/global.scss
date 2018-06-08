@@ -314,7 +314,7 @@
   .worldcup {
  	  width: 100%;
     height: 100vh;
-    background-image:image-url('worldcupident.svg');
+    background-image:asset-url('worldcupident.svg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -343,7 +343,7 @@
 
   .products_hero {
     text-align: center;
-    background-image:image-url('lifestyle.png');
+    background-image:asset-url('lifestyle.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
