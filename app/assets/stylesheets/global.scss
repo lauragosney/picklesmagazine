@@ -739,6 +739,51 @@
   opacity: 0.03;
   }
 
+
+
+  div.loader {
+    background-color: $white;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    z-index: 12;
+    transition: opacity 2s ease;
+  }
+
+  @keyframes moveY {
+    from { top: 0; } to { top: 100%; }
+  }
+
+  @keyframes moveX {
+    from { left: 0; } to { left: 100%; }
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg)
+    };
+
+    100% {
+      transform: rotate(360deg)
+    };
+  }
+
+  div.loader.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .loader img {
+    animation: moveY 3s linear infinite alternate, moveX 3.75s linear infinite alternate, rotate 10s linear infinite;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+  }
+
+
   .menu-toggle {
     position: fixed;
     top: 0;

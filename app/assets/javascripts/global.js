@@ -81,4 +81,10 @@ $(document).on("ready", function () {
   }).on("ajax:error", function (e, xhr, status, error) {
     alert("Please complete all required fields")
   })
+
+
+  setTimeout(() => {
+    document.querySelector('div.loader').classList.add('hidden')
+  }, 3000)
+
 })
