@@ -26,4 +26,5 @@ class ApplicationController < ActionController::Base
       session[:shown_splash] = "yep"
     end
   end
+  
 end
