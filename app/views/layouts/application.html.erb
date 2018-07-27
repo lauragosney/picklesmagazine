@@ -39,10 +39,12 @@
 
   <body>
 
-    <div class="loader">
-      <%= image_tag "loader.svg", class: "football" %>
-      <div class="ballshadow"></div>
-    </div>
+    <% if @show_splash %>
+        <div class="loader">
+          <%= image_tag "loader.svg", class: "football" %>
+          <div class="ballshadow"></div>
+        </div>
+    <% end %>
 
     <header>
 
