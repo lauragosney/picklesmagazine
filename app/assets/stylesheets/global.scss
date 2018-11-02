@@ -325,16 +325,30 @@
 
   .hero {
  	  display: flex;
- 	  width: 100%;
+    background-color: #ffffff;
     height: 100vh;
-    justify-content: center;
- 	  align-items: center;
-    position: fixed;
     z-index: -1;
     opacity: 1;
     transition: opacity 1s;
     padding-left: 20px;
     padding-right: 20px;
+  }
+
+  .hero-image {
+ 	  display: flex;
+    flex-wrap: wrap;
+ 	  width: 100%;
+    justify-content: center;
+  }
+
+  .arrow {
+    display: block;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    padding: 30px;
+    cursor: pointer;
   }
 
   .price h5 {
@@ -734,7 +748,7 @@
   }
 
   .block_1 {
-    padding-top: 2000px;
+    padding-top: 100px;
   }
 
   .fade {
@@ -1309,6 +1323,8 @@
       justify-content: center;
       align-items: center;
     }
+
+
 
 
   @media (max-width: 800px) {

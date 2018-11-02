@@ -84,7 +84,17 @@ $(document).on("ready", function () {
 
 
   setTimeout(() => {
-    document.querySelector('div.loader').classList.add('hidden')
-  }, 1500)
+      document.querySelector('div.loader').classList.add('hidden')
+    }, 1500)
+
+
+  // const arrowDown = document.querySelector('.arrow')
+  //
+  // arrowDown.addEventListener('click', function(event) {
+  //
+  //     event.preventDefault()
+  //
+  //
+  // })
 
 })

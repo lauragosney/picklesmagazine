@@ -11,5 +11,6 @@
 // about supported directives.
 //
 //= require jquery
+//= require in-view
 //= require rails-ujs
 //= require global
