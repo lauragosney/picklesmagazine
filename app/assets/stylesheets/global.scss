@@ -361,10 +361,17 @@
     opacity: 0;
   }
 
-  .header_black_visible {
+ .header_black_visible {
     opacity: 1;
   }
 
+  .header_black {
+    color: $black;
+  }
+
+  .header_white {
+    color: $white;
+  }
 
 
   footer {
@@ -1414,13 +1421,6 @@
       margin-top: 120px;
     }
 
-    .header_black {
-      color: $black;
-    }
-
-    .header_white {
-      color: $white;
-    }
 
 
   @media (max-width: 800px) {

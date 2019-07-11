@@ -20,6 +20,27 @@
     </div>
   </div>
 
+  <div class="header_black_hide">
+    <div class="menu-toggle">
+      <%= image_tag "menu-icon.svg", class: "icon" %>
+      <%= image_tag "menu-close.svg", class: "close" %>
+    </div>
+
+    <h1 class="logo">
+      <%= link_to root_path do %>
+        <%= image_tag "pickles_logo_update.svg" %>
+      <% end %>
+    </h1>
+
+    <div class="cart">
+      <%= link_to cart_path do %>
+        <%= image_tag "cart.svg" %>
+        ( <%= @current_cart.total_quantity %> )
+        <!-- <%= number_to_currency @current_cart.total_price_in_pounds,  unit: "£" %> -->
+      <% end %>
+    </div>
+  </div>
+
 
   <div class="menu">
 
