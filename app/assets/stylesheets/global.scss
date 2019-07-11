@@ -1,23 +1,56 @@
+// @font-face {
+//   font-family:'geomanist';
+//   font-weight: 400;
+//   src: font-url('geomanist-regular.otf') format('truetype');
+//   src: font-url('geomanist-regular.eot') format('embedded-opentype'),
+//       font-url('geomanist-regular.woff2') format('woff2'),
+//      font-url('geomanist-regular.woff') format('woff'),
+//      font-url('geomanist-regular.ttf') format('truetype'),
+//      font-url('geomanist-regular.svg#geomanist-regular') format('svg');
+// }
+//
+// @font-face {
+//   font-family:'geomanist';
+//   font-weight: 700;
+//   src: font-url('geomanist-bold.otf') format('truetype');
+//   src: font-url('geomanist-bold.eot') format('embedded-opentype'),
+//       font-url('geomanist-bold.woff2') format('woff2'),
+//      font-url('geomanist-bold.woff') format('woff'),
+//      font-url('geomanist-bold.ttf') format('truetype'),
+//      font-url('geomanist-bold.svg#geomanist-bold') format('svg');
+// }
+
 @font-face {
-  font-family:'geomanist';
+  font-family:'reader';
   font-weight: 400;
-  src: font-url('geomanist-regular.otf') format('truetype');
-  src: font-url('geomanist-regular.eot') format('embedded-opentype'),
-      font-url('geomanist-regular.woff2') format('woff2'),
-     font-url('geomanist-regular.woff') format('woff'),
-     font-url('geomanist-regular.ttf') format('truetype'),
-     font-url('geomanist-regular.svg#geomanist-regular') format('svg');
+  src: font-url('Reader-Regular.otf') format('truetype');
+  src: font-url('Reader-Regular.eot') format('embedded-opentype'),
+      font-url('Reader-Regular.woff2') format('woff2'),
+      font-url('Reader-Regular.woff') format('woff'),
+      font-url('Reader-Regular.ttf') format('truetype'),
+      font-url('Reader-Regular.svg#Reader-Regular') format('svg');
 }
 
 @font-face {
-  font-family:'geomanist';
+  font-family:'reader';
   font-weight: 700;
-  src: font-url('geomanist-bold.otf') format('truetype');
-  src: font-url('geomanist-bold.eot') format('embedded-opentype'),
-      font-url('geomanist-bold.woff2') format('woff2'),
-     font-url('geomanist-bold.woff') format('woff'),
-     font-url('geomanist-bold.ttf') format('truetype'),
-     font-url('geomanist-bold.svg#geomanist-bold') format('svg');
+  src: font-url('Reader-Bold.otf') format('truetype');
+  src: font-url('Reader-Bold.eot') format('embedded-opentype'),
+      font-url('Reader-Bold.woff2') format('woff2'),
+      font-url('Reader-Bold.woff') format('woff'),
+      font-url('Reader-Bold.ttf') format('truetype'),
+      font-url('Reader-Bold.svg#Reader-Bold') format('svg');
+}
+
+@font-face {
+  font-family:'readerpro';
+  font-weight: 900;
+  src: font-url('ReaderPro-Black.otf') format('truetype');
+  src: font-url('ReaderPro-Black.eot') format('embedded-opentype'),
+      font-url('ReaderPro-Black.woff2') format('woff2'),
+      font-url('ReaderPro-Black.woff') format('woff'),
+      font-url('ReaderPro-Black.ttf') format('truetype'),
+      font-url('ReaderPro-Black.svg#ReaderPro-Black') format('svg');
 }
 
   $green: #7ed321;
@@ -29,7 +62,9 @@
   $errorred: #ee3322;
 
 
-  $font:'geomanist', Helvetica, Arial, sans-serif;
+  $font:'reader', Helvetica, Arial, sans-serif;
+  $fontpro:'readerpro', Helvetica, Arial, sans-serif;
+
 
 
   $font-size-h1-px:60px;
@@ -46,9 +81,9 @@
   $line-height-body-px: 1.8;
   $line-height-headlines-px: 1.2;
 
-  $font-weight-bold: 700;
+  $font-weight-black: 900;
   $font-weight-regular: 400;
-  $font-weight-light: 200;
+  $font-weight-bold: 900;
 
 
   html, body, div, span, applet, object, iframe,
@@ -151,8 +186,8 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: $font;
-   	font-weight: $font-weight-bold;
+    font-family: $fontpro;
+   	font-weight: $font-weight-black;
   	color: $black;
     line-height: $line-height-headlines-px;
     padding: 0;
@@ -161,22 +196,22 @@
 
   h2 {
     font-size: $font-size-h2-px;
-    font-weight: $font-weight-bold;
+    font-weight: $font-weight-black;
   }
 
   h3 {
     font-size: $font-size-h3-px;
-    font-weight: $font-weight-bold;
+    font-weight: $font-weight-black;
   }
 
   h4 {
     font-size: $font-size-h4-px;
-    font-weight: $font-weight-bold;
+    font-weight: $font-weight-black;
   }
 
   h5 {
     font-size:$font-size-h5-px;
-    font-weight: $font-weight-bold;
+    font-weight: $font-weight-black;
   }
 
   h6 {
@@ -194,6 +229,14 @@
     text-decoration: none;
   }
 
+  .white {
+    color: $white;
+  }
+
+  .white a {
+    color: $white;
+  }
+
 
   div.active {
 
@@ -203,7 +246,7 @@
 
     a {
         color: $grey;
-        font-weight: $font-weight-bold;
+        font-weight: $font-weight-black;
         text-decoration: none;
         margin-left: 20px;
         margin-right: 20px;
@@ -278,20 +321,19 @@
 
 
   header, footer {
-    padding: 30px;
+    padding: 45px;
   }
 
   header {
-    padding: 40px 40px 50px 39px;
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
     position: fixed;
     width: 100%;
     z-index: 4;
     top: 0;
-    background-color: $white;
-
+    transition: background-color 1s;
 
     nav a {
       padding-left: 20px;
@@ -300,7 +342,30 @@
     nav img {
       padding-bottom: 5px;
     }
+
+    .header_white a {
+      transition: color 1s;
+    }
   }
+
+
+  header.scrolled {
+    background-color: $white;
+
+    .header_white a {
+      color: $black;
+    }
+  }
+
+  .header_black_hide {
+    opacity: 0;
+  }
+
+  .header_black_visible {
+    opacity: 1;
+  }
+
+
 
   footer {
     background-color: $black;
@@ -309,9 +374,6 @@
     margin-top: 90px;
   }
 
-  .top_container {
-    min-height: 40px;
-  }
 
   .worldcup {
  	  width: 100%;
@@ -323,32 +385,29 @@
     position: absolute;
   }
 
-  .hero {
- 	  display: flex;
-    background-color: #ffffff;
-    height: 100vh;
-    z-index: -1;
-    opacity: 1;
-    transition: opacity 1s;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  .hero-image {
- 	  display: flex;
-    flex-wrap: wrap;
- 	  width: 100%;
-    justify-content: center;
-    padding-bottom: 30px;
-  }
+  // .hero {
+ 	//   display: flex;
+  //   height: 100vh;
+  //   z-index: -1;
+  //   opacity: 1;
+  //   transition: opacity 1s;
+  //
+  // }
+  //
+  // .hero-image {
+ 	//   display: flex;
+  //   flex-wrap: wrap;
+ 	//   width: 100%;
+  //   justify-content: center;
+  //   padding-bottom: 30px;
+  // }
 
   .arrow {
     display: block;
     width: 100%;
     text-align: center;
     position: absolute;
-    bottom: 0;
-    padding: 30px;
+    top: 50%;
     cursor: pointer;
   }
 
@@ -363,7 +422,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding-top: 250px;
+    padding-top: 290px;
     padding-bottom: 250px;
     margin-bottom: 90px;
 
@@ -372,6 +431,15 @@
       padding-left: 20px;
       padding-right: 20px;
     }
+  }
+
+  .home_hero {
+    background-image:asset-url('image_shirt.jpg');
+    margin-bottom: 0px;
+  }
+
+  .container_3 {
+    margin: 0px auto 90px auto;
   }
 
   .container {
@@ -394,6 +462,7 @@
   .text {
     margin: 30px auto 30px auto;
     max-width: 760px;
+    padding: 0px 20px;
 
     p span {
       font-family: $font !important;
@@ -418,8 +487,17 @@
 
 
   p.subhead {
-    font-weight: $font-weight-bold;
+    font-weight: $font-weight-black;
     padding-top: 20px;
+  }
+
+  .fullwidth-intro {
+    text-align: center;
+    padding-top: 290px;
+    padding-bottom: 250px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
   .intro {
@@ -469,7 +547,8 @@
       margin-top: 0px;
       color: $black;
       text-transform: uppercase;
-      font-weight: $font-weight-bold;
+      font-family: $fontpro;
+      font-weight: $font-weight-black;
       font-size: $font-size-links-px;
       line-height: 5.25;
 
@@ -517,7 +596,8 @@
     padding: 10px 0px 8px 0px;
     display: block;
     text-transform: uppercase;
-    font-weight: $font-weight-bold;
+    font-family: $fontpro;
+    font-weight: $font-weight-black;
     font-size:$font-size-links-px;
     text-align: center;
     transition: 0.3s;
@@ -535,7 +615,8 @@
       margin-top: 0px;
       color: $black;
       text-transform: uppercase;
-      font-weight: $font-weight-bold;
+      font-family: $fontpro;
+      font-weight: $font-weight-black;
       font-size: $font-size-links-px;
       line-height: 5.25;
       transition: all 0.3s;
@@ -570,7 +651,8 @@
       margin-top: 0px;
       color: $black;
       text-transform: uppercase;
-      font-weight: $font-weight-bold;
+      font-family: $fontpro;
+      font-weight: $font-weight-black;
       font-size: $font-size-links-px;
       line-height: 5.25;
 
@@ -616,8 +698,9 @@
   .instagram {
     text-align: center;
     margin-bottom: 30px;
+    font-family: $fontpro;
     font-size: $font-size-h4-px;
-    font-weight: $font-weight-bold;
+    font-weight: $font-weight-black;
     color: $black;
     line-height: $line-height-headlines-px;
 
@@ -693,7 +776,8 @@
       padding: 10px 0 8px 0;
       display: block;
       text-transform: uppercase;
-      font-weight: $font-weight-bold;
+      font-family: $fontpro;
+      font-weight: $font-weight-black;
       font-size:$font-size-links-px;
       transition: 0.3s;
       max-width: 100%;
@@ -757,7 +841,6 @@
   }
 
 
-
   div.loader {
     background-color: $white;
     position: fixed;
@@ -802,12 +885,10 @@
 
 
   .menu-toggle {
-    position: fixed;
-    top: 0;
-    left: 0;
-    padding: 22px 20px;
-    width: 100px;
     z-index: 6;
+    position: fixed;
+    left: 30px;
+    top: 25px;
     cursor: pointer;
 
     img.close {
@@ -827,9 +908,8 @@
 
   .cart {
     position: fixed;
-    right: 0px;
-    top: 0px;
-    padding: 30px 20px;
+    right: 30px;
+    top: 30px;
     font-weight: 600;
     line-height: 1;
     z-index: 4;
@@ -837,6 +917,10 @@
     img {
       padding-right: 5px;
     }
+  }
+
+  .cart-white a {
+    color: $white;
   }
 
   .menu {
@@ -867,8 +951,9 @@
   }
 
   .menu nav a {
+    font-family: $fontpro;
     font-size: $font-size-h4-px;
- 	  font-weight: $font-weight-bold;
+ 	  font-weight: $font-weight-black;
     line-height: $line-height-body-px;
     margin-bottom: 10px;
     margin-left: auto;
@@ -914,19 +999,14 @@
   }
 
 
-  div.header2 {
-    max-width: 130px;
-    overflow: hidden;
-    margin: 0px auto 80px auto;
-
-    h1.logo {
-      padding: 0;
-      text-align: center;
-      position: fixed;
-      top: 4%;
-      z-index:5;
-    }
+  h1.logo {
+    z-index:5;
+    width: 180px;
+    position: fixed;
+    top: 25px;
+    transform: translate(-50%, 0);
   }
+
 
   .success,
   .error  {
@@ -999,7 +1079,8 @@
 
   .link {
     margin-top: 40px;
-    font-weight: $font-weight-bold;
+    font-family: $fontpro;
+    font-weight: $font-weight-black;
   }
 
   .basket_empty {
@@ -1163,7 +1244,8 @@
 
    .order_details {
      margin: 20px auto;
-     font-weight: $font-weight-bold;
+     font-family: $fontpro;
+     font-weight: $font-weight-black;
 
      p {
        font-weight: $font-weight-regular;
@@ -1173,7 +1255,7 @@
 
    .basket {
      min-height: 800px;
-     margin: 0px auto 90px auto;
+     margin: 90px auto 90px auto;
      max-width: 960px;
      padding: 0 20px 0 20px;
    }
@@ -1219,8 +1301,9 @@
       }
 
       .total {
+        font-family: $fontpro;
         font-size: $font-size-h5-px;
-        font-weight: $font-weight-bold;
+        font-weight: $font-weight-black;
       }
     }
 
@@ -1243,7 +1326,8 @@
 
       p {
         display:inline-block;
-        font-weight:$font-weight-bold;
+        font-family: $fontpro;
+        font-weight:$font-weight-black;
       }
     }
 
@@ -1306,8 +1390,9 @@
 
       a {
         color: $black;
+        font-family: $fontpro;
         font-size: $font-size-h3-px;
-        font-weight: $font-weight-bold;
+        font-weight: $font-weight-black;
         text-align: center;
         transition: 0.3s;
       }
@@ -1325,10 +1410,29 @@
       align-items: center;
     }
 
+    .container_top {
+      margin-top: 120px;
+    }
 
+    .header_black {
+      color: $black;
+    }
+
+    .header_white {
+      color: $white;
+    }
 
 
   @media (max-width: 800px) {
+
+    .arrow {
+      display: block;
+      width: 100%;
+      text-align: center;
+      position: absolute;
+      top: 35%;
+      cursor: pointer;
+    }
 
     .open nav a {
       transform: translateX(0);
@@ -1371,6 +1475,11 @@
     display: flex;
     flex-direction: column;
     margin-bottom:40px;
+    margin-top: 40px
+  }
+
+  .container_top {
+    margin-top: 80px;
   }
 
   .block_2 {
@@ -1407,6 +1516,11 @@
       padding-top: 150px;
       padding-bottom: 150px;
       margin-bottom: 40px;
+    }
+
+    .home_hero {
+      background-image: image-url('image_shirt.jpg');
+      margin-bottom: 0px;
     }
 
 

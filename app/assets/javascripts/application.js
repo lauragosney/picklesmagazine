@@ -13,4 +13,5 @@
 //= require jquery
 //= require in-view
 //= require rails-ujs
+//= require header
 //= require global

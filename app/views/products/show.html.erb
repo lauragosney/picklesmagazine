@@ -1,112 +1,145 @@
-<div class="header2">
-  <h1 class="logo">
-    <%= link_to root_path do %>
-      <%= image_tag "pickles-logo-small.svg" %>
+<header>
+  <div class="header_black">
+    <div class="menu-toggle">
+      <%= image_tag "menu-icon.svg", class: "icon" %>
+      <%= image_tag "menu-close.svg", class: "close" %>
+    </div>
+
+    <h1 class="logo">
+      <%= link_to root_path do %>
+        <%= image_tag "pickles_logo_update.svg" %>
       <% end %>
     </h1>
-</div>
 
-<div class="top_container"></div>
-
-
-<p class="text_link">
- <%= link_to "Back to all products", products_path %>
-</p>
-
-<div class="product_hero">
-
-  <div class="product_image">
-    <%= image_tag @product.image_1.large %>
+    <div class="cart">
+      <%= link_to cart_path do %>
+        <%= image_tag "cart.svg" %>
+        ( <%= @current_cart.total_quantity %> )
+        <!-- <%= number_to_currency @current_cart.total_price_in_pounds,  unit: "£" %> -->
+      <% end %>
+    </div>
   </div>
 
-  <div class="product_details">
-    <h3><%= @product.title %></h3>
 
-    <div class="price">
-      <h5><%= number_to_currency @product.price_in_pounds, unit: "£" %></h5>
-    </div>
+  <div class="menu">
 
-    <% if @product.is_sold_out? %>
-       <div class="sold_out">
-          Sold out
+      <nav>
+        <%= link_to "Home", root_path, class: "homehover" %>
+        <%= link_to "Events", events_path, class: "eventhover" %>
+        <%= link_to "Shop", products_path, class: "shophover" %>
+        <%= link_to "Stories", stories_path, class: "storieshover" %>
+        <%= link_to "About", about_path, class: "abouthover" %>
+        <%= link_to "Contact", contact_path, class: "contacthover" %>
+      </nav>
+
+      <div class="navigation-overlay-bg-home-hover"></div>
+      <div class="navigation-overlay-bg-event-hover"></div>
+       <div class="navigation-overlay-bg-shop-hover"></div>
+       <div class="navigation-overlay-bg-stories-hover"></div>
+       <div class="navigation-overlay-bg-about-hover"></div>
+       <div class="navigation-overlay-bg-contact-hover"></div>
+  </div>
+</header>
+
+<div class="container_top">
+    <p class="text_link">
+     <%= link_to "Back to all products", products_path %>
+    </p>
+
+    <div class="product_hero">
+
+      <div class="product_image">
+        <%= image_tag @product.image_1.large %>
       </div>
-    <% end %>
 
-    <%= simple_form_for [@product, @order_item] do |f| %>
-      <% if @product.product_variants.present? %>
+      <div class="product_details">
+        <h3><%= @product.title %></h3>
 
-        <div class="product_variant">
-
-           <%= f.input :product_variant_id, as: :select, collection: @product.product_variants.all, label_method: :select_text, prompt: 'Select size', label: false, include_blank: false %>
+        <div class="price">
+          <h5><%= number_to_currency @product.price_in_pounds, unit: "£" %></h5>
         </div>
+
+        <% if @product.is_sold_out? %>
+           <div class="sold_out">
+              Sold out
+          </div>
         <% end %>
 
-        <div class="quantity">
-          <%= f.input :quantity, label: "Qty" %>
-        </div>
+        <%= simple_form_for [@product, @order_item] do |f| %>
+          <% if @product.product_variants.present? %>
+
+            <div class="product_variant">
+
+               <%= f.input :product_variant_id, as: :select, collection: @product.product_variants.all, label_method: :select_text, prompt: 'Select size', label: false, include_blank: false %>
+            </div>
+            <% end %>
+
+            <div class="quantity">
+              <%= f.input :quantity, label: "Qty" %>
+            </div>
 
 
 
-      <%= f.button :submit, "Add to cart", class: "button_primary" %>
-      <% end %>
+          <%= f.button :submit, "Add to cart", class: "button_primary" %>
+          <% end %>
 
-      <% if flash[:success].present? %>
-        <div class="success">
-          <%= flash[:success] %>
-        </div>
-      <% end %>
+          <% if flash[:success].present? %>
+            <div class="success">
+              <%= flash[:success] %>
+            </div>
+          <% end %>
 
-      <% if flash[:error].present? %>
-        <div class="error">
-          <%= flash[:error] %>
-        </div>
-      <% end %>
-
-
-  </div>
-
-</div>
+          <% if flash[:error].present? %>
+            <div class="error">
+              <%= flash[:error] %>
+            </div>
+          <% end %>
 
 
+      </div>
 
-
-  <section class="container_2">
-
-  <div class="product_description">
-    <h4>Details</h4>
-      <p><%= simple_format @product.description %></p>
     </div>
-</section>
-
-<section class="product_extraimages">
 
 
-        <div class="product_extraimage">
-          <% if @product.image_2.medium.present? %>
-            <%= image_tag @product.image_2.medium %>
-          <% end %>
+
+
+      <section class="container_2">
+
+      <div class="product_description">
+        <h4>Details</h4>
+          <p><%= simple_format @product.description %></p>
         </div>
-        <div class="product_extraimage">
-          <% if @product.image_3.medium.present? %>
-            <%= image_tag @product.image_3.medium %>
-          <% end %>
-        </div>
-        <div class="product_extraimage">
-          <% if @product.image_4.medium.present? %>
-            <%= image_tag @product.image_4.medium %>
-          <% end %>
-        </div>
+    </section>
 
-</section>
+    <section class="product_extraimages">
 
 
-<section class="container">
-  <div class="quote">
-    <h4><%= @product.quote %></h4>
-    <p><%= @product.quote_credit %></p>
-  </div>
-</section>
+            <div class="product_extraimage">
+              <% if @product.image_2.medium.present? %>
+                <%= image_tag @product.image_2.medium %>
+              <% end %>
+            </div>
+            <div class="product_extraimage">
+              <% if @product.image_3.medium.present? %>
+                <%= image_tag @product.image_3.medium %>
+              <% end %>
+            </div>
+            <div class="product_extraimage">
+              <% if @product.image_4.medium.present? %>
+                <%= image_tag @product.image_4.medium %>
+              <% end %>
+            </div>
 
+    </section>
+
+
+    <section class="container">
+      <div class="quote">
+        <h4><%= @product.quote %></h4>
+        <p><%= @product.quote_credit %></p>
+      </div>
+    </section>
+</div>
 
 
 

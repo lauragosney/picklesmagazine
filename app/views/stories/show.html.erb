@@ -1,20 +1,53 @@
-<div class="header2">
-  <h1 class="logo">
-    <%= link_to root_path do %>
-      <%= image_tag "pickles-logo-small.svg" %>
+<header>
+  <div class="header_white">
+    <div class="menu-toggle">
+      <%= image_tag "menu-icon-white.svg", class: "icon" %>
+      <%= image_tag "menu-close.svg", class: "close" %>
+    </div>
+
+    <h1 class="logo">
+      <%= link_to root_path do %>
+        <%= image_tag "pickles_logo_update_white.svg" %>
       <% end %>
     </h1>
-</div>
-
-<div class="top_container"></div>
 
 
-<div class="container">
+    <div class="cart cart-white">
+      <%= link_to cart_path do %>
+        <%= image_tag "cart-white.svg" %>
+        ( <%= @current_cart.total_quantity %> )
+        <!-- <%= number_to_currency @current_cart.total_price_in_pounds,  unit: "£" %> -->
+      <% end %>
+    </div>
+  </div>
 
-  <div class="intro">
+
+  <div class="menu">
+
+      <nav>
+        <%= link_to "Home", root_path, class: "homehover" %>
+        <%= link_to "Events", events_path, class: "eventhover" %>
+        <%= link_to "Shop", products_path, class: "shophover" %>
+        <%= link_to "Stories", stories_path, class: "storieshover" %>
+        <%= link_to "About", about_path, class: "abouthover" %>
+        <%= link_to "Contact", contact_path, class: "contacthover" %>
+      </nav>
+
+      <div class="navigation-overlay-bg-home-hover"></div>
+      <div class="navigation-overlay-bg-event-hover"></div>
+       <div class="navigation-overlay-bg-shop-hover"></div>
+       <div class="navigation-overlay-bg-stories-hover"></div>
+       <div class="navigation-overlay-bg-about-hover"></div>
+       <div class="navigation-overlay-bg-contact-hover"></div>
+  </div>
+</header>
+
+<div class="container_3">
+
+  <div class="fullwidth-intro" style="background-image: url(<%= @story.image_1.large %>);">
 
     <div>
-      <h6>
+      <h6 class="white">
       <% @story.categories.each do |cat| %>
         <%=  link_to cat.title, stories_path(category: cat.title) %>
         <% end %>
@@ -23,14 +56,14 @@
     </div>
 
 
-    <h2><%= @story.title %></h2>
+    <h2 class="white"><%= @story.title %></h2>
 
     <% if @story.standfirst.present? %>
-    <p><%= @story.standfirst.html_safe %></p>
+    <p class="white"><%= @story.standfirst.html_safe %></p>
     <% end %>
 
     <% if @story.credit.present? %>
-      <h6><%= @story.byline %> | <%= @story.credit %></h6>
+      <h6 class="white"><%= @story.byline %> | <%= @story.credit %></h6>
     <% end %>
 
 
@@ -38,7 +71,9 @@
 
   </div>
 
-  <%= image_tag @story.image_1.large %>
+
+
+
   <p class="captions"><%= @story.caption_1.html_safe %></p>
 
 

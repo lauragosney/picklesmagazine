@@ -1,5 +1,6 @@
 $(document).on("ready", function () {
 
+
   $('.delivery_address').hide();
 
   $("#order_subscribe").on("click", function(e) {
