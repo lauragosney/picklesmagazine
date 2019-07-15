@@ -343,34 +343,136 @@
       padding-bottom: 5px;
     }
 
-    .header_white a {
-      transition: color 1s;
-    }
   }
 
 
   header.scrolled {
     background-color: $white;
+  }
 
-    .header_white a {
-      color: $black;
+  .header-hide {
+    opacity: 0;
+  }
+  
+  .menu-toggle {
+    z-index: 6;
+    position: fixed;
+    left: 30px;
+    top: 25px;
+    cursor: pointer;
+
+    img.close {
+      display: none;
+    }
+
+    &.open {
+      img.close {
+        display: inline;
+      }
+
+      img.icon {
+        display: none;
+      }
     }
   }
 
-  .header_black_hide {
-    opacity: 0;
+  h1.logo {
+    z-index:5;
+    width: 180px;
+    position: fixed;
+    top: 25px;
   }
 
- .header_black_visible {
-    opacity: 1;
+  .cart {
+    position: fixed;
+    right: 30px;
+    top: 30px;
+    font-weight: 600;
+    line-height: 1;
+    z-index: 4;
+
+    img {
+      padding-right: 5px;
+    }
   }
 
-  .header_black {
-    color: $black;
-  }
-
-  .header_white {
+  .cart-white a {
     color: $white;
+  }
+
+  .menu {
+    background-color: $black;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    transform: translateX(-100%);
+    transition: transform 0.5s cubic-bezier(0.06, 0.17, 0.2, 1);
+    z-index: 5;
+  }
+
+  .open {
+    transform: translateX(0);
+  }
+
+  .menu nav {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 8;
+  }
+
+  .menu nav a {
+    font-family: $fontpro;
+    font-size: $font-size-h4-px;
+    font-weight: $font-weight-black;
+    line-height: $line-height-body-px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    color: $white;
+    text-decoration: none;
+    text-align: center;
+    padding:0;
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  }
+
+  .open nav a:nth-child(1) {
+    transition-delay: 0.2s;
+  }
+
+  .open nav a:nth-child(2) {
+    transition-delay: 0.3s;
+  }
+
+  .open nav a:nth-child(3) {
+    transition-delay: 0.4s;
+  }
+
+  .open nav a:nth-child(4) {
+    transition-delay: 0.5s;
+  }
+
+  .open nav a:nth-child(5) {
+    transition-delay: 0.6s;
+  }
+
+  .open nav a {
+    transform: translateX(0);
+    opacity: 1;
+    transition: all 0.3s;
+    border-bottom: 2px solid transparent;
+  }
+
+  .open nav a:hover {
+    border-bottom: 2px solid $white;
   }
 
 
@@ -891,128 +993,7 @@
   }
 
 
-  .menu-toggle {
-    z-index: 6;
-    position: fixed;
-    left: 30px;
-    top: 25px;
-    cursor: pointer;
 
-    img.close {
-      display: none;
-    }
-
-    &.open {
-      img.close {
-        display: inline;
-      }
-
-      img.icon {
-        display: none;
-      }
-    }
-  }
-
-  .cart {
-    position: fixed;
-    right: 30px;
-    top: 30px;
-    font-weight: 600;
-    line-height: 1;
-    z-index: 4;
-
-    img {
-      padding-right: 5px;
-    }
-  }
-
-  .cart-white a {
-    color: $white;
-  }
-
-  .menu {
-    background-color: $black;
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0%;
-    left: 0%;
-    transform: translateX(-100%);
-    transition: transform 0.5s cubic-bezier(0.06, 0.17, 0.2, 1);
-    z-index: 5;
-  }
-
-  .open {
-    transform: translateX(0);
-  }
-
-  .menu nav {
-    position: absolute;
-	  text-align: center;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 8;
-  }
-
-  .menu nav a {
-    font-family: $fontpro;
-    font-size: $font-size-h4-px;
- 	  font-weight: $font-weight-black;
-    line-height: $line-height-body-px;
-    margin-bottom: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    color: $white;
-    text-decoration: none;
-    text-align: center;
-    padding:0;
-    opacity: 0;
-    transform: translateX(-100px);
- 	  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-  }
-
-  .open nav a:nth-child(1) {
-    transition-delay: 0.2s;
-  }
-
-  .open nav a:nth-child(2) {
-    transition-delay: 0.3s;
-  }
-
-  .open nav a:nth-child(3) {
-    transition-delay: 0.4s;
-  }
-
-  .open nav a:nth-child(4) {
-    transition-delay: 0.5s;
-  }
-
-  .open nav a:nth-child(5) {
-    transition-delay: 0.6s;
-  }
-
-  .open nav a {
-    transform: translateX(0);
-    opacity: 1;
-  	transition: all 0.3s;
-  	border-bottom: 2px solid transparent;
-  }
-
-  .open nav a:hover {
-    border-bottom: 2px solid $white;
-  }
-
-
-  h1.logo {
-    z-index:5;
-    width: 180px;
-    position: fixed;
-    top: 25px;
-    transform: translate(-50%, 0);
-  }
 
 
   .success,
