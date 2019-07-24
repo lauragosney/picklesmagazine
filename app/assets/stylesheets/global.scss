@@ -9,16 +9,16 @@
 //      font-url('geomanist-regular.svg#geomanist-regular') format('svg');
 // }
 //
-// @font-face {
-//   font-family:'geomanist';
-//   font-weight: 700;
-//   src: font-url('geomanist-bold.otf') format('truetype');
-//   src: font-url('geomanist-bold.eot') format('embedded-opentype'),
-//       font-url('geomanist-bold.woff2') format('woff2'),
-//      font-url('geomanist-bold.woff') format('woff'),
-//      font-url('geomanist-bold.ttf') format('truetype'),
-//      font-url('geomanist-bold.svg#geomanist-bold') format('svg');
-// }
+@font-face {
+  font-family:'geomanist';
+  font-weight: 700;
+  src: font-url('geomanist-bold.otf') format('truetype');
+  src: font-url('geomanist-bold.eot') format('embedded-opentype'),
+      font-url('geomanist-bold.woff2') format('woff2'),
+     font-url('geomanist-bold.woff') format('woff'),
+     font-url('geomanist-bold.ttf') format('truetype'),
+     font-url('geomanist-bold.svg#geomanist-bold') format('svg');
+}
 
 @font-face {
   font-family:'reader';
@@ -64,26 +64,29 @@
 
   $font:'reader', Helvetica, Arial, sans-serif;
   $fontpro:'readerpro', Helvetica, Arial, sans-serif;
+  $fontcart:'geomanist', Helvetica, Arial, sans-serif;
+
 
 
 
   $font-size-h1-px:60px;
-  $font-size-h2-px:52px;
+  $font-size-h2-px:58px;
   $font-size-h3-px:40px;
   $font-size-h4-px:32px;
   $font-size-h5-px:24px;
-  $font-size-h6-px:13px;
+  $font-size-h6-px:16px;
   $font-size-body-px: 17px;
   $font-size-links-px: 13px;
   $font-size-captions-px: 11px;
 
 
   $line-height-body-px: 1.8;
+  $line-height-subheadlines-px: 1.5;
   $line-height-headlines-px: 1.2;
 
   $font-weight-black: 900;
   $font-weight-regular: 400;
-  $font-weight-bold: 900;
+  $font-weight-bold: 700;
 
 
   html, body, div, span, applet, object, iframe,
@@ -185,7 +188,7 @@
   	color: $black;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1, h2, h3, h4, h5 {
     font-family: $fontpro;
    	font-weight: $font-weight-black;
   	color: $black;
@@ -215,8 +218,10 @@
   }
 
   h6 {
+    font-family: $font;
     font-size:$font-size-h6-px;
-    font-weight: $font-weight-regular;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-subheadlines-px;
   }
 
 
@@ -401,6 +406,9 @@
   }
 
   .cart {
+    font-family: $fontcart;
+    font-weight: $font-weight-bold;
+    font-size: 19px;
     position: fixed;
     right: 30px;
     top: 30px;
@@ -411,6 +419,7 @@
     svg {
       vertical-align: bottom;
       max-width: 100%;
+      padding-right: 4px;
     }
   }
 
@@ -1019,9 +1028,6 @@
   }
 
 
-
-
-
   .success,
   .error  {
     text-align: center;
@@ -1428,6 +1434,15 @@
       margin-top: 120px;
     }
 
+    h6.stories-cat {
+      display: inline-block;
+      border-bottom: solid 1px $white;
+      margin-bottom: 30px;
+    }
+
+    h2.stories-head {
+      margin-bottom: 25px;
+    }
 
 
   @media (max-width: 800px) {

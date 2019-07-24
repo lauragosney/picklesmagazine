@@ -5,7 +5,7 @@
   <div class="fullwidth-intro" style="background-image: url(<%= @story.image_1.large %>);">
 
     <div>
-      <h6 class="white">
+      <h6 class="white stories-cat">
       <% @story.categories.each do |cat| %>
         <%=  link_to cat.title, stories_path(category: cat.title) %>
         <% end %>
@@ -14,14 +14,13 @@
     </div>
 
 
-    <h2 class="white"><%= @story.title %></h2>
+    <h2 class="white stories-head"><%= @story.title %></h2>
 
-    <% if @story.standfirst.present? %>
-    <p class="white"><%= @story.standfirst.html_safe %></p>
-    <% end %>
+
 
     <% if @story.credit.present? %>
-      <h6 class="white"><%= @story.byline %> | <%= @story.credit %></h6>
+      <h6 class="white"><%= @story.byline %></h6>
+      <h6 class="white"><%= @story.credit %></h6>
     <% end %>
 
 
