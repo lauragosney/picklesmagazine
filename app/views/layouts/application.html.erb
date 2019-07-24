@@ -47,21 +47,21 @@
         </div>
     <% end %>
 
-    <header>
+    <header class="<%= content_for :header_class %>">
         <div class="menu-toggle">
-          <%= image_tag "menu-icon.svg", class: "icon" %>
-          <%= image_tag "menu-close.svg", class: "close" %>
+          <%= inline_svg "menu-icon.svg", class: "icon" %>
+          <%= inline_svg "menu-close.svg", class: "close whiteHeader" %>
         </div>
 
         <h1 class="logo">
           <%= link_to root_path do %>
-            <%= image_tag "pickles_logo_update.svg" %>
+            <%= inline_svg "pickles_logo_update.svg" %>
           <% end %>
         </h1>
 
         <div class="cart">
           <%= link_to cart_path do %>
-            <%= image_tag "cart.svg" %>
+          <%= inline_svg "cart" %>
             ( <%= @current_cart.total_quantity %> )
             <!-- <%= number_to_currency @current_cart.total_price_in_pounds,  unit: "£" %> -->
           <% end %>

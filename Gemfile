@@ -57,6 +57,8 @@ gem 'gibbon'
 
 gem 'pg_search'
 
+gem 'inline_svg'
+
 
 
 group :development, :test do

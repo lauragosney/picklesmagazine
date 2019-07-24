@@ -5,9 +5,11 @@ $(document).on("ready", function () {
   const toggleHeader = function () {
     const pixels = window.pageYOffset
   		if(pixels > 60) {
-       		headerTag.classList.add('scrolled')
+       	headerTag.classList.add('scrolled')
+        headerTag.classList.add('blackHeader')
        } else {
-         headerTag.classList.remove('scrolled')
+        headerTag.classList.remove('scrolled')
+        headerTag.classList.remove('blackHeader')
        }
   }
 

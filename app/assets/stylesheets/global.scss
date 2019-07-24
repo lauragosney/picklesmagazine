@@ -345,32 +345,49 @@
 
   }
 
+  .whiteHeader a {
+    color: $white;
+  }
+
+  .whiteHeader svg path {
+    fill: $white;
+  }
+
+  #menu-close path#Shape {
+    fill: $white;
+  }
+
+  .blackHeader a {
+    color: $black;
+  }
+
+  .blackHeader svg path {
+    fill: $black;
+  }
+
 
   header.scrolled {
     background-color: $white;
   }
 
-  .header-hide {
-    opacity: 0;
-  }
-  
+
   .menu-toggle {
     z-index: 6;
     position: fixed;
     left: 30px;
-    top: 25px;
+    top: 33px;
     cursor: pointer;
 
-    img.close {
+    svg.close {
       display: none;
     }
 
     &.open {
-      img.close {
+      svg.close {
         display: inline;
       }
 
-      img.icon {
+      svg.icon {
         display: none;
       }
     }
@@ -391,13 +408,10 @@
     line-height: 1;
     z-index: 4;
 
-    img {
-      padding-right: 5px;
+    svg {
+      vertical-align: bottom;
+      max-width: 100%;
     }
-  }
-
-  .cart-white a {
-    color: $white;
   }
 
   .menu {
