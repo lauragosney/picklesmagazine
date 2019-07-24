@@ -406,15 +406,18 @@
   }
 
   .cart {
-    font-family: $fontcart;
-    font-weight: $font-weight-bold;
-    font-size: 19px;
     position: fixed;
     right: 30px;
     top: 30px;
     font-weight: 600;
     line-height: 1;
     z-index: 4;
+
+    a {
+      font-family: $fontcart;
+      font-weight: $font-weight-bold;
+      font-size: 19px;
+    }
 
     svg {
       vertical-align: bottom;
