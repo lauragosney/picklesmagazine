@@ -981,7 +981,7 @@
   }
 
   .block_1 {
-    padding-top: 100px;
+    padding-top: 80px;
   }
 
   .fade {
@@ -1505,8 +1505,13 @@
   }
 
   .container_top {
-    margin-top: 80px;
+    margin-top: 100px;
   }
+
+  .block_1 {
+    padding-top: 40px;
+  }
+
 
   .block_2 {
     flex-direction: column-reverse;
@@ -1667,5 +1672,17 @@
       a {
         font-size: $font-size-h5-px;
       }
+    }
+  }
+
+  @media (max-width: 375px) {
+
+    h1.logo {
+      width: 150px;
+      top: 27px;
+    }
+
+    .arrow {
+      top: 40%;
     }
   }
