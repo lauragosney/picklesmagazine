@@ -12,8 +12,8 @@
 <section class="block_1 container_2" id="yearofthedog">
 
   <div class="block-image-left">
-  <% if @product_launch1.present? %>
-    <%= link_to product_path(@product_launch1) do %>
+  <% if @@story_launch.present? %>
+    <%= link_to product_path(@@story_launch) do %>
     <%= image_tag "pickles1_story1.jpg" %>
     <% end %>
   <% end %>
@@ -28,16 +28,16 @@
   <div class="block-copy">
         <h6>Feature</h6>
         <%= image_tag "dividers.svg" %>
-        <% if @product_launch1.present? %>
-            <%= link_to product_path(@product_launch1) do %>
+        <% if @story_launch.present? %>
+            <%= link_to product_path(@story_launch) do %>
           <% end %>
         <% end %>
         <h4>The Little Club That Dreamed Big</h4>
         <p>Pistoia, a medium-sized town in the heart of Tuscany. It is the summer of 1980 and after 50 years the local football team (Unione Sportiva Pistoiese) has just been promoted again to the top league, Serie A. For a 10-year old boy who fell in love with football a couple of years earlier this is potentially the pinnacle of his existence.
         </p>
         <div class="button_secondary">
-        <% if @product_launch1.present? %>
-            <%= link_to product_path(@product_launch1) do %>
+        <% if @story_launch.present? %>
+            <%= link_to product_path(@story_launch) do %>
             Read now <%= image_tag "arrow_icon.svg",width: 30 %>
             <% end %>
         <% end %>
