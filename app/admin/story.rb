@@ -1,7 +1,7 @@
 ActiveAdmin.register Story do
 
   permit_params :title, :byline, :standfirst, :body, :image_1, :image_2, :image_3, :image_4, :image_5, :quote,
-  :caption_1, :caption_2, :caption_3, :caption_4, :caption_5, :credit, :is_featured, category_ids:[]
+  :caption_1, :caption_2, :caption_3, :caption_4, :caption_5, :credit, :is_featured, :on_homepage, :on_homepage_slottwo, category_ids:[]
 
    show do
      attributes_table do
