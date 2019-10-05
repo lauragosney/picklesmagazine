@@ -5,7 +5,7 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @featured_products = Product.where(is_featured: true)
+    @featured_products = Product.where(is_featured: true).order('created_at DESC')
 
     @product = Product.find(params[:id])
 
