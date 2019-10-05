@@ -1,7 +1,7 @@
 ActiveAdmin.register Story do
 
   permit_params :title, :byline, :standfirst, :body, :image_1, :image_2, :image_3, :image_4, :image_5, :quote,
-  :caption_1, :caption_2, :caption_3, :caption_4, :caption_5, :credit, :is_featured, :on_homepage, :on_homepage_slottwo, category_ids:[]
+  :caption_1, :caption_2, :caption_3, :caption_4, :caption_5, :credit, :is_featured, category_ids:[]
 
    show do
      attributes_table do
@@ -54,8 +54,6 @@ ActiveAdmin.register Story do
         editor.quote.html_safe
       end
       row :is_featured
-      row :on_homepage
-      row :on_homepage_slottwo
       row :categories do |category|
         category.categories.all.map do |t|
           t.title
@@ -85,8 +83,6 @@ ActiveAdmin.register Story do
 
 
     column :is_featured
-    column :on_homepage
-    column :on_homepage_slottwo
     column :quote do |editor|
       editor.quote.html_safe
     end
@@ -112,8 +108,6 @@ ActiveAdmin.register Story do
 
      f.inputs "Filters" do
        f.input :is_featured, label: "Featured story?"
-       f.input :on_homepage, label: "On homepage slot 1?"
-       f.input :on_homepage_slottwo, label: "On homepage slot 2?"
      end
 
      f.inputs "Images" do
