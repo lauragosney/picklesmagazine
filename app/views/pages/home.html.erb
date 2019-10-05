@@ -12,8 +12,8 @@
 <section class="block_1 container_2" id="yearofthedog">
 
   <div class="block-image-left">
-  <% if @@story_launch.present? %>
-    <%= link_to product_path(@@story_launch) do %>
+  <% if @story_launch.present? %>
+    <%= link_to product_path(@story_launch) do %>
     <%= image_tag "pickles1_story1.jpg" %>
     <% end %>
   <% end %>
