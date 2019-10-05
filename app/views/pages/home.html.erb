@@ -13,7 +13,7 @@
 
   <div class="block-image-left">
   <% if @story_launch.present? %>
-    <%= link_to product_path(@story_launch) do %>
+    <%= link_to stories_path(@story_launch) do %>
     <%= image_tag "pickles1_story1.jpg" %>
     <% end %>
   <% end %>
@@ -29,7 +29,7 @@
         <h6>Feature</h6>
         <%= image_tag "dividers.svg" %>
         <% if @story_launch.present? %>
-            <%= link_to product_path(@story_launch) do %>
+            <%= link_to stories_path(@story_launch) do %>
           <% end %>
         <% end %>
         <h4>The Little Club That Dreamed Big</h4>
@@ -37,7 +37,7 @@
         </p>
         <div class="button_secondary">
         <% if @story_launch.present? %>
-            <%= link_to product_path(@story_launch) do %>
+            <%= link_to stories_path(@story_launch) do %>
             Read now <%= image_tag "arrow_icon.svg",width: 30 %>
             <% end %>
         <% end %>
