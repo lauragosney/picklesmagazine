@@ -2,6 +2,7 @@ class Story < ApplicationRecord
 
   has_many :category_stories
   has_many :categories, through: :category_stories
+  has_many :category_stories, dependent: :delete_all
 
   validates :title, presence: true
   validates :byline, presence: true
