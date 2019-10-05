@@ -1,8 +1,8 @@
 <%= content_for :header_class, "whiteHeader" %>
 
 <div class="products_hero home_hero">
-    <h2>Headline to go in here</h2>
-    <a class="arrow" href="#yearofthedog"><%= image_tag "Arrow_White.svg",width: 60 %></a>
+    <h2>New issue out now</h2>
+    <a class="arrow" href="#yearofthedog"><%= image_tag "Arrow_White.svg",width: 50 %></a>
   </div>
 
 
@@ -14,7 +14,7 @@
   <div class="block-image-left">
   <% if @product_launch1.present? %>
     <%= link_to product_path(@product_launch1) do %>
-    <%= image_tag "image_shirt.jpg" %>
+    <%= image_tag "pickles1_story1.jpg" %>
     <% end %>
   <% end %>
   </div>
@@ -26,19 +26,19 @@
 
 
   <div class="block-copy">
-        <h6>The Pickles Shirt</h6>
+        <h6>Feature</h6>
         <%= image_tag "dividers.svg" %>
         <% if @product_launch1.present? %>
             <%= link_to product_path(@product_launch1) do %>
           <% end %>
         <% end %>
-        <h4>Year of the dog</h4>
-        <p>Here it is! We’ve been working tirelessly to create a shirt that matches our magazine’s design principles, with nods to 80s classics from your youth and a quality finish Matt Le Tissier would be proud of. A shirt that won’t look out of place in the local discotheque or the weekly five-a-side game. Woof!
+        <h4>The Little Club That Dreamed Big</h4>
+        <p>Pistoia, a medium-sized town in the heart of Tuscany. It is the summer of 1980 and after 50 years the local football team (Unione Sportiva Pistoiese) has just been promoted again to the top league, Serie A. For a 10-year old boy who fell in love with football a couple of years earlier this is potentially the pinnacle of his existence.
         </p>
         <div class="button_secondary">
         <% if @product_launch1.present? %>
             <%= link_to product_path(@product_launch1) do %>
-            Shop now <%= image_tag "arrow_icon.svg",width: 30 %>
+            Read now <%= image_tag "arrow_icon.svg",width: 30 %>
             <% end %>
         <% end %>
 
@@ -61,8 +61,8 @@
             <%= link_to product_path(@product_launch2) do %>
             <% end %>
           <% end %>
-        		<h4>Introducing Pickles <br> Issue 14</h4>
-        		<p>As it’s our fourteenth issue, it seemed only right that we honour the greatest number 14 of all-time… Of course we’re talking about Johan Cruyff. We remember some of the moments that defined him and his impact on the beautiful game. Plus the usual plethora of stories, fantastic artwork and photography.
+        		<h4>Pickles 1/9</h4>
+        		<p>After a Pep Guardiola style sabbatical, to recharge our batteries and check out the opposition, we've come back stronger. In the latest edition of Pickles we ask some big questions, continue to tell the game’s forgotten stories, tackle issues that transcend its 90 minutes and celebrate the best in real football culture. We imagine a world without football pundits, Twitter without Football Twitter, ask the question, can clubs still afford luxury, and celebrate the life of legendary soul boy, Laurie Cunningham.
             </p>
        	 		<div class="button_secondary">
             <% if @product_launch2.present? %>
@@ -79,7 +79,7 @@
     <div class="block-image-right">
     <% if @product_launch2.present? %>
       <%= link_to product_path(@product_launch2) do %>
-      <%= image_tag "image_mag.jpg" %>
+      <%= image_tag "pickles1_hp1.jpg" %>
 
     <% end %>
   <% end %>

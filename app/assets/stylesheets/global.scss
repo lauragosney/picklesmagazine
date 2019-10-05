@@ -543,7 +543,7 @@
     width: 100%;
     text-align: center;
     position: absolute;
-    top: 50%;
+    bottom: 30%;
     cursor: pointer;
   }
 
@@ -570,7 +570,9 @@
   }
 
   .home_hero {
-    background-image:asset-url('image_shirt.jpg');
+    background-image:asset-url('pickles1_mainimage.jpg');
+    padding-top: 350px;
+    padding-bottom: 350px;
     margin-bottom: 0px;
   }
 
@@ -1451,15 +1453,6 @@
 
   @media (max-width: 800px) {
 
-    .arrow {
-      display: block;
-      width: 100%;
-      text-align: center;
-      position: absolute;
-      top: 35%;
-      cursor: pointer;
-    }
-
     .open nav a {
       transform: translateX(0);
       opacity: 1;
@@ -1535,6 +1528,15 @@
 
   @media (max-width: 534px) {
 
+    .arrow {
+      display: block;
+      width: 100%;
+      text-align: center;
+      position: absolute;
+      top: 35%;
+      cursor: pointer;
+    }
+
     .big_link {
       width:100%;
     }
@@ -1550,7 +1552,7 @@
     }
 
     .home_hero {
-      background-image: image-url('image_shirt.jpg');
+      background-image:asset-url('pickles1_mainimage.jpg');
       margin-bottom: 0px;
     }
 
@@ -1683,6 +1685,6 @@
     }
 
     .arrow {
-      top: 40%;
+      bottom: 40%;
     }
   }
