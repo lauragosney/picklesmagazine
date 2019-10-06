@@ -543,7 +543,7 @@
     width: 100%;
     text-align: center;
     position: absolute;
-    bottom: 0%;
+    bottom: 7%;
     cursor: pointer;
   }
 
@@ -574,6 +574,7 @@
     padding-top: 350px;
     padding-bottom: 350px;
     margin-bottom: 0px;
+    position: relative;
   }
 
   .container_3 {
@@ -1457,6 +1458,14 @@
       font-weight: $font-weight-black;
       font-size: $font-size-links-px;
       line-height: 5.25;
+      border: 2px solid $white;
+      padding: 10px 36px;
+      transition: 0.3s;
+    }
+
+    .button_home a:hover {
+      color: $black;
+      background-color: $white;
     }
 
 
@@ -1537,27 +1546,13 @@
 
   @media (max-width: 534px) {
 
-    .arrow {
-      display: block;
-      width: 100%;
-      text-align: center;
-      position: absolute;
-      bottom: 40%;
-      cursor: pointer;
-    }
-
     .big_link {
       width:100%;
     }
 
     .products_hero {
-      text-align: center;
-      background-image:image-url('lifestyle.png');
-      background-repeat: no-repeat;
-      background-size: cover;
-      padding-top: 150px;
-      padding-bottom: 150px;
-      margin-bottom: 40px;
+      padding-top: 270px;
+      padding-bottom: 270px;
     }
 
     .home_hero {
@@ -1691,9 +1686,5 @@
     h1.logo {
       width: 150px;
       top: 27px;
-    }
-
-    .arrow {
-      bottom: 45%;
     }
   }

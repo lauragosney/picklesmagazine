@@ -2,11 +2,11 @@
 
 <div class="products_hero home_hero">
     <h2>New Issue Out Now</h2>
-    <a class="arrow" href="#yearofthedog"><%= image_tag "Arrow_White.svg",width: 45 %></a>
+    <a class="arrow" href="#yearofthedog"><%= image_tag "arrow_down_white.svg",width: 30 %></a>
     <div class="button_home">
     <% if @product_launch2.present? %>
       <%= link_to product_path(@product_launch2) do %>
-      Shop now
+      order now
       <% end %>
     <% end %>
 
