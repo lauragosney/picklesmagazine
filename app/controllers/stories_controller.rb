@@ -5,7 +5,7 @@ class StoriesController < ApplicationController
 
    if @category_id.present?
       @category = Category.find_by(title: @category_id)
-      @stories = @category.stories.all
+      @stories = @category.stories.all.order('created_at DESC')
    else
       @stories = Story.order('created_at DESC')
    end
