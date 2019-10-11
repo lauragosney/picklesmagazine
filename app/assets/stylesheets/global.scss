@@ -571,10 +571,24 @@
 
   .home_hero {
     background-image:asset-url('pickles1_mainimage.jpg');
-    padding-top: 350px;
-    padding-bottom: 350px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 100vh;
     margin-bottom: 0px;
     position: relative;
+    text-align: center;
+  }
+
+  .type_hero {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    h2 {
+      color: $white;
+    }
   }
 
   .container_3 {
@@ -1551,6 +1565,11 @@
     }
 
     .products_hero {
+      padding-top: 270px;
+      padding-bottom: 270px;
+    }
+
+    .fullwidth-intro {
       padding-top: 270px;
       padding-bottom: 270px;
     }
