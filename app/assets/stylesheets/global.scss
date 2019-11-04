@@ -53,6 +53,7 @@
       font-url('ReaderPro-Black.svg#ReaderPro-Black') format('svg');
 }
 
+  $blue: #0792d1;
   $green: #7ed321;
   $hovergreen: #6CAF22;
   $black: #000000;
@@ -133,7 +134,7 @@
   }
 
   input:focus {
-	  border: 1px solid $green;
+	  border: 1px solid $blue;
 	  outline: 0;
 	  border-radius: 0;
     box-shadow: none;
@@ -165,12 +166,12 @@
   }
 
   select:hover {
-    border: solid 1px $green;
+    border: solid 1px $blue;
     outline:none;
   }
 
   select:focus {
-    border: solid 1px $green;
+    border: solid 1px $blue;
     outline:none;
   }
 
@@ -633,7 +634,7 @@
     }
 
     a:hover {
-      color: $green;
+      color: $blue;
     }
   }
 
@@ -730,7 +731,7 @@
   }
 
   .grid_single:hover {
-      border: 1px solid $green;
+      border: 1px solid $blue;
       padding: 10px;
   }
 
@@ -755,8 +756,8 @@
 
 .button_primary  {
     margin-top: 24px;
-    color: $black;
-    background-color: $green;
+    color: $white;
+    background-color: $blue;
     border: none;
     padding: 10px 0px 8px 0px;
     display: block;
@@ -772,7 +773,8 @@
   }
 
   .button_primary:hover  {
-    background-color: $hovergreen;
+    background-color: $blue;
+    opacity: 0.7;
     cursor:pointer
   }
 
@@ -800,10 +802,12 @@
 
   .button_secondary:hover  {
 
-    color: $green;
+    color: $blue;
+    opacity: 0.7;
 
     a {
-      color: $green;
+      color: $blue;
+      opacity: 0.7;
     }
 
     img {
@@ -836,7 +840,8 @@
 
     a {
       transition: all 0.3s;
-      color: $green;
+      color: $blue;
+      opacity:0.7;
     }
 
     img {
@@ -874,7 +879,7 @@
     }
 
     a:hover {
-      color: $green;
+      color: $blue;
     }
   }
 
@@ -900,7 +905,7 @@
   }
 
   .my-input:hover {
-    border: solid 1px $green;
+    border: solid 1px $blue;
   }
 
   .product_grid_2 {
@@ -935,8 +940,8 @@
     input.button_primary  {
       margin: 24px 0px 0px 0px;
       width: 100%;
-      color: $black;
-      background-color: $green;
+      color: $white;
+      background-color: $blue;
       border: none;
       padding: 10px 0 8px 0;
       display: block;
@@ -953,7 +958,8 @@
     }
 
     .button_primary:hover  {
-      background-color: $hovergreen;
+      background-color: $blue;
+      opacity: 0.7;
     }
 
     img {
@@ -1105,7 +1111,8 @@
     }
 
     input.btn.button_primary:hover {
-      background-color: $hovergreen;
+      background-color: $blue;
+      opacity: 0.7;
       cursor: pointer;
     }
   }
@@ -1211,14 +1218,14 @@
   input#order_item_quantity:hover,
   select#order_country:hover,
   select#order_delivery_country:hover {
-   	border: solid 1px $green;
+   	border: solid 1px $blue;
   }
 
   select#order_item_product_variant_id:focus,
   input#order_item_quantity:focus,
   select#order_country:focus,
   select#order_delivery_country:focus {
-   	border: solid 1px $green;
+   	border: solid 1px $blue;
     outline: none;
   }
 
@@ -1395,7 +1402,7 @@
       }
 
       a:hover {
-        color:$green
+        color: $blue;
       }
     }
 
@@ -1439,7 +1446,8 @@
       }
 
       a:hover {
-        color: $green;
+        color: $blue;
+        opacity:0.7;
       }
 
     }
@@ -1480,6 +1488,10 @@
     .button_home a:hover {
       color: $black;
       background-color: $white;
+    }
+
+    .text i {
+      font-style: italic;
     }
 
 
