@@ -367,15 +367,9 @@
     color: $black;
   }
 
-  .blackHeader svg path {
-    fill: $black;
-  }
-
-
   header.scrolled {
     background-color: $white;
   }
-
 
   .menu-toggle {
     z-index: 6;
@@ -571,7 +565,7 @@
   }
 
   .home_hero {
-    background-image:asset-url('pickles1_mainimage.jpg');
+    background-image:asset-url('pickles2_mainimage.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1494,6 +1488,30 @@
       font-style: italic;
     }
 
+    // .slide-in-promo-banner {
+    //   display: flex;
+    //   position: fixed;
+    //   width: 33.3%;
+    //   -webkit-transform: translateX(100%);
+    //   transform: translateX(100%);
+    //   text-align: left;
+    //   bottom: 0px;
+    //   right: 0;
+    //   background: #FBFAEF;
+    //   padding: 20px;
+    //   z-index: 3;
+    //   transition: transform .5s, -webkit-transform .5s;
+    // }
+
+    .close-banner {
+      z-index: 4;
+      position: absolute;
+    }
+
+    .show-banner {
+      -webkit-transform: translateX(0%);
+      transform: translateX(0%);
+    }
 
   @media (max-width: 800px) {
 
@@ -1587,7 +1605,7 @@
     }
 
     .home_hero {
-      background-image:asset-url('pickles1_mainimage.jpg');
+      background-image:asset-url('pickles2_mainimage.jpg');
       margin-bottom: 0px;
       padding-top: 85vh;
     }

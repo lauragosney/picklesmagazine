@@ -1,12 +1,14 @@
 <%= content_for :header_class, "whiteHeader" %>
 
+
+
 <div class="home_hero">
   <div class="type_hero">
-    <h2>New Issue Out Now</h2>
+    <h2>New Issue Coming Soon</h2>
     <div class="button_home">
     <% if @product_launch2.present? %>
       <%= link_to product_path(@product_launch2) do %>
-      order now
+      Pre-Order Now
       <% end %>
     <% end %>
 
