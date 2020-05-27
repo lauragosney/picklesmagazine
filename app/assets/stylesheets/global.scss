@@ -363,8 +363,13 @@
     fill: $white;
   }
 
-  .blackHeader a {
+  .blackHeader {
+   svg path {
+      fill: $black;
+    };
+   a {
     color: $black;
+    }
   }
 
   header.scrolled {
